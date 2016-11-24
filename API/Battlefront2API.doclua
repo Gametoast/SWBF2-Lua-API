@@ -1124,9 +1124,15 @@ function SpaceAssaultSetupBitmaps(shipBitmapATT, shipBitmapDEF, shieldBitmapATT,
 function SpaceAssaultGetScoreLimit() end
 
 --------------------------------------------------------------
--- Returns whether or not the current mission is using non-multiplayer rules.
+-- Returns whether or not the current mission is a multiplayer match.
 -- 
--- @return #int			1 if using non-multiplayer rules, 0 if using multiplayer rules
+-- @return #int			1 if multiplayer match, 0 if not
+function ScriptCB_InMultiplayer() end
+
+--------------------------------------------------------------
+-- Returns whether or not the current mission is using campaign rules.
+-- 
+-- @return #int			1 if using campaign rules, 0 if using non-campaign rules
 function IsCampaign() end
 
 --------------------------------------------------------------
