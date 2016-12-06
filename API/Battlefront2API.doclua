@@ -1402,6 +1402,7 @@ function ActivateObject(objectName) end
 function DeactivateObject(objectName) end
 
 --------------------------------------------------------------
+-- Assigns the specified object to the specified team.
 -- 
 -- @param #string objectName		ID of object to set the team of
 -- @param #int teamIndex			Index of the team to assign to the object
@@ -1410,14 +1411,14 @@ function SetObjectTeam(objectName, teamIndex) end
 --------------------------------------------------------------
 -- Returns the team index of the specified object.
 -- 
--- @param #string objectName		ID of object to destroy
+-- @param #string objectName		ID of object to get the team of
 -- @return #int						Index of the team the object belongs to
 function GetObjectTeam(objectName) end
 
 --------------------------------------------------------------
 -- Returns whether or not the specified object is alive.
 -- 
--- @param #string objectName		ID of object to get the name of
+-- @param #string objectName		ID of object to check
 -- @return #int						1 if object is alive, 0 if object is not alive
 function IsObjectAlive(objectName) end
 
@@ -1514,10 +1515,10 @@ function SetProperty(objectName, property, value) end
 -- Creates a new instance of the specified entity and returns it.
 -- 
 -- @param #string class			Name of the entity class to instantiate
--- @param node					Path point to create the entity at
+-- @param matrix				Matrix or path point to create the entity at
 -- @param #string name			Name to assign to the entity
 -- @return						Entity instance
-function CreateEntity(class, node, name) end
+function CreateEntity(class, matrix, name) end
 
 --------------------------------------------------------------
 -- Deletes the specified entity.
