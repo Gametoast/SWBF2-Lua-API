@@ -1,0 +1,1757 @@
+{
+    "SetBleedingVoiceOver": {
+        "prefix": "SetBleedingVoiceOver",
+        "body": "SetBleedingVoiceOver(${1:playerTeam}, ${2:bleedTeam}, ${3:streamSoundName}, ${4:bleeding})",
+        "description": "Sets the sound stream to play for the specified team when the other specified team has started/stopped bleeding.    \n\n playerTeam : Player's team number    \n bleedTeam : The team that's started/stopped bleeding    \n streamSoundName : Stream sound to play when the local player is playerTeam and bleedTeam has started/stopped bleeding    \n bleeding : Set to 1 to assign a started bleeding sound, set to 0 to assign a stopped bleeding sound",
+        "scope": "source.lua"
+    },
+    
+    "SetBleedingRepeatTime": {
+        "prefix": "SetBleedingRepeatTime",
+        "body": "SetBleedingRepeatTime(${1:repeatTime})",
+        "description": "Sets the bleeding sound stream repeat time.",
+        "scope": "source.lua"
+    },
+    
+    "SetPlanetaryBonusVoiceOver": {
+        "prefix": "SetPlanetaryBonusVoiceOver",
+        "body": "SetPlanetaryBonusVoiceOver(${1:playerTeam}, ${2|0,1,2,3,4,5|}, ${3:streamSoundName})",
+        "description": "Sets the voice over to play for the specified bonus.",
+        "scope": "source.lua"
+    },
+    
+    "SetSoundEffect": {
+        "prefix": "SetSoundEffect",
+        "body": "SetSoundEffect(${1|\"BirdScatter\",\"Bird\",\"LeafFall\",\"ScopeDisplayAmbient\",\"ScopeDisplayZoomIn\",\"ScopeDisplayZoomOut\",\"WeaponUnableSelect\",\"WeaponModeUnableSelect\",\"SpawnDisplayUnitChange\",\"SpawnDisplayUnitAccept\",\"SpawnDisplaySpawnPointChange\",\"SpawnDisplaySpawnPointAccept\",\"SpawnDisplayBack\",\"LockOn\",\"HeroesUnlocked\",\"HeroSpawned\",\"HeroDefeated\"|}, ${2:soundPropertyName}, ${3:teamIndex})",
+        "description": "Sets the sound effect to play for the specified sound event.    \n\n soundEventType : Type of event.    \n\n soundPropertyName : Name of a SoundProperty assigned to the event    \n\n teamIndex : Only required if 'soundEventType' == 'HeroSpawned' or 'HeroDefeated'. Index of team that player is on",
+        "scope": "source.lua"
+    },
+    
+    "SetLowReinforcementsVoiceOver": {
+        "prefix": "SetLowReinforcementsVoiceOver",
+        "body": "SetLowReinforcementsVoiceOver(${1:playerTeam}, ${2:lowReinforcementTeam}, ${3:streamSoundName}, ${4:numReinforcements}, ${5:isPercentage})",
+        "description": "Sets the voice over for when the specified team has low reinforcements.",
+        "scope": "source.lua"
+    },
+    
+    "SetOutOfBoundsVoiceOver": {
+        "prefix": "SetOutOfBoundsVoiceOver",
+        "body": "SetOutOfBoundsVoiceOver(${1:playerTeam}, ${2:streamSoundName})",
+        "description": "Sets the out-of-bounds voice over to play for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SetAmbientMusic": {
+        "prefix": "SetAmbientMusic",
+        "body": "SetAmbientMusic(${1:playerTeam}, ${2:reinforcementCount}, ${3:musicName}, ${4:gameStage}, ${5:isPercentage})",
+        "description": "Sets the ambient music to play for players on the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SetAttackingTeam": {
+        "prefix": "SetAttackingTeam",
+        "body": "SetAttackingTeam(${1:teamIndex})",
+        "description": "Sets which music and voice overs are heard when in two-player (only?) splitscreen.",
+        "scope": "source.lua"
+    },
+    
+    "SetVictoryMusic": {
+        "prefix": "SetVictoryMusic",
+        "body": "SetVictoryMusic(${1:teamIndex}, ${2:soundStreamID})",
+        "description": "Sets the music to play for players on the specified team when their team is victorious.",
+        "scope": "source.lua"
+    },
+    
+    "SetDefeatMusic": {
+        "prefix": "SetDefeatMusic",
+        "body": "SetDefeatMusic(${1:teamIndex}, ${2:soundStreamID})",
+        "description": "Sets the music to play for players on the specified team when their team is defeated.",
+        "scope": "source.lua"
+    },
+    
+    "PlayAudioStream": {
+        "prefix": "PlayAudioStream",
+        "body": "PlayAudioStream(${1:streamFilename}, ${2:streamID}, ${3:segmentID}, ${4:gain}, ${5:busName}, ${6:streamIndex})",
+        "description": "Plays the specified sound stream segment.",
+        "scope": "source.lua"
+    },
+    
+    "PlayAudioStreamUsingProperties": {
+        "prefix": "PlayAudioStreamUsingProperties",
+        "body": "PlayAudioStreamUsingProperties(${1:streamFilename}, ${2:soundStreamID}, ${3:noOpen})",
+        "description": "Plays the specified sound stream with the specified properties.",
+        "scope": "source.lua"
+    },
+    
+    "StopAudioStream": {
+        "prefix": "StopAudioStream",
+        "body": "StopAudioStream(${1:streamIndex}, ${2:close})",
+        "description": "Stops and optionally closes the specified sound stream.",
+        "scope": "source.lua"
+    },
+    
+    "OpenAudioStream": {
+        "prefix": "OpenAudioStream",
+        "body": "OpenAudioStream(${1:streamFilename}, ${2:streamID})",
+        "description": "Opens the specified sound stream.",
+        "scope": "source.lua"
+    },
+    
+    "AudioStreamAppendSegments": {
+        "prefix": "AudioStreamAppendSegments",
+        "body": "AudioStreamAppendSegments(${1:streamFilename}, ${2:streamID}, ${3:streamIndex})",
+        "description": "Appends the specified sound stream to another stream.  Just like how only one segment in an open audio stream can be played at a time, only one segment in a group of appended segments can be played at a time.    \n\n NOTE: This can ONLY be used with streams that are stored inside the same lvl file!",
+        "scope": "source.lua"
+    },
+    
+    "AudioStreamComplete": {
+        "prefix": "AudioStreamComplete",
+        "body": "AudioStreamComplete(${1:streamID})",
+        "description": "Returns whether or not a sound stream is currently playing.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_SndPlaySound": {
+        "prefix": "ScriptCB_SndPlaySound",
+        "body": "ScriptCB_SndPlaySound(${1:soundID})",
+        "description": "Plays the specified sound properties.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_SndBusFade": {
+        "prefix": "ScriptCB_SndBusFade",
+        "body": "ScriptCB_SndBusFade(${1:busName}, ${2:endGain}, ${3:endGain}, ${4:endGain})",
+        "description": "Fades the specified sound bus.",
+        "scope": "source.lua"
+    },
+    
+    "ScaleSoundParameter": {
+        "prefix": "ScaleSoundParameter",
+        "body": "ScaleSoundParameter(${1:groupID}, ${2|\"Gain\",\"GainDev\",\"Pitch\",\"PitchDev\",\"PlayProbability\",\"PlayInterval\",\"PlayIntervalDev\",\"ReverbGain\",\"Pan\",\"MinDistance\",\"MuteDistance\",\"MaxDistance\",\"RollIn\",\"RollInDistance\"|}, ${3:scale})",
+        "description": "Scales the specified parameter for the specified sound group.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_SetMovieAudioBus": {
+        "prefix": "ScriptCB_SetMovieAudioBus",
+        "body": "ScriptCB_SetMovieAudioBus(${1:busID})",
+        "description": "Sets the bus that controls movie audio volume.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_SetDopplerFactor": {
+        "prefix": "ScriptCB_SetDopplerFactor",
+        "body": "ScriptCB_SetDopplerFactor(${1:dopplerFactor})",
+        "description": "Exaggerates or reduces doppler effects.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_PlayInGameMusic": {
+        "prefix": "ScriptCB_PlayInGameMusic",
+        "body": "ScriptCB_PlayInGameMusic(${1:musicID})",
+        "description": "Plays the specified music.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_StopInGameMusic": {
+        "prefix": "ScriptCB_StopInGameMusic",
+        "body": "ScriptCB_StopInGameMusic()",
+        "description": "Stops the music previously played using 'ScriptCB_PlayInGameMusic()'.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_EnableCommandPostVO": {
+        "prefix": "ScriptCB_EnableCommandPostVO",
+        "body": "ScriptCB_EnableCommandPostVO(${1:enabled})",
+        "description": "Enables or disables command post voice overs.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_EnableHeroMusic": {
+        "prefix": "ScriptCB_EnableHeroMusic",
+        "body": "ScriptCB_EnableHeroMusic(${1:enabled})",
+        "description": "Enables or disables hero music.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_EnableHeroVO": {
+        "prefix": "ScriptCB_EnableHeroVO",
+        "body": "ScriptCB_EnableHeroVO(${1:enabled})",
+        "description": "Enables or disables hero voice overs.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_SetSpawnDisplayGain": {
+        "prefix": "ScriptCB_SetSpawnDisplayGain",
+        "body": "ScriptCB_SetSpawnDisplayGain(${1:gain}, ${2:fadeTime})",
+        "description": "Sets the gain of the ingame bus when the spawn display is visible.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_TriggerSoundRegionEnable": {
+        "prefix": "ScriptCB_TriggerSoundRegionEnable",
+        "body": "ScriptCB_TriggerSoundRegionEnable(${1:groupName}, ${2:enabled})",
+        "description": "Enables or disables the specified trigger sound region.",
+        "scope": "source.lua"
+    },
+    
+    "FindEntityClass": {
+        "prefix": "FindEntityClass",
+        "body": "FindEntityClass(${1:entityClassName})",
+        "description": "Returns the entity class of the specified class name.",
+        "scope": "source.lua"
+    },
+    
+    "SetPS2ModelMemory": {
+        "prefix": "SetPS2ModelMemory",
+        "body": "SetPS2ModelMemory(${1:bytes})",
+        "description": "Sets the amount of extra(?) model memory to allocate for the map on the PS2.",
+        "scope": "source.lua"
+    },
+    
+    "SetWorldExtents": {
+        "prefix": "SetWorldExtents",
+        "body": "SetWorldExtents(${1:amount})",
+        "description": "For CollisionManager and TreeGrid sizes...    \n\n 'SetWorldExtents' and 'ScriptPreInit' go hand in hand. When building a Space level, you may notice that when you exit your ship you instantly die. You also might find that running around certain parts of your ship you will die without taking damage. That's what 'SetWorldExtents' is for. If you have this set to 2500, but you're still finding that the world is killing you (and you're not walking into a death region) then bump it up to enlarge the soldier based playable space.    \n\n Might have to go in 'ScriptPreInit'.",
+        "scope": "source.lua"
+    },
+    
+    "StealArtistHeap": {
+        "prefix": "StealArtistHeap",
+        "body": "StealArtistHeap(${1:playerTeam}, ${2:streamSoundName})",
+        "description": "Sets the amount of memory to take from the artist memory pools and reallocate. (Where to, though?)",
+        "scope": "source.lua"
+    },
+    
+    "ReadDataFile": {
+        "prefix": "ReadDataFile",
+        "body": "ReadDataFile(${1:sourceFilename})",
+        "description": "Loads the specified lvl file. Sub-lvls contained in the lvl file can be loaded in subsequent arguments like so:    \n 'ReadDataFile(\"dc:SIDE\\rep.lvl\", \"rep_inf_ep3_trooper\", \"rep_inf_ep3_engineer\", \"rep_hero_anakin\")'    \n\n You can also load a sub-lvl with a semicolon in the 'sourceFilename' argument like so:    \n 'ReadDataFile(\"dc:Sound\\abc.lvl;ABCg\")'",
+        "scope": "source.lua"
+    },
+    
+    "ReadDataFileInGame": {
+        "prefix": "ReadDataFileInGame",
+        "body": "ReadDataFileInGame(${1:sourceFilename})",
+        "description": "Loads the specified lvl file during run-time (I think?). Sub-lvls contained in the lvl file can be loaded in subsequent arguments like so:    \n 'ReadDataFileInGame(\"dc:SIDE\\rep.lvl\", \"rep_inf_ep3_trooper\", \"rep_inf_ep3_engineer\", \"rep_hero_anakin\")'    \n\n You can also load a sub-lvl with a semicolon in the 'sourceFilename' argument like so:    \n 'ReadDataFileInGame(\"dc:Sound\\abc.lvl;ABCg\")'",
+        "scope": "source.lua"
+    },
+    
+    "SetupTempHeap": {
+        "prefix": "SetupTempHeap",
+        "body": "SetupTempHeap(${1:bytes})",
+        "description": "Sets the amount of memory to allocate to a temporary pool.    \n\n Used in galactic conquest. (What for specifically, though?)",
+        "scope": "source.lua"
+    },
+    
+    "ClearTempHeap": {
+        "prefix": "ClearTempHeap",
+        "body": "ClearTempHeap()",
+        "description": "Clears the temporary memory pool created with 'SetupTempHeap'.",
+        "scope": "source.lua"
+    },
+    
+    "AddCameraShot": {
+        "prefix": "AddCameraShot",
+        "body": "AddCameraShot(${1:quatW}, ${2:quatX}, ${3:quatY}, ${4:quatZ}, ${5:posX}, ${6:posY}, ${7:posZ})",
+        "description": "Adds a shot to the map's set of camera shots.    \n\n These are the different camera angles that you cycle through while in spectator mode when there's no players to spectate.    \n\n Use the 'DumpCamera' console command to print new ones to the debug log.",
+        "scope": "source.lua"
+    },
+    
+    "SetCameraRotation": {
+        "prefix": "SetCameraRotation",
+        "body": "SetCameraRotation(${1:quatW}, ${2:quatX}, ${3:quatY}, ${4:quatZ})",
+        "description": "Sets the camera's rotation (in quaternions). Note that the camera is immediately reset if the player is controlling a Controllable entity.",
+        "scope": "source.lua"
+    },
+    
+    "SetCameraPosition": {
+        "prefix": "SetCameraPosition",
+        "body": "SetCameraPosition(${1:posX}, ${2:posY}, ${3:posZ})",
+        "description": "Sets the camera's position. Note that the camera is immediately reset if the player is controlling a Controllable entity. ",
+        "scope": "source.lua"
+    },
+    
+    "MoveCameraToEntity": {
+        "prefix": "MoveCameraToEntity",
+        "body": "MoveCameraToEntity(${1:entity})",
+        "description": "Moves the camera to the specified entity.    \n\n Used in galactic conquest.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapCameraPosition": {
+        "prefix": "SetMapCameraPosition",
+        "body": "SetMapCameraPosition(${1:posX}, ${2:posY}, ${3:posZ})",
+        "description": "Sets the map camera's position.    \n\n Used in galactic conquest.",
+        "scope": "source.lua"
+    },
+    
+    "GetMapCameraPosition": {
+        "prefix": "GetMapCameraPosition",
+        "body": "GetMapCameraPosition()",
+        "description": "Returns the map camera's position values.    \n\n Used in galactic conquest.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapCameraOffset": {
+        "prefix": "SetMapCameraOffset",
+        "body": "SetMapCameraOffset(${1:zoom}, ${2:posX}, ${3:posY}, ${4:posZ})",
+        "description": "Sets the map camera's position offset for the specified level of zoom.    \n\n Used in galactic conquest.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapCameraPitch": {
+        "prefix": "SetMapCameraPitch",
+        "body": "SetMapCameraPitch(${1:zoom}, ${2:pitch})",
+        "description": "Sets the map camera's pitch for the specified level of zoom.    \n\n Used in galactic conquest.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapCameraZoom": {
+        "prefix": "SetMapCameraZoom",
+        "body": "SetMapCameraZoom(${1:zoom}, ${2:dir}, ${3:ratio})",
+        "description": "Sets the map camera's zoom level.    \n\n Used in galactic conquest.",
+        "scope": "source.lua"
+    },
+    
+    "GetMapCameraZoom": {
+        "prefix": "GetMapCameraZoom",
+        "body": "GetMapCameraZoom()",
+        "description": "Returns the map camera's current zoom values.    \n\n Used in galactic conquest.",
+        "scope": "source.lua"
+    },
+    
+    "SnapMapCamera": {
+        "prefix": "SnapMapCamera",
+        "body": "SnapMapCamera(${1:playerTeam}, ${2:streamSoundName})",
+        "description": "",
+        "scope": "source.lua"
+    },
+    
+    "SetState": {
+        "prefix": "SetState",
+        "body": "SetState(${1:state})",
+        "description": "Restarts the shell.",
+        "scope": "source.lua"
+    },
+    
+    "SetHistorical": {
+        "prefix": "SetHistorical",
+        "body": "SetHistorical()",
+        "description": "Sets the mission as historical, might be related to Galactic Conquest?    \n\n Obsolete, used in SWBF1.",
+        "scope": "source.lua"
+    },
+    
+    "SetTeamName": {
+        "prefix": "SetTeamName",
+        "body": "SetTeamName(${1:teamIndex}, ${2:key})",
+        "description": "Sets the name of the specified team. The names 'neutral', 'neu', 'alliance', 'all', 'empire', 'imp', 'republic', 'rep', and 'cis' map to pre-defined team identifiers; anything else maps to locals. (Yes, this is not very general.)",
+        "scope": "source.lua"
+    },
+    
+    "SetTeamAggressiveness": {
+        "prefix": "SetTeamAggressiveness",
+        "body": "SetTeamAggressiveness(${1:teamIndex}, ${2:aggressiveness})",
+        "description": "Sets the aggressiveness of the AI on the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SetMinFlyHeight": {
+        "prefix": "SetMinFlyHeight",
+        "body": "SetMinFlyHeight(${1:height})",
+        "description": "Controls how far downwards from the center of the world the AI can fly.    \n\n These are used on ground based maps to limit the jet classes and jedi, but is also used to keep flyers from getting too far below the space battlefield. To find an appropriate height, use 'PrintPlayerPos' in the console, fly to your desired min height, and punch those numbers in. It's best to keep the MinFlyHeight and the MinPlayerFlyHeight in line with each other to avoid AI doing things that players can't.",
+        "scope": "source.lua"
+    },
+    
+    "SetMaxFlyHeight": {
+        "prefix": "SetMaxFlyHeight",
+        "body": "SetMaxFlyHeight(${1:height})",
+        "description": "Controls how far upwards from the center of the world the AI can fly.    \n\n These are used on ground based maps to limit the jet classes and jedi, but is also used to keep flyers from getting too far above the space battlefield. To find an appropriate height, use 'PrintPlayerPos' in the console, fly to your desired max height, and punch those numbers in. It's best to keep the MaxFlyHeight and the MaxPlayerFlyHeight in line with each other to avoid AI doing things that players can't.",
+        "scope": "source.lua"
+    },
+    
+    "SetMinPlayerFlyHeight": {
+        "prefix": "SetMinPlayerFlyHeight",
+        "body": "SetMinPlayerFlyHeight(${1:height})",
+        "description": "Controls how far downwards from the center of the world the player can fly.    \n\n These are used on ground based maps to limit the jet classes and jedi, but is also used to keep flyers from getting too far below the space battlefield. To find an appropriate height, use 'PrintPlayerPos' in the console, fly to your desired min height, and punch those numbers in. It's best to keep the MinFlyHeight and the MinPlayerFlyHeight in line with each other to avoid players doing things that AI can't.",
+        "scope": "source.lua"
+    },
+    
+    "SetMaxPlayerFlyHeight": {
+        "prefix": "SetMaxPlayerFlyHeight",
+        "body": "SetMaxPlayerFlyHeight(${1:height})",
+        "description": "Controls how far upwards from the center of the world the player can fly.    \n\n These are used on ground based maps to limit the jet classes and jedi, but is also used to keep flyers from getting too far above the space battlefield. To find an appropriate height, use 'PrintPlayerPos' in the console, fly to your desired max height, and punch those numbers in. It's best to keep the MaxFlyHeight and the MaxPlayerFlyHeight in line with each other to avoid players doing things that players can't.",
+        "scope": "source.lua"
+    },
+    
+    "SetUberMode": {
+        "prefix": "SetUberMode",
+        "body": "SetUberMode(${1:enabled})",
+        "description": "Enables uber mode, which allows more than 32 units per team.",
+        "scope": "source.lua"
+    },
+    
+    "SetAllowBlindJetJumps": {
+        "prefix": "SetAllowBlindJetJumps",
+        "body": "SetAllowBlindJetJumps(${1:allow})",
+        "description": "Exact functionality unknown, but likely allows AI units to jetjump at will instead of restricting them to JetJump hint nodes. Used in Kamino.",
+        "scope": "source.lua"
+    },
+    
+    "SetStationaryWaitTime": {
+        "prefix": "SetStationaryWaitTime",
+        "body": "SetStationaryWaitTime(${1:time})",
+        "description": "Unused, exact functionality unknown. Might be related to AI planning requests.",
+        "scope": "source.lua"
+    },
+    
+    "SetTeamIcon": {
+        "prefix": "SetTeamIcon",
+        "body": "SetTeamIcon(${1:teamIndex}, ${2:icon})",
+        "description": "Sets the icon of the specified team to the specified texture. Not sure where exactly this is used.",
+        "scope": "source.lua"
+    },
+    
+    "SetTeamAsEnemy": {
+        "prefix": "SetTeamAsEnemy",
+        "body": "SetTeamAsEnemy(${1:team}, ${2:other})",
+        "description": "Makes the specified 'team' regard the 'other' team as an enemy. It does not affect how the 'other' team regards the specified 'team'!",
+        "scope": "source.lua"
+    },
+    
+    "SetTeamAsNeutral": {
+        "prefix": "SetTeamAsNeutral",
+        "body": "SetTeamAsNeutral(${1:team}, ${2:other})",
+        "description": "Makes the specified 'team' regard the 'other' team as a neutral. It does not affect how the 'other' team regards the specified 'team'!",
+        "scope": "source.lua"
+    },
+    
+    "SetTeamAsFriend": {
+        "prefix": "SetTeamAsFriend",
+        "body": "SetTeamAsFriend(${1:team}, ${2:other})",
+        "description": "Makes the specified 'team' regard the 'other' team as an ally. It does not affect how the 'other' team regards the specified 'team'!",
+        "scope": "source.lua"
+    },
+    
+    "SetUnitCount": {
+        "prefix": "SetUnitCount",
+        "body": "SetUnitCount(${1:teamIndex}, ${2:count})",
+        "description": "Sets the number of units the specified team has.",
+        "scope": "source.lua"
+    },
+    
+    "GetUnitCount": {
+        "prefix": "GetUnitCount",
+        "body": "GetUnitCount(${1:teamIndex})",
+        "description": "Returns the number of units the specified team has.",
+        "scope": "source.lua"
+    },
+    
+    "SetReinforcementCount": {
+        "prefix": "SetReinforcementCount",
+        "body": "SetReinforcementCount(${1:teamIndex}, ${2:tickets})",
+        "description": "Sets the specified team's ticket count.",
+        "scope": "source.lua"
+    },
+    
+    "GetReinforcementCount": {
+        "prefix": "GetReinforcementCount",
+        "body": "GetReinforcementCount(${1:teamIndex})",
+        "description": "Returns the specified team's current ticket count.",
+        "scope": "source.lua"
+    },
+    
+    "AddReinforcements": {
+        "prefix": "AddReinforcements",
+        "body": "AddReinforcements(${1:teamIndex}, ${2:tickets})",
+        "description": "Adds the specified number of tickets to the specified team's ticket count.",
+        "scope": "source.lua"
+    },
+    
+    "SetTeamPoints": {
+        "prefix": "SetTeamPoints",
+        "body": "SetTeamPoints(${1:teamIndex}, ${2:points})",
+        "description": "Sets the specified team's point count.",
+        "scope": "source.lua"
+    },
+    
+    "GetTeamPoints": {
+        "prefix": "GetTeamPoints",
+        "body": "GetTeamPoints(${1:teamIndex})",
+        "description": "Returns the specified team's current point count.",
+        "scope": "source.lua"
+    },
+    
+    "AddTeamPoints": {
+        "prefix": "AddTeamPoints",
+        "body": "AddTeamPoints(${1:teamIndex}, ${2:points})",
+        "description": "Adds the specified number of points to the specified team's point count.",
+        "scope": "source.lua"
+    },
+    
+    "AddFlagCapturePoints": {
+        "prefix": "AddFlagCapturePoints",
+        "body": "AddFlagCapturePoints(${1:integerChrIdx})",
+        "description": "Gives the specified character unit flag capture points.",
+        "scope": "source.lua"
+    },
+    
+    "AddAssaultDestroyPoints": {
+        "prefix": "AddAssaultDestroyPoints",
+        "body": "AddAssaultDestroyPoints(${1:integerChrIdx})",
+        "description": "Gives the specified character unit assault destroy points.",
+        "scope": "source.lua"
+    },
+    
+    "AddSpaceAssaultDestroyPoints": {
+        "prefix": "AddSpaceAssaultDestroyPoints",
+        "body": "AddSpaceAssaultDestroyPoints(${1:integerChrIdx}, ${2:object})",
+        "description": "Gives the specified character unit space assault destroy points for the specified object.",
+        "scope": "source.lua"
+    },
+    
+    "GetTeamFactionId": {
+        "prefix": "GetTeamFactionId",
+        "body": "GetTeamFactionId(${1:teamIndex})",
+        "description": "Returns the faction ID of the specified team.    \n\n Not sure what this is used for.",
+        "scope": "source.lua"
+    },
+    
+    "AddUnitClass": {
+        "prefix": "AddUnitClass",
+        "body": "AddUnitClass(${1:teamIndex}, ${2:unitClass}, ${3:minUnits}, ${4:maxUnits})",
+        "description": "Adds the specified unit class to the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SetHeroClass": {
+        "prefix": "SetHeroClass",
+        "body": "SetHeroClass(${1:teamIndex}, ${2:heroClass})",
+        "description": "Sets the hero class for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "EnableSPHeroRules": {
+        "prefix": "EnableSPHeroRules",
+        "body": "EnableSPHeroRules()",
+        "description": "Turns on the hero rules for the game.  This should be present in every multiplayer script, unless you do not actually want heroes in your map.  Simply omit this line, and you will never get heroes in your game.",
+        "scope": "source.lua"
+    },
+    
+    "EnableSPScriptedHeroes": {
+        "prefix": "EnableSPScriptedHeroes",
+        "body": "EnableSPScriptedHeroes()",
+        "description": "Turns on the campaign hero rules for the game.    \n\n This should be present in every campaign script for missions that include heroes.",
+        "scope": "source.lua"
+    },
+    
+    "SetHeroUnlockRule": {
+        "prefix": "SetHeroUnlockRule",
+        "body": "SetHeroUnlockRule(${1:rule})",
+        "description": "Unused. Sets the rule by which the hero is unlocked.",
+        "scope": "source.lua"
+    },
+    
+    "SetHeroTeamRule": {
+        "prefix": "SetHeroTeamRule",
+        "body": "SetHeroTeamRule(${1:rule})",
+        "description": "Unused. Sets the hero player rule (whatever that means).",
+        "scope": "source.lua"
+    },
+    
+    "SetHeroPlayerRule": {
+        "prefix": "SetHeroPlayerRule",
+        "body": "SetHeroPlayerRule(${1:rule})",
+        "description": "Unused. Sets the hero player rule (whatever that means).",
+        "scope": "source.lua"
+    },
+    
+    "SetHeroRespawnRule": {
+        "prefix": "SetHeroRespawnRule",
+        "body": "SetHeroRespawnRule(${1:rule})",
+        "description": "Unused. Sets the rule by which the hero respawns.",
+        "scope": "source.lua"
+    },
+    
+    "UnlockHeroForTeam": {
+        "prefix": "UnlockHeroForTeam",
+        "body": "UnlockHeroForTeam(${1:teamIndex})",
+        "description": "Unlocks the hero for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "AcceptHero": {
+        "prefix": "AcceptHero",
+        "body": "AcceptHero(${1:integerChrIdx})",
+        "description": "Forces the specified character unit to accept the unlocked hero, automatically bringing them to the spawn screen.",
+        "scope": "source.lua"
+    },
+    
+    "ShowAllUnitsOnMinimap": {
+        "prefix": "ShowAllUnitsOnMinimap",
+        "body": "ShowAllUnitsOnMinimap(${1:enabled})",
+        "description": "Shows all units on the minimap if enabled.",
+        "scope": "source.lua"
+    },
+    
+    "ShowTeamPoints": {
+        "prefix": "ShowTeamPoints",
+        "body": "ShowTeamPoints(${1:teamIndex}, ${2:enabled})",
+        "description": "Shows or hides the CTF points for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "ActivateBonus": {
+        "prefix": "ActivateBonus",
+        "body": "ActivateBonus(${1:teamIndex}, ${2|\"MEDICAL_SUPPLIES\",\"SURPLUS_SUPPLIES\",\"SENSOR_BOOST\",\"HERO\",\"RESERVES\",\"SABOTAGE\",\"SNEAK_ATTACK\",\"TRAINING\"|})",
+        "description": "Activates a bonus for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SetBleedRate": {
+        "prefix": "SetBleedRate",
+        "body": "SetBleedRate(${1:teamIndex}, ${2:rate})",
+        "description": "Sets the specified team's ticket bleed rate.",
+        "scope": "source.lua"
+    },
+    
+    "GetBleedRate": {
+        "prefix": "GetBleedRate",
+        "body": "GetBleedRate(${1:teamIndex})",
+        "description": "Returns the specified team's current ticket bleed rate.",
+        "scope": "source.lua"
+    },
+    
+    "SetCarrierClass": {
+        "prefix": "SetCarrierClass",
+        "body": "SetCarrierClass(${1:teamIndex}, ${2:class})",
+        "description": "Obsolete, from SWBF1. Sets the carrier class for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SetSpawnDelay": {
+        "prefix": "SetSpawnDelay",
+        "body": "SetSpawnDelay(${1:num1}, ${2:num2})",
+        "description": "Specifies an initial spawn delay.    \n\n All levels use this call. You should never have to modify the values.",
+        "scope": "source.lua"
+    },
+    
+    "SetSpawnDelayTeam": {
+        "prefix": "SetSpawnDelayTeam",
+        "body": "SetSpawnDelayTeam(${1:num1}, ${2:num2}, ${3:teamIndex})",
+        "description": "Specifies an initial spawn delay for the specified team.    \n\n All levels use this call. You should never have to modify the values.",
+        "scope": "source.lua"
+    },
+    
+    "SetDenseEnvironment": {
+        "prefix": "SetDenseEnvironment",
+        "body": "SetDenseEnvironment(${1:enabledStr})",
+        "description": "Sets a switch in the code that controls a number of AI behaviors.    \n\n If this were a very foggy map, with a short view distance, you would set this to 'true' which would make the AI see a shorter distance, and other various things to make the AI act more appropriately in an environment with limited visibility.    \n\n Synonymous with 'SetUrbanEnvironment()'.",
+        "scope": "source.lua"
+    },
+    
+    "SetAttackerSnipeRange": {
+        "prefix": "SetAttackerSnipeRange",
+        "body": "SetAttackerSnipeRange(${1:distance})",
+        "description": "Sets the distance from which AI scout units can snipe when using 'attack' snipe hint nodes.",
+        "scope": "source.lua"
+    },
+    
+    "SetDefenderSnipeRange": {
+        "prefix": "SetDefenderSnipeRange",
+        "body": "SetDefenderSnipeRange(${1:distance})",
+        "description": "Sets the distance from which AI scout units can snipe when using 'defend' snipe hint nodes.",
+        "scope": "source.lua"
+    },
+    
+    "SetStayInTurrets": {
+        "prefix": "SetStayInTurrets",
+        "body": "SetStayInTurrets(${1:enabled})",
+        "description": "Makes AI units stay in turrets, but under what conditions, no one knows... Found on Endor.",
+        "scope": "source.lua"
+    },
+    
+    "SetMaxCollisionDistance": {
+        "prefix": "SetMaxCollisionDistance",
+        "body": "SetMaxCollisionDistance(${1:distance})",
+        "description": "Sets the maximum collision distance for asteroids. What this does exactly is unclear.",
+        "scope": "source.lua"
+    },
+    
+    "SetParticleLODBias": {
+        "prefix": "SetParticleLODBias",
+        "body": "SetParticleLODBias(${1:bias})",
+        "description": "Sets the particle LOD bias (probably correlates to particle view distance). Needed for particles in space to work properly, don't delete it!",
+        "scope": "source.lua"
+    },
+    
+    "SetMemoryPoolSize": {
+        "prefix": "SetMemoryPoolSize",
+        "body": "SetMemoryPoolSize(${1|\"AcklayData\",\"ActiveRegion\",\"Aimer\",\"AmmoCounter\",\"Asteroid\",\"BaseHint\",\"ClothData\",\"Combo\",\"Combo::Attack\",\"Combo::Condition\",\"Combo::DamageSample\",\"Combo::Deflect\",\"Combo::State\",\"Combo::Transition\",\"CommandFlyer\",\"CommandHover\",\"CommandWalker\",\"ConnectivityGraphFollower\",\"EnergyBar\",\"EntityBuildingArmedDynamic\",\"EntityCarrier\",\"EntityCloth\",\"EntityDefenseGridTurret\",\"EntityDroid\",\"EntityDroideka\",\"EntityFlyer\",\"EntityHover\",\"EntityLight\",\"EntityMine\",\"EntityPortableTurret\",\"EntityRemoteTerminal\",\"EntitySoldier\",\"EntitySoundStatic\",\"EntitySoundStream\",\"EntityTauntaun\",\"EntityWalker\",\"FlagItem\",\"FLEffectObject::OffsetMatrix\",\"LightFlash\",\"MountedTurret\",\"Music\",\"Navigator\",\"Obstacle\",\"Ordnance\",\"OrdnanceTowCable\",\"ParticleEmitter\",\"ParticleEmitterInfoData\",\"ParticleEmitterObject\",\"ParticleTransformer::ColorTrans\",\"ParticleTransformer::PositionTr\",\"ParticleTransformer::SizeTransf\",\"PassengerSlot\",\"PathFollower\",\"PathNode\",\"PathRequest\",\"PowerupItem\",\"RedOmniLight\",\"ShieldEffect\",\"SoldierAnimation\",\"SoundSpaceRegion\",\"TentacleSimulator\",\"Timer\",\"TreeGridStack\",\"UnitAgent\",\"UnitController\",\"Weapon\"|}, ${2:size})",
+        "description": "Sets the size of the specified memory pool.",
+        "scope": "source.lua"
+    },
+    
+    "SetNumBirdTypes": {
+        "prefix": "SetNumBirdTypes",
+        "body": "SetNumBirdTypes(${1:types})",
+        "description": "Sets how many types of birds there are in the level.",
+        "scope": "source.lua"
+    },
+    
+    "SetBirdType": {
+        "prefix": "SetBirdType",
+        "body": "SetBirdType(${1:disable}, ${2:size}, ${3:texture})",
+        "description": "Declares a new bird type.",
+        "scope": "source.lua"
+    },
+    
+    "SetBirdFlockMinHeight": {
+        "prefix": "SetBirdFlockMinHeight",
+        "body": "SetBirdFlockMinHeight(${1:height})",
+        "description": "Sets the lowest height at which flocks of birds can fly.",
+        "scope": "source.lua"
+    },
+    
+    "SetNumFishTypes": {
+        "prefix": "SetNumFishTypes",
+        "body": "SetNumFishTypes(${1:types})",
+        "description": "",
+        "scope": "source.lua"
+    },
+    
+    "SetFishType": {
+        "prefix": "SetFishType",
+        "body": "SetFishType(${1:disable}, ${2:size}, ${3:texture})",
+        "description": "Declares a new fish type.",
+        "scope": "source.lua"
+    },
+    
+    "FillAsteroidRegion": {
+        "prefix": "FillAsteroidRegion",
+        "body": "FillAsteroidRegion(${1:region}, ${2:class}, ${3:count}, ${4:maxSpeedX}, ${5:maxSpeedY}, ${6:maxSpeedZ}, ${7:minSpeedX}, ${8:minSpeedY}, ${9:minSpeedZ})",
+        "description": "Fills the specified region with asteroids.    \n\n Each asteroid will move in the X, Y, and Z directions at a random velocity within the range of each 'minSpeed' and 'maxSpeed' argument. Asteroid velocity is probably measured in meters per second. This randomized velocity is different for each asteroid.    \n\n NOTE: Asteroids won't appear unless the 'Asteroid' memory pool is filled >= the total number of asteroids that are in the level!",
+        "scope": "source.lua"
+    },
+    
+    "FillAsteroidPath": {
+        "prefix": "FillAsteroidPath",
+        "body": "FillAsteroidPath(${1:path}, ${2:maxOffset}, ${3:class}, ${4:count}, ${5:maxSpeedX}, ${6:maxSpeedY}, ${7:maxSpeedZ}, ${8:minSpeedX}, ${9:minSpeedY}, ${10:minSpeedZ})",
+        "description": "Fills the specified path with asteroids.    \n\n The distribution of the asteroids along the path's spline is more-or-less even. However, the position of each asteroid is also offset in a random direction. The distance of this offset is a random value between 0 and 'maxOffset'. This randomized offset is different for each asteroid.    \n\n Each asteroid will move in the X, Y, and Z directions at a random velocity within the range of each 'minSpeed' and 'maxSpeed' argument. Asteroid velocity is probably measured in meters per second. This randomized velocity is different for each asteroid.    \n\n NOTE: Asteroids won't appear unless the 'Asteroid' memory pool is filled >= the total number of asteroids that are in the level!",
+        "scope": "source.lua"
+    },
+    
+    "AddDeathRegion": {
+        "prefix": "AddDeathRegion",
+        "body": "AddDeathRegion(${1:regionClass})",
+        "description": "Registers the specified region class as a death region. Entities that enter this region will be immediately killed.",
+        "scope": "source.lua"
+    },
+    
+    "AddLandingRegion": {
+        "prefix": "AddLandingRegion",
+        "body": "AddLandingRegion(${1:regionClass})",
+        "description": "Registers the specified region class as a landing region. Flyers will be able to land when inside of this region.",
+        "scope": "source.lua"
+    },
+    
+    "RemoveRegion": {
+        "prefix": "RemoveRegion",
+        "body": "RemoveRegion(${1:regionClass})",
+        "description": "Removes the specified region class. Death regions and landing regions removed by RemoveRegion can be re-added with AddDeathRegion or AddLandingRegion.",
+        "scope": "source.lua"
+    },
+    
+    "IsCharacterInRegion": {
+        "prefix": "IsCharacterInRegion",
+        "body": "IsCharacterInRegion(${1:integerChrIdx}, ${2:region})",
+        "description": "Returns whether or not the specified character is in the specified region.",
+        "scope": "source.lua"
+    },
+    
+    "GetRegionName": {
+        "prefix": "GetRegionName",
+        "body": "GetRegionName(${1:region})",
+        "description": "Returns the name of the specified region class.",
+        "scope": "source.lua"
+    },
+    
+    "GetRegion": {
+        "prefix": "GetRegion",
+        "body": "GetRegion(${1:region})",
+        "description": "Returns the class of the specified region.",
+        "scope": "source.lua"
+    },
+    
+    "ClearWalkers": {
+        "prefix": "ClearWalkers",
+        "body": "ClearWalkers()",
+        "description": "Wipes out any allocations that may have been done automatically for walkers.  You'll need to have this line in and uncommented if you want to have walkers in your level.",
+        "scope": "source.lua"
+    },
+    
+    "AddWalkerType": {
+        "prefix": "AddWalkerType",
+        "body": "AddWalkerType(${1:numPairs}, ${2:count})",
+        "description": "Adds walkers to your level.    \n\n The first number inside the parenthesis (numPairs) specifies how many leg pairs the walker type has. Droidekas are set up as a special case, with 0 leg pairs. So as you can see below, we have AddWalkerType(0,4), this specifies that we will have 4 walkers with 0 leg pairs (droidekas). 1 leg pair would specify a walker with one pair of legs, an ATST for example, or a one-man ATST from the Clone Wars era. So for 2 ATSTs, we would have a line that says AddWalkerType(1, 2). 2 leg pairs would be a unit like the CIS spider walker, or an ATAT, and 3 leg pairs would be the 6-legged walker from the Clone Wars era.    \n\n Examples:    \n\n 'AddWalkerType(0, 4) -- special -> droidekas, 0x4 (4 droidekas)'    \n 'AddWalkerType(1, 2) -- 1x2 (2 walkers with 1 pair of legs)'    \n 'AddWalkerType(2, 4) -- 2x4 (4 walkers with 2 pairs of legs)'    \n 'AddWalkerType(3, 1) -- 3x1 (1 walker with 3 pairs of legs)'",
+        "scope": "source.lua"
+    },
+    
+    "SetAIVehicleNotifyRadius": {
+        "prefix": "SetAIVehicleNotifyRadius",
+        "body": "SetAIVehicleNotifyRadius(${1:radius})",
+        "description": "Sets the distance around a waiting vehicle from which AI can be lured in.",
+        "scope": "source.lua"
+    },
+    
+    "SetAIViewMultiplier": {
+        "prefix": "SetAIViewMultiplier",
+        "body": "SetAIViewMultiplier(${1:visibility})",
+        "description": "Sets the overall view distance multiplier for AI.",
+        "scope": "source.lua"
+    },
+    
+    "AISnipeSuitabilityDist": {
+        "prefix": "AISnipeSuitabilityDist",
+        "body": "AISnipeSuitabilityDist(${1:distance})",
+        "description": "Sets the distance (in meters) from which AI scout units can snipe.",
+        "scope": "source.lua"
+    },
+    
+    "SetGroundFlyerMap": {
+        "prefix": "SetGroundFlyerMap",
+        "body": "SetGroundFlyerMap(${1:enabled})",
+        "description": "When enabled, makes it so AI flyers are spatially aware of the ground, thus reducing/eliminating the chances of them crashing into it.",
+        "scope": "source.lua"
+    },
+    
+    "EnableAIAutoBalance": {
+        "prefix": "EnableAIAutoBalance",
+        "body": "EnableAIAutoBalance()",
+        "description": "Turns on AutoBalancing.    \n\n This will work for Conquest/Assault/CTF games. Not campaign. Basically if the score gets too far in one teams favor (+/- 40 conquest, 60 assault, 1 ctf) it will make the losing team better and the winning team worse until things get back to close again.",
+        "scope": "source.lua"
+    },
+    
+    "DisableAIAutoBalance": {
+        "prefix": "DisableAIAutoBalance",
+        "body": "DisableAIAutoBalance()",
+        "description": "Turns off AutoBalancing.    \n\n It is on by default so you should use this for your campaign mode scripts.",
+        "scope": "source.lua"
+    },
+    
+    "SetAIDifficulty": {
+        "prefix": "SetAIDifficulty",
+        "body": "SetAIDifficulty(${1:player}, ${2:enemy}, ${3:difficulty})",
+        "description": "Sets the current difficulty modifier.    \n\n This can be called from any point within a mission. So if you want the bad guys to be more difficult on just one objective, call this with say (0,2) in the OnStart function, then call it again with (0,0) to reset it in the OnComplete function.",
+        "scope": "source.lua"
+    },
+    
+    "AddMissionObjective": {
+        "prefix": "AddMissionObjective",
+        "body": "AddMissionObjective(${1:teamIndex}, ${2:text}, ${3:popupText})",
+        "description": "Notifies the C++ code that the specified objective (uniquely identified in 'text' parameter) exists for the specified team.    \n\n Optionally specifies the text to show in a popup once the objective is activated.",
+        "scope": "source.lua"
+    },
+    
+    "ActivateObjective": {
+        "prefix": "ActivateObjective",
+        "body": "ActivateObjective(${1:text})",
+        "description": "Tells the C++ code to activate the specified objective.",
+        "scope": "source.lua"
+    },
+    
+    "CompleteObjective": {
+        "prefix": "CompleteObjective",
+        "body": "CompleteObjective(${1:text})",
+        "description": "Tells the C++ code to complete the specified objective.",
+        "scope": "source.lua"
+    },
+    
+    "AddMissionHint": {
+        "prefix": "AddMissionHint",
+        "body": "AddMissionHint(${1:hintText})",
+        "description": "Adds the specified hint to the list of hints for the level.",
+        "scope": "source.lua"
+    },
+    
+    "SetFlagGameplayType": {
+        "prefix": "SetFlagGameplayType",
+        "body": "SetFlagGameplayType(${1|\"none\",\"1flag\",\"2flag\",\"campaign\"|})",
+        "description": "Sets the flag gameplay type for the level.",
+        "scope": "source.lua"
+    },
+    
+    "SpaceAssaultEnable": {
+        "prefix": "SpaceAssaultEnable",
+        "body": "SpaceAssaultEnable(${1:enabled})",
+        "description": "Notifies C++ that we're running space assault now so it can do team scoring with critical systems and whatnot.",
+        "scope": "source.lua"
+    },
+    
+    "SpaceAssaultAddCriticalSystem": {
+        "prefix": "SpaceAssaultAddCriticalSystem",
+        "body": "SpaceAssaultAddCriticalSystem(${1:name}, ${2:pointValue}, ${3:hudPosX}, ${4:hudPosY}, ${5:displayHUDMarker})",
+        "description": "Adds a critical system to be destroyed in space assault.",
+        "scope": "source.lua"
+    },
+    
+    "SpaceAssaultLinkCriticalSystems": {
+        "prefix": "SpaceAssaultLinkCriticalSystems",
+        "body": "SpaceAssaultLinkCriticalSystems(${1:objects})",
+        "description": "Links together all of the critical system objects (the names of which are stored in the specified table) as one marker in space assault.",
+        "scope": "source.lua"
+    },
+    
+    "SpaceAssaultSetupTeamNumbers": {
+        "prefix": "SpaceAssaultSetupTeamNumbers",
+        "body": "SpaceAssaultSetupTeamNumbers(${1:unknown})",
+        "description": "Unused. Exact functionality unknown.",
+        "scope": "source.lua"
+    },
+    
+    "SpaceAssaultSetupBitmaps": {
+        "prefix": "SpaceAssaultSetupBitmaps",
+        "body": "SpaceAssaultSetupBitmaps(${1:shipBitmapATT}, ${2:shipBitmapDEF}, ${3:shieldBitmapATT}, ${4:shieldBitmapDEF}, ${5:critSysBitmapATT}, ${6:critSysBitmapDEF})",
+        "description": "Sets up the HUD bitmaps for each team's capital ship, systems, etc.",
+        "scope": "source.lua"
+    },
+    
+    "SpaceAssaultGetScoreLimit": {
+        "prefix": "SpaceAssaultGetScoreLimit",
+        "body": "SpaceAssaultGetScoreLimit()",
+        "description": "Returns the score limit for space assault.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_InMultiplayer": {
+        "prefix": "ScriptCB_InMultiplayer",
+        "body": "ScriptCB_InMultiplayer()",
+        "description": "Returns whether or not the current mission is a multiplayer match.",
+        "scope": "source.lua"
+    },
+    
+    "IsCampaign": {
+        "prefix": "IsCampaign",
+        "body": "IsCampaign()",
+        "description": "Returns whether or not the current mission is using campaign rules.",
+        "scope": "source.lua"
+    },
+    
+    "GetWorldFilename": {
+        "prefix": "GetWorldFilename",
+        "body": "GetWorldFilename()",
+        "description": "Returns the name of the first wld file that was loaded in the map.    \n\n For example, if the stock hot1.lvl file is loaded, this function will return 'hoth', since the wld file in hot1 is called 'hoth.wld'.",
+        "scope": "source.lua"
+	},
+	
+	// Messages
+	
+	"ShowMessageText": {
+        "prefix": "ShowMessageText",
+        "body": "ShowMessageText(${1:keyPath}, ${2:teamIndex})",
+        "description": "Prints the specified localized key in the message box in the player's HUD.    \n\n For example, printing the key 'level.cor1.objectives.campaign.1' would print 'Capture the Jedi Council Chamber'.",
+        "scope": "source.lua"
+    },
+    
+    "ShowPopup": {
+        "prefix": "ShowPopup",
+        "body": "ShowPopup(${1:keyPath})",
+        "description": "DEPRECATED, DOESN'T WORK.",
+        "scope": "source.lua"
+    },
+    
+    "ShowObjectiveTextPopup": {
+        "prefix": "ShowObjectiveTextPopup",
+        "body": "ShowObjectiveTextPopup(${1:keyPath})",
+        "description": "DEPRECATED, DOESN'T WORK.",
+        "scope": "source.lua"
+    },
+    
+    "ShowTimer": {
+        "prefix": "ShowTimer",
+        "body": "ShowTimer(${1:timerHandler})",
+        "description": "Shows or hides the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "ShowSelectionTextPopup": {
+        "prefix": "ShowSelectionTextPopup",
+        "body": "ShowSelectionTextPopup(${1:text})",
+        "description": "Shows the specified localized text in a selection popup. Used in spa2c_c for choosing control layout making but not for PC?!",
+        "scope": "source.lua"
+    },
+    
+    "BroadcastVoiceOver": {
+        "prefix": "BroadcastVoiceOver",
+        "body": "BroadcastVoiceOver(${1:streamID}, ${2:teamIndex})",
+        "description": "Plays the specified sound stream for all players, or optionally only for players on the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_PlayerSuicide": {
+        "prefix": "ScriptCB_PlayerSuicide",
+        "body": "ScriptCB_PlayerSuicide(${1:viewport})",
+        "description": "Kills the player of the specified HUD viewport.",
+        "scope": "source.lua"
+	},
+	
+	// Markers
+	
+	"MapAddRegionMarker": {
+        "prefix": "MapAddRegionMarker",
+        "body": "MapAddRegionMarker(${1:region}, ${2:\"hud_objective_icon_circle\"}, ${3:size}, ${4:teamIndex}, ${5|\"RED\",\"GREEN\",\"BLUE\",\"CYAN\",\"MAGENTA\",\"YELLOW\",\"ORANGE\",\"WHITE\",\"BLACK\"|}, ${6:showOnHUD}, ${7:pulseOpacity}, ${8:pulseSize})",
+        "description": "Attaches a map marker to the specified region class.",
+        "scope": "source.lua"
+    },
+    
+    "MapRemoveRegionMarker": {
+        "prefix": "MapRemoveRegionMarker",
+        "body": "MapRemoveRegionMarker(${1:region})",
+        "description": "Removes any map markers attached to the specified region class.",
+        "scope": "source.lua"
+    },
+    
+    "MapAddEntityMarker": {
+        "prefix": "MapAddEntityMarker",
+        "body": "MapAddEntityMarker(${1:entity}, ${2:\"hud_objective_icon_circle\"}, ${3:size}, ${4:teamIndex}, ${5|\"RED\",\"GREEN\",\"BLUE\",\"CYAN\",\"MAGENTA\",\"YELLOW\",\"ORANGE\",\"WHITE\",\"BLACK\"|}, ${6:showOnHUD}, ${7:pulseOpacity}, ${8:pulseSize})",
+        "description": "",
+        "scope": "source.lua"
+    },
+    
+    "MapRemoveEntityMarker": {
+        "prefix": "MapRemoveEntityMarker",
+        "body": "MapRemoveEntityMarker(${1:entity})",
+        "description": "Removes any map markers attached to the specified entity.",
+        "scope": "source.lua"
+    },
+    
+    "MapAddClassMarker": {
+        "prefix": "MapAddClassMarker",
+        "body": "MapAddClassMarker(${1:class}, ${2:\"hud_objective_icon_circle\"}, ${3:size}, ${4:teamIndex}, ${5|\"RED\",\"GREEN\",\"BLUE\",\"CYAN\",\"MAGENTA\",\"YELLOW\",\"ORANGE\",\"WHITE\",\"BLACK\"|}, ${6:showOnHUD}, ${7:pulseOpacity}, ${8:pulseSize})",
+        "description": "Attaches a map marker to all instances of the specified entity class.",
+        "scope": "source.lua"
+    },
+    
+    "MapRemoveClassMarker": {
+        "prefix": "MapRemoveClassMarker",
+        "body": "MapRemoveClassMarker(${1:class})",
+        "description": "Removes any map markers attached to the specified entity class.",
+        "scope": "source.lua"
+    },
+    
+    "MapHideCommandPosts": {
+        "prefix": "MapHideCommandPosts",
+        "body": "MapHideCommandPosts()",
+        "description": "Hides all command post markers from the minimap and radar.",
+        "scope": "source.lua"
+    },
+    
+    "EnableBuildingLockOn": {
+        "prefix": "EnableBuildingLockOn",
+        "body": "EnableBuildingLockOn(${1:objectName}, ${2:enabled})",
+        "description": "Sets whether or not the specified object can be locked onto by weapons.",
+        "scope": "source.lua"
+	},
+	
+	// Timer
+    
+    "FindTimer": {
+        "prefix": "FindTimer",
+        "body": "FindTimer(${1:timerHandler})",
+        "description": "Checks whether or not the specify Timer handler exists.",
+        "scope": "source.lua"
+    },
+    
+    "CreateTimer": {
+        "prefix": "CreateTimer",
+        "body": "CreateTimer(${1:name})",
+        "description": "Creates a new Timer with the specified name and returns its handler.",
+        "scope": "source.lua"
+    },
+    
+    "DestroyTimer": {
+        "prefix": "DestroyTimer",
+        "body": "DestroyTimer(${1:timerHandler})",
+        "description": "Deletes the specified Timer. Do not use the timer after destroying it!",
+        "scope": "source.lua"
+    },
+    
+    "StartTimer": {
+        "prefix": "StartTimer",
+        "body": "StartTimer(${1:timerHandler})",
+        "description": "Activates the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "StopTimer": {
+        "prefix": "StopTimer",
+        "body": "StopTimer(${1:timerHandler})",
+        "description": "Deactivates the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "SetTimerValue": {
+        "prefix": "SetTimerValue",
+        "body": "SetTimerValue(${1:timerHandler}, ${2:value})",
+        "description": "Sets the value of the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "GetTimerValue": {
+        "prefix": "GetTimerValue",
+        "body": "GetTimerValue(${1:timerHandler})",
+        "description": "Returns the value of the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "SetTimerRate": {
+        "prefix": "SetTimerRate",
+        "body": "SetTimerRate(${1:timerHandler}, ${2:rate})",
+        "description": "Sets the rate of the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "GetTimerRate": {
+        "prefix": "GetTimerRate",
+        "body": "GetTimerRate(${1:timerHandler})",
+        "description": "Returns the rate of the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "GetTimerName": {
+        "prefix": "GetTimerName",
+        "body": "GetTimerName(${1:timerHandler})",
+        "description": "Returns the name of the specified Timer.",
+        "scope": "source.lua"
+    },
+    
+    "SetDefeatTimer": {
+        "prefix": "SetDefeatTimer",
+        "body": "SetDefeatTimer(${1:timerHandler}, ${2:teamIndex})",
+        "description": "Tell the C++ code about the defeat Timer (which will display it on the HUD).",
+        "scope": "source.lua"
+    },
+    
+    "SetVictoryTimer": {
+        "prefix": "SetVictoryTimer",
+        "body": "SetVictoryTimer(${1:timerHandler}, ${2:teamIndex})",
+        "description": "Tell the C++ code about the victory Timer (which will display it on the HUD).",
+        "scope": "source.lua"
+    },
+    
+    "SetMissionTimer": {
+        "prefix": "SetMissionTimer",
+        "body": "SetMissionTimer(${1:timerHandler})",
+        "description": "UNUSED. Tell the C++ code about the mission timer (which will display it on the HUD).",
+        "scope": "source.lua"
+	},
+	
+	// Object
+	
+	"GetObjectHealth": {
+        "prefix": "GetObjectHealth",
+        "body": "GetObjectHealth(${1:objectName})",
+        "description": "Returns the current health value of the specified object.    \n\n Returns: \n 1. Object's CurHealth value    \n 2. Object's MaxHealth value    \n 3. Object's AddHealth value",
+        "scope": "source.lua"
+    },
+    
+    "GetObjectShield": {
+        "prefix": "GetObjectShield",
+        "body": "GetObjectShield(${1:objectName})",
+        "description": "Returns the current shield value of the specified object.    \n\n Returns: \n 1. Object's CurShield value    \n 2. Object's MaxShield value    \n 3. Object's AddShield value",
+        "scope": "source.lua"
+    },
+    
+    "GetObjectLastHitWeaponClass": {
+        "prefix": "GetObjectLastHitWeaponClass",
+        "body": "GetObjectLastHitWeaponClass(${1:objectName})",
+        "description": "Returns the name of the most recent weapon that the specified object was hit by.",
+        "scope": "source.lua"
+    },
+    
+    "KillObject": {
+        "prefix": "KillObject",
+        "body": "KillObject(${1:objectName})",
+        "description": "Kills the specified object.",
+        "scope": "source.lua"
+    },
+    
+    "RespawnObject": {
+        "prefix": "RespawnObject",
+        "body": "RespawnObject(${1:objectName})",
+        "description": "Respawns the specified object.",
+        "scope": "source.lua"
+	},
+	
+	// Entity
+    
+    "GetEntityPtr": {
+        "prefix": "GetEntityPtr",
+        "body": "GetEntityPtr(${1:object})",
+        "description": "Returns the entity pointer of the specified object or character unit index.",
+        "scope": "source.lua"
+    },
+    
+    "GetEntityName": {
+        "prefix": "GetEntityName",
+        "body": "GetEntityName(${1:entity})",
+        "description": "Returns the name of the specified entity.",
+        "scope": "source.lua"
+    },
+    
+    "GetEntityClass": {
+        "prefix": "GetEntityClass",
+        "body": "GetEntityClass(${1:entity})",
+        "description": "Returns the class of the specified entity.    \n\n Can be used with FindEntityClass to check whether or not an entity is a certain class.",
+        "scope": "source.lua"
+    },
+    
+    "GetEntityClassName": {
+        "prefix": "GetEntityClassName",
+        "body": "GetEntityClassName(${1:entity})",
+        "description": "Returns the class name of the specified entity.",
+        "scope": "source.lua"
+    },
+    
+    "SetEntityMatrix": {
+        "prefix": "SetEntityMatrix",
+        "body": "SetEntityMatrix(${1:entity}, ${2:matrix})",
+        "description": "Sets the matrix of the specified entity.",
+        "scope": "source.lua"
+    },
+    
+    "GetEntityMatrix": {
+        "prefix": "GetEntityMatrix",
+        "body": "GetEntityMatrix(${1:entity})",
+        "description": "Returns the matrix of the specified entity.",
+        "scope": "source.lua"
+    },
+    
+    "SetProperty": {
+        "prefix": "SetProperty",
+        "body": "SetProperty(${1:objectName}, ${2:property}, ${3:value})",
+        "description": "Sets the value of a property for the specified object.",
+        "scope": "source.lua"
+    },
+    
+    "CreateEntity": {
+        "prefix": "CreateEntity",
+        "body": "CreateEntity(${1:class}, ${2:matrix}, ${3:name})",
+        "description": "Creates a new instance of the specified entity and returns it.",
+        "scope": "source.lua"
+    },
+    
+    "DeleteEntity": {
+        "prefix": "DeleteEntity",
+        "body": "DeleteEntity(${1:entity})",
+        "description": "Deletes the specified entity.",
+        "scope": "source.lua"
+    },
+    
+    "GetEntityClassPtr": {
+        "prefix": "GetEntityClassPtr",
+        "body": "GetEntityClassPtr(${1:entity})",
+        "description": "Returns the entity class pointer of the specified entity.",
+        "scope": "source.lua"
+    },
+    
+    "SetClassProperty": {
+        "prefix": "SetClassProperty",
+        "body": "SetClassProperty(${1:objectClass}, ${2:property}, ${3:value})",
+        "description": "Sets the value of a property for the specified object class.",
+        "scope": "source.lua"
+    },
+    
+    "EntityFlyerTakeOff": {
+        "prefix": "EntityFlyerTakeOff",
+        "body": "EntityFlyerTakeOff(${1:flyer})",
+        "description": "Forces the specified flyer to perform a take-off.",
+        "scope": "source.lua"
+    },
+    
+    "EntityFlyerLand": {
+        "prefix": "EntityFlyerLand",
+        "body": "EntityFlyerLand(${1:flyer})",
+        "description": "Forces the specified flyer to perform a landing.",
+        "scope": "source.lua"
+    },
+    
+    "EntityFlyerInitAsFlying": {
+        "prefix": "EntityFlyerInitAsFlying",
+        "body": "EntityFlyerInitAsFlying(${1:flyer})",
+        "description": "Initializes the specified flyer as flying.",
+        "scope": "source.lua"
+    },
+    
+    "EntityFlyerInitAsLanded": {
+        "prefix": "EntityFlyerInitAsLanded",
+        "body": "EntityFlyerInitAsLanded(${1:flyer})",
+        "description": "Initializes the specified flyer as landed.",
+        "scope": "source.lua"
+    },
+    
+    "EnterVehicle": {
+        "prefix": "EnterVehicle",
+        "body": "EnterVehicle(${1:entity}, ${2:vehicle})",
+        "description": "Forces the specified entity into the specified vehicle.    \n\n Returns the ID of the vehicle class.",
+        "scope": "source.lua"
+    },
+    
+    "ExitVehicle": {
+        "prefix": "ExitVehicle",
+        "body": "ExitVehicle(${1:entity})",
+        "description": "Forces the specified entity out of whatever vehicle it's currently in.",
+        "scope": "source.lua"
+    },
+    
+    "EnableFlyerPath": {
+        "prefix": "EnableFlyerPath",
+        "body": "EnableFlyerPath(${1:pathID}, ${2:enable})",
+        "description": "Enables or disables the specified flyer path.",
+        "scope": "source.lua"
+    },
+    
+    "GetPathPoint": {
+        "prefix": "GetPathPoint",
+        "body": "GetPathPoint(${1:pathName}, ${2:nodeIdx})",
+        "description": "Returns the path point based on the specified path node.",
+        "scope": "source.lua"
+    },
+    
+    "GetNumTeamMembersAlive": {
+        "prefix": "GetNumTeamMembersAlive",
+        "body": "GetNumTeamMembersAlive(${1:teamIndex})",
+        "description": "Returns the number of units that are currently alive in the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "CreateMatrix": {
+        "prefix": "CreateMatrix",
+        "body": "CreateMatrix(${1:rad}, ${2:rotX}, ${3:rotY}, ${4:rotZ}, ${5:posX}, ${6:posY}, ${7:posZ}, ${8:matrix})",
+        "description": "Creates a new matrix based on an existing one.",
+        "scope": "source.lua"
+    },
+    
+    "GetScreenPosition": {
+        "prefix": "GetScreenPosition",
+        "body": "GetScreenPosition(${1:entity})",
+        "description": "Returns the current screen position relative to what seems to be the entity camera or entity origin point (otherwise known as pivot point or center of geometry (COG)).    \n\n Returns: \n 1. X position    \n 2. Y position    \n 3. Z position (so it seems, anyway)",
+        "scope": "source.lua"
+	},
+	
+	// procedural animation callbacks
+	
+	"PlayAnimation": {
+        "prefix": "PlayAnimation",
+        "body": "PlayAnimation(${1:animationGroupName})",
+        "description": "Resumes playing of animation group from whichever time it was at last.",
+        "scope": "source.lua"
+    },
+    
+    "PauseAnimation": {
+        "prefix": "PauseAnimation",
+        "body": "PauseAnimation(${1:animationGroupName})",
+        "description": "Pauses animation group's playback - objects remain where they are currently.",
+        "scope": "source.lua"
+    },
+    
+    "RewindAnimation": {
+        "prefix": "RewindAnimation",
+        "body": "RewindAnimation(${1:animationGroupName})",
+        "description": "Instanly rewinds the animation group to the beginning.    \n\n Can be called while the group is playing. If called while the group is stopped, play will resume from the beginning when Play is called.",
+        "scope": "source.lua"
+    },
+    
+    "SetAnimationStartPoint": {
+        "prefix": "SetAnimationStartPoint",
+        "body": "SetAnimationStartPoint(${1:animationGroupName})",
+        "description": "Takes the current positions of the objects referenced by the group, and uses those positions as the new start point for when that object is next animated.",
+        "scope": "source.lua"
+    },
+    
+    "PlayAnimationFromTo": {
+        "prefix": "PlayAnimationFromTo",
+        "body": "PlayAnimationFromTo(${1:animationGroupName}, ${2:beginTime}, ${3:endTime})",
+        "description": "Plays the indicated animation group from beginTime to endTime.    \n\n So for a 10-second animation, playing from 0 to 5 plays the first half, and playing from 5 to 10 plays the second half.",
+        "scope": "source.lua"
+    },
+	
+	// Character
+	
+    "GetTeamSize": {
+        "prefix": "GetTeamSize",
+        "body": "GetTeamSize(${1:teamIndex})",
+        "description": "Returns the total number of units (living or dead) on the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "GetTeamMember": {
+        "prefix": "GetTeamMember",
+        "body": "GetTeamMember(${1:teamIndex}, ${2:unitIndex})",
+        "description": "Returns the integer character index of the specified unit index from the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "GetCharacterTeam": {
+        "prefix": "GetCharacterTeam",
+        "body": "GetCharacterTeam(${1:characterIndex})",
+        "description": "Returns the integer index of the team that the specified character belongs to.",
+        "scope": "source.lua"
+    },
+    
+    "SelectCharacterTeam": {
+        "prefix": "SelectCharacterTeam",
+        "body": "SelectCharacterTeam(${1:character}, ${2:teamIndex})",
+        "description": "Selects the specified team for the specified character (as if you were doing so manually via the spawn screen).",
+        "scope": "source.lua"
+    },
+    
+    "IsCharacterHuman": {
+        "prefix": "IsCharacterHuman",
+        "body": "IsCharacterHuman(${1:characterIndex})",
+        "description": "Returns whether the specified character is a human player or an AI.",
+        "scope": "source.lua"
+    },
+    
+    "SelectCharacterClass": {
+        "prefix": "SelectCharacterClass",
+        "body": "SelectCharacterClass(${1:character}, ${2:class})",
+        "description": "Selects the specified class for the specified character (as if you were doing so manually via the spawn screen).",
+        "scope": "source.lua"
+    },
+    
+    "GetCharacterClass": {
+        "prefix": "GetCharacterClass",
+        "body": "GetCharacterClass(${1:integerChrIdx})",
+        "description": "Returns the numeric index of the specified character's class (starting at 0).    \n\n If you think of a team's list of classes as a table (with the hero being the last class in the list), the first class's index would be 0, the second class's index would be 1, etc.",
+        "scope": "source.lua"
+    },
+    
+    "BatchChangeTeams": {
+        "prefix": "BatchChangeTeams",
+        "body": "BatchChangeTeams(${1:sourceTeam}, ${2:destTeam}, ${3:numUnits})",
+        "description": "Moves specified number of units from the source team to the destination team.    \n\n No, you can't specify which units are moved. All this function does is iterate through the list of units on the source team and move each unit to the source team until the iterator max limit, 'numUnits', has been reached. Think of it as a for loop where the 'min' is '1' and the 'max' is 'numUnits', and inside the loop is a function that moves the unit index (shifted up by 1, so the player's index is going to be 1) matching the loop's 'cur' value to the destination team.    \n\n Also worth noting is when an alive unit is moved with this function, the function will not automatically kill the unit, so you must kill the unit through some other means if you don't want the unit to remain spawned their current class. One way you might do this (and this is untested) is by looping through the units in 'destTeam' and killing them (and only loop through as many as you plan on moving to the other team), and then call 'BatchChangeTeams' immediately after the loop has finished.) Here's what this might look like:    \n\n unitsToMove = 5    \n\n for unit=0,unitsToMove-1 do    \n\t KillObject(GetCharacterUnit(GetTeamMember(ATT, unit)))    \n end    \n\n BatchChangeTeams(ATT, DEF, unitsToMove)",
+        "scope": "source.lua"
+    },
+    
+    "AllowAISpawn": {
+        "prefix": "AllowAISpawn",
+        "body": "AllowAISpawn(${1:teamIndex}, ${2:canSpawn})",
+        "description": "Prevents or allows spawning of AI units from the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SpawnCharacter": {
+        "prefix": "SpawnCharacter",
+        "body": "SpawnCharacter(${1:integerChrIdx}, ${2:pathPoint})",
+        "description": "Spawns the specified character unit index at the specified path point.",
+        "scope": "source.lua"
+    },
+    
+    "GetCharacterUnit": {
+        "prefix": "GetCharacterUnit",
+        "body": "GetCharacterUnit(${1:entity})",
+        "description": "Returns the integer character index from the specified entity or team member index.",
+        "scope": "source.lua"
+    },
+    
+    "GetCharacterVehicle": {
+        "prefix": "GetCharacterVehicle",
+        "body": "GetCharacterVehicle(${1:entity})",
+        "description": "Returns the integer vehicle index from the specified vehicle entity.",
+        "scope": "source.lua"
+    },
+    
+    "GetCharacterRemote": {
+        "prefix": "GetCharacterRemote",
+        "body": "GetCharacterRemote(${1:entity})",
+        "description": "Returns the integer index from the specified RemoteTerminal entity.    \n\n See BF2EntityRemoteTerminalClassReference for more information.    \n http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2EntityRemoteTerminalClassReference.jpg",
+        "scope": "source.lua"
+    },
+    
+    "GetCharacterControllable": {
+        "prefix": "GetCharacterControllable",
+        "body": "GetCharacterControllable(${1:entity})",
+        "description": "Returns the integer vehicle index from the specified Controllable entity.    \n\n See BF2ControllableClassReference for more information.    \n http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2ControllableClassReference.jpg",
+        "scope": "source.lua"
+    },
+    
+    "GetCommandPostCaptureRegion": {
+        "prefix": "GetCommandPostCaptureRegion",
+        "body": "GetCommandPostCaptureRegion(${1:postID})",
+        "description": "Returns a command post's capture region.",
+        "scope": "source.lua"
+    },
+    
+    "GetCommandPostBleedValue": {
+        "prefix": "GetCommandPostBleedValue",
+        "body": "GetCommandPostBleedValue(${1:postID})",
+        "description": "Returns a command post's bleed value.",
+        "scope": "source.lua"
+    },
+    
+    "GetCommandPostTeam": {
+        "prefix": "GetCommandPostTeam",
+        "body": "GetCommandPostTeam(${1:postID})",
+        "description": "Returns a command post's owning team.",
+        "scope": "source.lua"
+    },
+    
+    "MissionVictory": {
+        "prefix": "MissionVictory",
+        "body": "MissionVictory(${1:teamIndex})",
+        "description": "Initiates a victory for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "MissionDefeat": {
+        "prefix": "MissionDefeat",
+        "body": "MissionDefeat(${1:teamIndex})",
+        "description": "Initiates a defeat for the specified team.",
+        "scope": "source.lua"
+    },
+    
+    "SetMissionEndMovie": {
+        "prefix": "SetMissionEndMovie",
+        "body": "SetMissionEndMovie(${1:sourceFilename}, ${2:movieID})",
+        "description": "Sets the movie to play once the mission has ended.",
+        "scope": "source.lua"
+	},
+	
+	// AI Goal management functions
+    
+    "ClearAIGoals": {
+        "prefix": "ClearAIGoals",
+        "body": "ClearAIGoals(${1:teamIndex})",
+        "description": "Removes all previous AI goals for this team.    \n\n You should call this before you set the first goals for a team, since teams 1, 2, and 3 start out with a default Conquest goal.",
+        "scope": "source.lua"
+    },
+    
+    "DeleteAIGoal": {
+        "prefix": "DeleteAIGoal",
+        "body": "DeleteAIGoal(${1:goalHandle})",
+        "description": "Removes the specified goal.",
+        "scope": "source.lua"
+    },
+    
+    "AddAIGoal": {
+        "prefix": "AddAIGoal",
+        "body": "AddAIGoal(${1:teamIndex}, ${2|\"Conquest\",\"Deathmatch\",\"Destroy\",\"Defend\",\"CTFOffense\",\"CTFDefense\",\"Follow\"|}, ${3:weight})",
+        "description": "Adds an AI goal for this team.",
+        "scope": "source.lua"
+	},
+	
+	// dynamic congraph functions
+    
+    "TogglePlanningGraphArcs": {
+        "prefix": "TogglePlanningGraphArcs",
+        "body": "TogglePlanningGraphArcs(${1:connection})",
+        "description": "Blocks the given dynamic connection/group if it is currently unblocked, or unblocks it if it is currently blocked.",
+        "scope": "source.lua"
+    },
+    
+    "BlockPlanningGraphArcs": {
+        "prefix": "BlockPlanningGraphArcs",
+        "body": "BlockPlanningGraphArcs(${1:connection})",
+        "description": "Blocks the given dynamic connection/group.",
+        "scope": "source.lua"
+    },
+    
+    "UnblockPlanningGraphArcs": {
+        "prefix": "UnblockPlanningGraphArcs",
+        "body": "UnblockPlanningGraphArcs(${1:connection})",
+        "description": "Unblocks the given dynamic connection/group.",
+        "scope": "source.lua"
+	},
+	
+	// dynamic barrier functions
+    
+    "ToggleBarriers": {
+        "prefix": "ToggleBarriers",
+        "body": "ToggleBarriers(${1:barrierID})",
+        "description": "Disables the given barrier if it is currently enabled, or enables it if it is currently disabled.",
+        "scope": "source.lua"
+    },
+    
+    "EnableBarriers": {
+        "prefix": "EnableBarriers",
+        "body": "EnableBarriers(${1:barrierID})",
+        "description": "Enables the given barrier.",
+        "scope": "source.lua"
+    },
+    
+    "DisableBarriers": {
+        "prefix": "DisableBarriers",
+        "body": "DisableBarriers(${1:barrierID})",
+        "description": "Disables the given barrier.",
+        "scope": "source.lua"
+    },
+    
+    "ForceAIOutOfVehicles": {
+        "prefix": "ForceAIOutOfVehicles",
+        "body": "ForceAIOutOfVehicles(${1:teamIndex}, ${2:enabled})",
+        "description": "Prevents all AI or AI on a specified team from using any vehicle. When this is called, AI currently in a vehicle will be forced out of it.",
+        "scope": "source.lua"
+    },
+    
+    "AICanCaptureCP": {
+        "prefix": "AICanCaptureCP",
+        "body": "AICanCaptureCP(${1:postID}, ${2:teamIndex}, ${3:canCapture})",
+        "description": "Prevents or allows AI to capture the specified command post.",
+        "scope": "source.lua"
+    },
+    
+    "SetAIDamageThreshold": {
+        "prefix": "SetAIDamageThreshold",
+        "body": "SetAIDamageThreshold(${1:object}, ${2:threshold})",
+        "description": "Sets the threshold at which AI units can no longer damage the specified object or entity.  For example, if 'threshold' is '0.5', AI will not be able to damage the object or entity if its health percentage is <= 50%.",
+        "scope": "source.lua"
+    },
+    
+    "TranslateAICommand": {
+        "prefix": "TranslateAICommand",
+        "body": "TranslateAICommand(${1:command_id})",
+		"description": "Translates AI command IDs to strings.    \n\n Depending on command_id (returned by CharacterIssueAICommand event), will be one of the following:    \n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
+        "scope": "source.lua"
+    },
+    
+    "AddShieldStrength": {
+        "prefix": "AddShieldStrength",
+        "body": "AddShieldStrength(${1:entity}, ${2:shields})",
+        "description": " Adds the specified amount to the specified entity's MaxShields.    \n\n NOTE: This does not affect the entity's CurShields value.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapNorthAngle": {
+        "prefix": "SetMapNorthAngle",
+        "body": "SetMapNorthAngle(${1:angle})",
+        "description": "Sets the north angle on the minimap.",
+        "scope": "source.lua"
+    },
+    
+    "ForceHumansOntoTeam1": {
+        "prefix": "ForceHumansOntoTeam1",
+        "body": "ForceHumansOntoTeam1()",
+        "description": "Forces all non-AI players to join team 1.",
+        "scope": "source.lua"
+    },
+    
+    "CanCharacterInteractWithFlag": {
+        "prefix": "CanCharacterInteractWithFlag",
+        "body": "CanCharacterInteractWithFlag(${1:integerChrIdx})",
+        "description": "Returns whether or not the specified character can interact with flags.",
+        "scope": "source.lua"
+    },
+    
+    "GetFlagCarrier": {
+        "prefix": "GetFlagCarrier",
+        "body": "GetFlagCarrier(${1:flag})",
+        "description": "Returns the character unit carrying the specified flag.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapRangeOverall": {
+        "prefix": "SetMapRangeOverall",
+        "body": "SetMapRangeOverall(${1:range})",
+        "description": "Sets the map overall range (whatever that means).    \n\n My guess is it's related to unit scan/transmit radar reporting. Either way, it doesn't appear to actually do anything.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapRangeShooting": {
+        "prefix": "SetMapRangeShooting",
+        "body": "SetMapRangeShooting(${1:range})",
+        "description": "Sets the map shooting range (whatever that means).    \n\n My guess is it's related to unit scan/transmit radar reporting. Either way, it doesn't appear to actually do anything.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapRangeViewCone": {
+        "prefix": "SetMapRangeViewCone",
+        "body": "SetMapRangeViewCone(${1:range})",
+        "description": "Sets the map range view cone (whatever that means).    \n\n My guess is it's related to unit scan/transmit radar reporting. Either way, it doesn't appear to actually do anything.",
+        "scope": "source.lua"
+    },
+    
+    "SetMapViewConeAngle": {
+        "prefix": "SetMapViewConeAngle",
+        "body": "SetMapViewConeAngle(${1:angle})",
+        "description": "Sets the map view cone angle (whatever that means).    \n\n My guess is it's related to unit scan/transmit radar reporting. Either way, it doesn't appear to actually do anything.",
+        "scope": "source.lua"
+    },
+    
+    "DisableSmallMapMiniMap": {
+        "prefix": "DisableSmallMapMiniMap",
+        "body": "DisableSmallMapMiniMap()",
+        "description": "Removes the small minimap from the HUD.",
+        "scope": "source.lua"
+	},
+	
+	// effects
+    
+    "CreateEffect": {
+        "prefix": "CreateEffect",
+        "body": "CreateEffect(${1:effectFilename})",
+        "description": "Spawns a new instance of the specified particle effect and returns it.",
+        "scope": "source.lua"
+    },
+    
+    "RemoveEffect": {
+        "prefix": "RemoveEffect",
+        "body": "RemoveEffect(${1:effect})",
+        "description": "Deletes the specified particle effect instance (returned by CreateEffect).",
+        "scope": "source.lua"
+    },
+    
+    "AttachEffectToObject": {
+        "prefix": "AttachEffectToObject",
+        "body": "AttachEffectToObject(${1:effect}, ${2:object})",
+        "description": "Attaches the specified particle effect instance to the specified object.",
+        "scope": "source.lua"
+    },
+    
+    "AttachEffectToMatrix": {
+        "prefix": "AttachEffectToMatrix",
+        "body": "AttachEffectToMatrix(${1:effect}, ${2:matrix})",
+        "description": "Attaches the specified particle effect instance to the specified matrix.",
+        "scope": "source.lua"
+    },
+    
+    "GetEffectMatrix": {
+        "prefix": "GetEffectMatrix",
+        "body": "GetEffectMatrix(${1:effect})",
+        "description": "Returns the matrix of the specified particle effect instance.",
+        "scope": "source.lua"
+    },
+    
+    "SetEffectMatrix": {
+        "prefix": "SetEffectMatrix",
+        "body": "SetEffectMatrix(${1:effect}, ${2:matrix})",
+        "description": "Sets the matrix of the specified particle effect instance.",
+        "scope": "source.lua"
+    },
+    
+    "IsEffectActive": {
+        "prefix": "IsEffectActive",
+        "body": "IsEffectActive(${1:effect})",
+        "description": "Returns whether or not the specified particle effect is active.",
+        "scope": "source.lua"
+    },
+    
+    "SetEffectActive": {
+        "prefix": "SetEffectActive",
+        "body": "SetEffectActive(${1:effect}, ${2:active})",
+        "description": "Sets the state of the specified particle effect.",
+        "scope": "source.lua"
+    }
+}
+
+// snippet "template":
+/*
+,
+    
+    "SetOutOfBoundsVoiceOver": {
+        "prefix": "SetOutOfBoundsVoiceOver",
+        "body": "SetOutOfBoundsVoiceOver(${1:playerTeam}, ${2:streamSoundName})",
+        "description": "",
+        "scope": "source.lua"
+	}
+*/
