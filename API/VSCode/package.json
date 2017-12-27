@@ -1,0 +1,45 @@
+{
+    "name": "vscode-swbf2-lua-api",
+    "displayName": "SWBF2 Lua API",
+	"description": "Lua snippets for Star Wars Battlefront II",
+	"icon": "images/swbf2-lua-api-128.png",
+	"version": "0.1.0",
+	"author": "Aaron Gilbert (https://www.aaron-gilbert.com/)",
+	"publisher": "aarongilbert2012",
+	"license": "GPL-3.0",
+	"homepage": "https://github.com/marth8880/SWBF2-Lua-API",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marth8880/SWBF2-Lua-API.git"
+	},
+	"bugs": "https://github.com/marth8880/SWBF2-Lua-API/issues",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Snippets"
+	],
+	"keywords": [
+		"swbf2",
+		"battlefront",
+		"lua",
+		"modding",
+		"api",
+		"snippets",
+		"callbacks",
+		"functions",
+		"gametoast",
+		"pandemic"
+	],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "lua",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    },
+	"__metadata": {
+		"publisherDisplayName": "Aaron Gilbert"
+	}
+}
