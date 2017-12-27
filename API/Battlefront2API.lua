@@ -270,8 +270,8 @@ function SetPS2ModelMemory(bytes) end
 -- 
 -- `SetWorldExtents` and `ScriptPreInit` go hand in hand. When building a Space level, you may notice that when you exit 
 --  your ship you instantly die. You also might find that running around certain parts of your ship you will die 
---  without taking damage. That’s what `SetWorldExtents` is for. If you have this set to 2500, but you’re still finding 
---  that the world is killing you (and you’re not walking into a death region) then bump it up to enlarge the soldier 
+--  without taking damage. Thatï¿½s what `SetWorldExtents` is for. If you have this set to 2500, but youï¿½re still finding 
+--  that the world is killing you (and youï¿½re not walking into a death region) then bump it up to enlarge the soldier 
 --  based playable space.
 -- 
 -- Might have to go in `ScriptPreInit`.
@@ -443,8 +443,8 @@ function SetTeamAggressiveness(teamIndex, aggressiveness) end
 -- Controls how far downwards from the center of the world the AI can fly.  These are used on ground based maps to limit 
 --  the jet classes and jedi, but is also used to keep flyers from getting too far below the space battlefield. To find 
 --  an appropriate height, use `PrintPlayerPos` in the console, fly to your desired min height, and punch those numbers 
---  in. It’s best to keep the MinFlyHeight and the MinPlayerFlyHeight in line with each other to avoid AI doing things 
---  that players can’t.
+--  in. Itï¿½s best to keep the MinFlyHeight and the MinPlayerFlyHeight in line with each other to avoid AI doing things 
+--  that players canï¿½t.
 -- 
 -- @param #int height			Height in meters(?)
 function SetMinFlyHeight(height) end
@@ -453,8 +453,8 @@ function SetMinFlyHeight(height) end
 -- Controls how far upwards from the center of the world the AI can fly.  These are used on ground based maps to limit 
 --  the jet classes and jedi, but is also used to keep flyers from getting too far above the space battlefield. To find 
 --  an appropriate height, use `PrintPlayerPos` in the console, fly to your desired max height, and punch those numbers 
---  in. It’s best to keep the MaxFlyHeight and the MaxPlayerFlyHeight in line with each other to avoid AI doing things 
---  that players can’t.
+--  in. Itï¿½s best to keep the MaxFlyHeight and the MaxPlayerFlyHeight in line with each other to avoid AI doing things 
+--  that players canï¿½t.
 -- 
 -- @param #int height			Height in meters(?)
 function SetMaxFlyHeight(height) end
@@ -463,8 +463,8 @@ function SetMaxFlyHeight(height) end
 -- Controls how far downwards from the center of the world the player can fly.  These are used on ground based maps to 
 --  limit the jet classes and jedi, but is also used to keep flyers from getting too far below the space battlefield. To 
 --  find an appropriate height, use `PrintPlayerPos` in the console, fly to your desired min height, and punch those 
---  numbers in. It’s best to keep the MinFlyHeight and the MinPlayerFlyHeight in line with each other to avoid AI doing 
---  things that players can’t.
+--  numbers in. Itï¿½s best to keep the MinFlyHeight and the MinPlayerFlyHeight in line with each other to avoid AI doing 
+--  things that players canï¿½t.
 -- 
 -- @param #int height			Height in meters(?)
 function SetMinPlayerFlyHeight(height) end
@@ -473,8 +473,8 @@ function SetMinPlayerFlyHeight(height) end
 -- Controls how far upwards from the center of the world the player can fly.  These are used on ground based maps to 
 --  limit the jet classes and jedi, but is also used to keep flyers from getting too far above the space battlefield. To 
 --  find an appropriate height, use `PrintPlayerPos` in the console, fly to your desired min height, and punch those 
---  numbers in. It’s best to keep the MaxFlyHeight and the MaxPlayerFlyHeight in line with each other to avoid AI doing 
---  things that players can’t.
+--  numbers in. Itï¿½s best to keep the MaxFlyHeight and the MaxPlayerFlyHeight in line with each other to avoid AI doing 
+--  things that players canï¿½t.
 -- 
 -- @param #int height			Height in meters(?)
 function SetMaxPlayerFlyHeight(height) end
@@ -772,7 +772,7 @@ function SetMaxCollisionDistance(distance) end
 
 --------------------------------------------------------------
 -- Sets the particle LOD bias (probably correlates to particle view distance). Needed for particles in space 
---  to work properly, don’t delete it!
+--  to work properly, donï¿½t delete it!
 -- 
 -- @param #int bias				LOD bias value, is set to `15000` in stock space maps
 function SetParticleLODBias(bias) end
@@ -968,7 +968,7 @@ function GetRegionName(region) end
 function GetRegion(region) end
 
 --------------------------------------------------------------
--- Wipes out any allocations that may have been done automatically for walkers.  You’ll need to have this line in, 
+-- Wipes out any allocations that may have been done automatically for walkers.  Youï¿½ll need to have this line in, 
 --  and uncommented if you want to have walkers in your level.
 function ClearWalkers() end
 
@@ -1633,7 +1633,7 @@ function GetScreenPosition(entity) end
 function PlayAnimation(animationGroupName) end
 
 --------------------------------------------------------------
--- Pauses animation group's playback – objects remain where they are currently.
+-- Pauses animation group's playback ï¿½ objects remain where they are currently.
 -- 
 -- @param #string animationGroupName		ID of animation group to pause
 function PauseAnimation(animationGroupName) end
@@ -1699,7 +1699,7 @@ function SelectCharacterTeam(character, teamIndex) end
 function IsCharacterHuman(characterIndex) end
 
 --------------------------------------------------------------
--- Selects the specified team for the specified character (as if you were doing so manually via the spawn screen).
+-- Selects the specified class for the specified character (as if you were doing so manually via the spawn screen).
 -- 
 -- @param #int character		Character unit
 -- @param #int class			Name of class to select
@@ -1891,19 +1891,19 @@ function UnblockPlanningGraphArcs(connection) end
 --------------------------------------------------------------
 -- Disables the given barrier if it is currently enabled, or enables it if it is currently disabled.
 -- 
--- @param #int connection		ID of barrier to toggle
+-- @param #int barrierID		ID of barrier to toggle
 function ToggleBarriers(barrierID) end
 
 --------------------------------------------------------------
 -- Enables the given barrier.
 -- 
--- @param #int connection		ID of barrier to enable
+-- @param #int barrierID		ID of barrier to enable
 function EnableBarriers(barrierID) end
 
 --------------------------------------------------------------
 -- Disables the given barrier.
 -- 
--- @param #int connection		ID of barrier to disable
+-- @param #int barrierID		ID of barrier to disable
 function DisableBarriers(barrierID) end
 
 --------------------------------------------------------------
@@ -1915,7 +1915,7 @@ function DisableBarriers(barrierID) end
 function ForceAIOutOfVehicles(teamIndex, enabled) end
 
 --------------------------------------------------------------
--- Disables the given barrier.
+-- Prevents or allows AI to capture the specified command post.
 -- 
 -- @param #string postID		ID of command post
 -- @param #int teamIndex		Index of team whose AI to affect
