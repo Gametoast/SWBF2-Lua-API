@@ -2058,6 +2058,3 @@ function IsEffectActive(effect) end
 -- @param effect		Particle effect instance returned by CreateEffect
 -- @param #int active	Set to 1 to activate effect, set to 0 to deactivate effect
 function SetEffectActive(effect, active) end
-
-
-
