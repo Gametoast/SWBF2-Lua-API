@@ -2077,7 +2077,7 @@ function ReleaseCharacterDeath(eventHandler) end
 -- This event occurs whenever a character (human or AI) dies.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeath(callback) end
 
 --------------------------------------------------------------
@@ -2085,7 +2085,7 @@ function OnCharacterDeath(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeathName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2093,7 +2093,7 @@ function OnCharacterDeathName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeathTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2101,7 +2101,7 @@ function OnCharacterDeathTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeathConfig(callback, configStr) end
 
 -- CharacterSpawn
@@ -2120,7 +2120,7 @@ function ReleaseCharacterSpawn(eventHandler) end
 -- This event occurs whenever a character (human or AI) spawns.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterSpawn(callback) end
 
 --------------------------------------------------------------
@@ -2128,7 +2128,7 @@ function OnCharacterSpawn(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterSpawnName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2136,7 +2136,7 @@ function OnCharacterSpawnName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterSpawnTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2144,7 +2144,7 @@ function OnCharacterSpawnTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterSpawnConfig(callback, configStr) end
 
 -- CharacterDispensePowerup
@@ -2163,7 +2163,7 @@ function ReleaseCharacterDispensePowerup(eventHandler) end
 -- This event occurs whenever a character drops a health/ammo pickup.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, powerup`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispensePowerup(callback) end
 
 --------------------------------------------------------------
@@ -2171,7 +2171,7 @@ function OnCharacterDispensePowerup(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, powerup`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispensePowerupName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2179,7 +2179,7 @@ function OnCharacterDispensePowerupName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, powerup`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispensePowerupTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2187,7 +2187,7 @@ function OnCharacterDispensePowerupTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, powerup`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispensePowerupConfig(callback, configStr) end
 
 -- callbackname
@@ -2208,7 +2208,7 @@ function ReleaseCharacterDispenseControllable(eventHandler) end
 -- If you want to check exactly what kind of controllable was dropped, use 'GetEntityClassName(controllable)'.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, controllable`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispenseControllable(callback) end
 
 --------------------------------------------------------------
@@ -2218,7 +2218,7 @@ function OnCharacterDispenseControllable(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, controllable`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispenseControllableName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2228,7 +2228,7 @@ function OnCharacterDispenseControllableName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, controllable`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispenseControllableTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2238,7 +2238,7 @@ function OnCharacterDispenseControllableTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, controllable`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDispenseControllableConfig(callback, configStr) end
 
 -- CharacterLandedFlyer
@@ -2264,7 +2264,7 @@ function ReleaseCharacterLandedFlyer(eventHandler) end
 -- `end`
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, flyer`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterLandedFlyer(callback) end
 
 --------------------------------------------------------------
@@ -2279,7 +2279,7 @@ function OnCharacterLandedFlyer(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, flyer`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterLandedFlyerName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2294,7 +2294,7 @@ function OnCharacterLandedFlyerName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, flyer`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterLandedFlyerTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2309,7 +2309,7 @@ function OnCharacterLandedFlyerTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, flyer`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterLandedFlyerConfig(callback, configStr) end
 
 -- CharacterEnterVehicle
@@ -2328,7 +2328,7 @@ function ReleaseCharacterEnterVehicle(eventHandler) end
 -- This event occurs whenever a character enters a vehicle. It also works for turrets!
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, vehicle`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterEnterVehicle(callback) end
 
 --------------------------------------------------------------
@@ -2336,7 +2336,7 @@ function OnCharacterEnterVehicle(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, vehicle`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterEnterVehicleName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2344,7 +2344,7 @@ function OnCharacterEnterVehicleName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, vehicle`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterEnterVehicleTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2352,7 +2352,7 @@ function OnCharacterEnterVehicleTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, vehicle`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterEnterVehicleConfig(callback, configStr) end
 
 -- CharacterChangeClass
@@ -2375,7 +2375,7 @@ function ReleaseCharacterChangeClass(eventHandler) end
 -- If you need the class name, you can use 'GetEntityClassName(GetCharacterUnit(player))'.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterChangeClass(callback) end
 
 --------------------------------------------------------------
@@ -2387,7 +2387,7 @@ function OnCharacterChangeClass(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterChangeClassName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2399,7 +2399,7 @@ function OnCharacterChangeClassName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterChangeClassTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2411,7 +2411,7 @@ function OnCharacterChangeClassTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterChangeClassConfig(callback, configStr) end
 
 -- CharacterIssueAICommand
@@ -2436,7 +2436,7 @@ function ReleaseCharacterIssueAICommand(eventHandler) end
 --  'stopfollowchr'
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, command_id`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterIssueAICommand(callback) end
 
 --------------------------------------------------------------
@@ -2450,7 +2450,7 @@ function OnCharacterIssueAICommand(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, command_id`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterIssueAICommandName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2464,7 +2464,7 @@ function OnCharacterIssueAICommandName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, command_id`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterIssueAICommandTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2478,7 +2478,7 @@ function OnCharacterIssueAICommandTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, command_id`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterIssueAICommandConfig(callback, configStr) end
 
 -- EVENT CALLBACKS :: Command Post
@@ -2502,7 +2502,7 @@ function ReleaseBeginNeutralize(eventHandler) end
 -- This Event occurs when an enemy unit begins neutralizing a Command Post.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginNeutralize(callback) end
 
 --------------------------------------------------------------
@@ -2513,7 +2513,7 @@ function OnBeginNeutralize(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginNeutralizeName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2524,7 +2524,7 @@ function OnBeginNeutralizeName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginNeutralizeTeam(callback, teamIndex) end
 
 -- AbortNeutralize
@@ -2546,7 +2546,7 @@ function ReleaseAbortNeutralize(eventHandler) end
 -- This Event occurs when an enemy unit stops neutralizing a Command Post.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnAbortNeutralize(callback) end
 
 --------------------------------------------------------------
@@ -2557,7 +2557,7 @@ function OnAbortNeutralize(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnAbortNeutralizeName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2568,7 +2568,7 @@ function OnAbortNeutralizeName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnAbortNeutralizeTeam(callback, teamIndex) end
 
 -- FinishNeutralize
@@ -2590,7 +2590,7 @@ function ReleaseFinishNeutralize(eventHandler) end
 -- This Event occurs when an enemy unit finishes neutralizing a Command Post.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFinishNeutralize(callback) end
 
 --------------------------------------------------------------
@@ -2601,7 +2601,7 @@ function OnFinishNeutralize(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFinishNeutralizeName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2612,7 +2612,7 @@ function OnFinishNeutralizeName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFinishNeutralizeTeam(callback, teamIndex) end
 
 -- BeginCapture
@@ -2634,7 +2634,7 @@ function ReleaseBeginCapture(eventHandler) end
 -- This Event occurs when a unit begins capturing a neutral Command Post.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginCapture(callback) end
 
 --------------------------------------------------------------
@@ -2645,7 +2645,7 @@ function OnBeginCapture(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginCaptureName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2656,7 +2656,7 @@ function OnBeginCaptureName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginCaptureTeam(callback, teamIndex) end
 
 -- AbortCapture
@@ -2678,7 +2678,7 @@ function ReleaseAbortCapture(eventHandler) end
 -- This Event occurs when a unit stops capturing a neutral Command Post.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnAbortCapture(callback) end
 
 --------------------------------------------------------------
@@ -2689,7 +2689,7 @@ function OnAbortCapture(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnAbortCaptureName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2700,7 +2700,7 @@ function OnAbortCaptureName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnAbortCaptureTeam(callback, teamIndex) end
 
 -- FinishCapture
@@ -2722,7 +2722,7 @@ function ReleaseFinishCapture(eventHandler) end
 -- This Event occurs when a unit finishes capturing a neutral Command Post.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFinishCapture(callback) end
 
 --------------------------------------------------------------
@@ -2733,7 +2733,7 @@ function OnFinishCapture(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFinishCaptureName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2744,7 +2744,7 @@ function OnFinishCaptureName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFinishCaptureTeam(callback, teamIndex) end
 
 -- CommandPostKill
@@ -2766,7 +2766,7 @@ function ReleaseCommandPostKill(eventHandler) end
 -- This Event occurs when a Command Post dies.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, killer`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCommandPostKill(callback) end
 
 --------------------------------------------------------------
@@ -2777,7 +2777,7 @@ function OnCommandPostKill(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, killer`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCommandPostKillName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2788,7 +2788,7 @@ function OnCommandPostKillName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, killer`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCommandPostKillTeam(callback, teamIndex) end
 
 -- CommandPostRespawn
@@ -2810,7 +2810,7 @@ function ReleaseCommandPostRespawn(eventHandler) end
 -- This Event occurs when a Command Post spawns or respawns.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCommandPostRespawn(callback) end
 
 --------------------------------------------------------------
@@ -2821,7 +2821,7 @@ function OnCommandPostRespawn(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCommandPostRespawnName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2832,7 +2832,7 @@ function OnCommandPostRespawnName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCommandPostRespawnTeam(callback, teamIndex) end
 
 -- EVENT CALLBACKS :: Flag
@@ -2856,7 +2856,7 @@ function ReleaseFlagPickUp(eventHandler) end
 -- This Event occurs when a character picks up a Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUp(callback) end
 
 --------------------------------------------------------------
@@ -2867,7 +2867,7 @@ function OnFlagPickUp(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUpName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2878,7 +2878,7 @@ function OnFlagPickUpName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUpTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2889,7 +2889,7 @@ function OnFlagPickUpTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string configStr		Character config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUpConfig(callback, configStr) end
 
 -- FlagDrop
@@ -2911,7 +2911,7 @@ function ReleaseFlagDrop(eventHandler) end
 -- This Event occurs when a character drops a Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagDrop(callback) end
 
 --------------------------------------------------------------
@@ -2922,7 +2922,7 @@ function OnFlagDrop(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagDropName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2933,7 +2933,7 @@ function OnFlagDropName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagDropTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2944,7 +2944,7 @@ function OnFlagDropTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string configStr		Character config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagDropConfig(callback, configStr) end
 
 -- FlagReturn
@@ -2966,7 +2966,7 @@ function ReleaseFlagReturn(eventHandler) end
 -- This Event occurs when a character returns an allied Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagReturn(callback) end
 
 --------------------------------------------------------------
@@ -2977,7 +2977,7 @@ function OnFlagReturn(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagReturnName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -2988,7 +2988,7 @@ function OnFlagReturnName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagReturnTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -2999,7 +2999,7 @@ function OnFlagReturnTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string configStr		Character config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagReturnConfig(callback, configStr) end
 
 -- FlagCapture
@@ -3021,7 +3021,7 @@ function ReleaseFlagCapture(eventHandler) end
 -- This Event occurs when a character captures a neutral or enemy Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagCapture(callback) end
 
 --------------------------------------------------------------
@@ -3032,7 +3032,7 @@ function OnFlagCapture(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagCaptureName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3043,7 +3043,7 @@ function OnFlagCaptureName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagCaptureTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3054,7 +3054,7 @@ function OnFlagCaptureTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string configStr		Character config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagCaptureConfig(callback, configStr) end
 
 -- EVENT CALLBACKS :: Object
@@ -3078,7 +3078,7 @@ function ReleaseObjectCreate(eventHandler) end
 -- This Event occurs on the creation of an Object, before setting its properties.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreate(callback) end
 
 --------------------------------------------------------------
@@ -3089,7 +3089,7 @@ function OnObjectCreate(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreateName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3100,7 +3100,7 @@ function OnObjectCreateName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreateTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3111,7 +3111,7 @@ function OnObjectCreateTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreateConfig(callback, configStr) end
 
 -- ObjectInit
@@ -3133,7 +3133,7 @@ function ReleaseObjectInit(eventHandler) end
 -- This Event occurs on the initialization of an Object, after settings its properties.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectInit(callback) end
 
 --------------------------------------------------------------
@@ -3144,7 +3144,7 @@ function OnObjectInit(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectInitName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3155,7 +3155,7 @@ function OnObjectInitName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectInitTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3166,7 +3166,7 @@ function OnObjectInitTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectInitConfig(callback, configStr) end
 
 -- ObjectDamage
@@ -3188,7 +3188,7 @@ function ReleaseObjectDamage(eventHandler) end
 -- This Event occurs whenever an Object takes damage.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDamage(callback) end
 
 --------------------------------------------------------------
@@ -3199,7 +3199,7 @@ function OnObjectDamage(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDamageName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3210,7 +3210,7 @@ function OnObjectDamageName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDamageTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3221,7 +3221,7 @@ function OnObjectDamageTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDamageConfig(callback, configStr) end
 
 -- ObjectRepair
@@ -3243,7 +3243,7 @@ function ReleaseObjectRepair(eventHandler) end
 -- This event occurs when a character finishes repairing an Object. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRepair(callback) end
 
 --------------------------------------------------------------
@@ -3254,7 +3254,7 @@ function OnObjectRepair(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRepairName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3265,7 +3265,7 @@ function OnObjectRepairName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRepairTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3276,7 +3276,7 @@ function OnObjectRepairTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRepairConfig(callback, configStr) end
 
 -- ObjectHack
@@ -3298,7 +3298,7 @@ function ReleaseObjectHack(eventHandler) end
 -- This Event occurs whenever a character hacks an Object (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHack(callback) end
 
 --------------------------------------------------------------
@@ -3309,7 +3309,7 @@ function OnObjectHack(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHackName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3320,7 +3320,7 @@ function OnObjectHackName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHackTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3331,7 +3331,7 @@ function OnObjectHackTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHackConfig(callback, configStr) end
 
 -- ObjectKill
@@ -3353,7 +3353,7 @@ function ReleaseObjectKill(eventHandler) end
 -- This Event occurs when an Object dies.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectKill(callback) end
 
 --------------------------------------------------------------
@@ -3364,7 +3364,7 @@ function OnObjectKill(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectKillName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3375,7 +3375,7 @@ function OnObjectKillName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectKillTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3386,7 +3386,7 @@ function OnObjectKillTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectKillConfig(callback, configStr) end
 
 -- ObjectHeadshot
@@ -3408,7 +3408,7 @@ function ReleaseObjectHeadshot(eventHandler) end
 -- This Event occurs when an Object gets shot in the head.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHeadshot(callback) end
 
 --------------------------------------------------------------
@@ -3419,7 +3419,7 @@ function OnObjectHeadshot(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHeadshotName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3430,7 +3430,7 @@ function OnObjectHeadshotName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHeadshotTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3441,7 +3441,7 @@ function OnObjectHeadshotTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectHeadshotConfig(callback, configStr) end
 
 -- ObjectRespawn
@@ -3463,7 +3463,7 @@ function ReleaseObjectRespawn(eventHandler) end
 -- This Event occurs when an Object respawns.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRespawn(callback) end
 
 --------------------------------------------------------------
@@ -3474,7 +3474,7 @@ function OnObjectRespawn(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRespawnName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3485,7 +3485,7 @@ function OnObjectRespawnName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRespawnTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3496,7 +3496,7 @@ function OnObjectRespawnTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectRespawnConfig(callback, configStr) end
 
 -- ObjectDelete
@@ -3518,7 +3518,7 @@ function ReleaseObjectDelete(eventHandler) end
 -- This Event occurs on the deletion of an Object. Do not use the Object after deletion!
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDelete(callback) end
 
 --------------------------------------------------------------
@@ -3529,7 +3529,7 @@ function OnObjectDelete(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDeleteName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3540,7 +3540,7 @@ function OnObjectDeleteName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDeleteTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3551,7 +3551,7 @@ function OnObjectDeleteTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectDeleteConfig(callback, configStr) end
 
 -- TeamChange
@@ -3573,7 +3573,7 @@ function ReleaseTeamChange(eventHandler) end
 -- This Event occurs when an Object changes teams.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTeamChange(callback) end
 
 --------------------------------------------------------------
@@ -3584,7 +3584,7 @@ function OnTeamChange(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTeamChangeName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3595,7 +3595,7 @@ function OnTeamChangeName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTeamChangeTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3606,7 +3606,7 @@ function OnTeamChangeTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTeamChangeConfig(callback, configStr) end
 
 -- HealthChange
@@ -3628,7 +3628,7 @@ function ReleaseHealthChange(eventHandler) end
 -- This Event occurs when the Object's health changes due to an external event. AddHealth does not trigger this Event (supposedly).
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnHealthChange(callback) end
 
 --------------------------------------------------------------
@@ -3639,7 +3639,7 @@ function OnHealthChange(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnHealthChangeName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3650,7 +3650,7 @@ function OnHealthChangeName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnHealthChangeTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3661,7 +3661,7 @@ function OnHealthChangeTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnHealthChangeConfig(callback, configStr) end
 
 -- ShieldChange
@@ -3683,7 +3683,7 @@ function ReleaseShieldChange(eventHandler) end
 -- This Event occurs when the Object's shield changes due to an external event. AddShield does not trigger this Event (supposedly).
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnShieldChange(callback) end
 
 --------------------------------------------------------------
@@ -3694,7 +3694,7 @@ function OnShieldChange(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnShieldChangeName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3705,7 +3705,7 @@ function OnShieldChangeName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnShieldChangeTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3716,7 +3716,7 @@ function OnShieldChangeTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnShieldChangeConfig(callback, configStr) end
 
 -- EVENT CALLBACKS :: Region
@@ -3742,7 +3742,7 @@ function ReleaseEnterRegion(eventHandler) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnEnterRegion(callback, regionNameStr) end
 
 --------------------------------------------------------------
@@ -3755,7 +3755,7 @@ function OnEnterRegion(callback, regionNameStr) end
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
 -- @param #string charNameStr	Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnEnterRegionName(callback, regionNameStr, charNameStr) end
 
 --------------------------------------------------------------
@@ -3768,7 +3768,7 @@ function OnEnterRegionName(callback, regionNameStr, charNameStr) end
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
 -- @param #int charTeamIndex	Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnEnterRegionTeam(callback, regionNameStr, charTeamIndex) end
 
 --------------------------------------------------------------
@@ -3781,7 +3781,7 @@ function OnEnterRegionTeam(callback, regionNameStr, charTeamIndex) end
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
 -- @param #string charConfigStr	Character config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnEnterRegionConfig(callback, regionNameStr, charConfigStr) end
 
 -- LeaveRegion
@@ -3805,7 +3805,7 @@ function ReleaseLeaveRegion(eventHandler) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnLeaveRegion(callback, regionNameStr) end
 
 --------------------------------------------------------------
@@ -3818,7 +3818,7 @@ function OnLeaveRegion(callback, regionNameStr) end
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
 -- @param #string charNameStr	Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnLeaveRegionName(callback, regionNameStr, charNameStr) end
 
 --------------------------------------------------------------
@@ -3831,7 +3831,7 @@ function OnLeaveRegionName(callback, regionNameStr, charNameStr) end
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
 -- @param #int charTeamIndex	Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnLeaveRegionTeam(callback, regionNameStr, charTeamIndex) end
 
 --------------------------------------------------------------
@@ -3844,7 +3844,7 @@ function OnLeaveRegionTeam(callback, regionNameStr, charTeamIndex) end
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
 -- @param #string charConfigStr	Character config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnLeaveRegionConfig(callback, regionNameStr, charConfigStr) end
 
 -- EVENT CALLBACKS :: Team
@@ -3865,7 +3865,7 @@ function ReleaseTicketCountChange(eventHandler) end
 -- This event occurs when the reinforcement count changes.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, count`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTicketCountChange(callback) end
 
 --------------------------------------------------------------
@@ -3873,7 +3873,7 @@ function OnTicketCountChange(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, count`
 -- @param #int teamIndex		Index of team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTicketCountChangeTeam(callback, teamIndex) end
 
 -- TicketBleedChange
@@ -3892,7 +3892,7 @@ function ReleaseTicketBleedChange(eventHandler) end
 -- This event occurs when the bleed rate changes.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, bleed`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTicketBleedChange(callback) end
 
 --------------------------------------------------------------
@@ -3900,7 +3900,7 @@ function OnTicketBleedChange(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, bleed`
 -- @param #int teamIndex		Index of team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTicketBleedChangeTeam(callback, teamIndex) end
 
 -- EVENT CALLBACKS :: Timer
@@ -3926,7 +3926,7 @@ function ReleaseTimerElapse(eventHandler) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `timer`
 -- @param timer					Timer or timer name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnTimerElapse(callback, timer) end
 
 
@@ -3953,7 +3953,7 @@ function ReleaseObjectCreate(eventHandler) end
 -- 
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreate(callback) end
 
 --------------------------------------------------------------
@@ -3964,7 +3964,7 @@ function OnObjectCreate(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
 -- @param #string nameStr		Object name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreateName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -3975,7 +3975,7 @@ function OnObjectCreateName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
 -- @param #int teamIndex		Object team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreateTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -3986,7 +3986,7 @@ function OnObjectCreateTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
 -- @param #string configStr		Object config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnObjectCreateConfig(callback, configStr) end
 ]]
 
@@ -4013,7 +4013,7 @@ function ReleaseFlagPickUp(eventHandler) end
 -- 
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUp(callback) end
 
 --------------------------------------------------------------
@@ -4024,7 +4024,7 @@ function OnFlagPickUp(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUpName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -4035,7 +4035,7 @@ function OnFlagPickUpName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUpTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -4046,7 +4046,7 @@ function OnFlagPickUpTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
 -- @param #string configStr		Character config
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnFlagPickUpConfig(callback, configStr) end
 ]]
 
@@ -4073,7 +4073,7 @@ function ReleaseBeginNeutralize(eventHandler) end
 -- 
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginNeutralize(callback) end
 
 --------------------------------------------------------------
@@ -4084,7 +4084,7 @@ function OnBeginNeutralize(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #string nameStr		Command Post name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginNeutralizeName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -4095,7 +4095,7 @@ function OnBeginNeutralizeName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnBeginNeutralizeTeam(callback, teamIndex) end
 ]]
 
@@ -4119,7 +4119,7 @@ function ReleaseCharacterDeath(eventHandler) end
 -- 
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeath(callback) end
 
 --------------------------------------------------------------
@@ -4127,7 +4127,7 @@ function OnCharacterDeath(callback) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
 -- @param #string nameStr		Character name
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeathName(callback, nameStr) end
 
 --------------------------------------------------------------
@@ -4135,7 +4135,7 @@ function OnCharacterDeathName(callback, nameStr) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
 -- @param #int teamIndex		Character team
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeathTeam(callback, teamIndex) end
 
 --------------------------------------------------------------
@@ -4143,6 +4143,6 @@ function OnCharacterDeathTeam(callback, teamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
 -- @param #string configStr		Character class
--- @return						Unique handler for event callback
+-- @return						Unique event callback handler
 function OnCharacterDeathConfig(callback, configStr) end
 ]]
