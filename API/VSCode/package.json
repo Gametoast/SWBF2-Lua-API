@@ -3,7 +3,7 @@
     "displayName": "SWBF2 Lua API",
 	"description": "Lua snippets for Star Wars Battlefront II",
 	"icon": "images/swbf2-lua-api-128.png",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"author": "Aaron Gilbert (https://www.aaron-gilbert.com/)",
 	"publisher": "aarongilbert2012",
 	"license": "GPL-3.0",

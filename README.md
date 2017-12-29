@@ -19,7 +19,7 @@ Because each IDE uses a different documentation framework, the features for each
 
 #### Not yet included
 
-- **Snippets for event callbacks (such as `OnCharacterSpawn`).**
+- Snippets for event callbacks (such as `OnCharacterSpawn`).
 
 ### Visual Studio Code
 
@@ -30,21 +30,28 @@ Because each IDE uses a different documentation framework, the features for each
 - Functions with parameters include auto-completion for each parameter.
 - Parameters with predetermined values have dropdown-based value auto-fill.
 - Functions with multiple return values include descriptions of each return value.
+- Snippets for all event callbacks (such as `OnCharacterSpawn`) - furthermore, each snippet includes auto-completion that sets up the callback's lambda function (e.g., 'function(object, killer)' for 'OnObjectKill') and instance values.
 
 #### Not yet included
 
 - Parameter descriptions - this is largely because VSCode does not yet seem to support individual parameter descriptions.
-- **Snippets for event callbacks (such as `OnCharacterSpawn`).**
 
 ## Install
 
 ### Lua Development Tools
 
-Save [API/LuaDevelopmentTools/Battlefront2API.doclua](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/master/API/LuaDevelopmentTools/Battlefront2API.doclua) (right-click link & Save As) to the root of your project's source folder (or `data_***\Common\scripts`).
+Save [API\LuaDevelopmentTools\Battlefront2API.doclua](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/master/API/LuaDevelopmentTools/Battlefront2API.doclua) (right-click link & Save As) to the root of your project's source folder (or `data_***\Common\scripts`).
 
 > When saving the file, make sure the file extension is `.doclua` and not `.doclua.txt`!
 
 ### Visual Studio Code
+
+1. Go to the [extension's page on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=aarongilbert2012.vscode-swbf2-lua-api)
+2. Click the `Install` button
+3. If you're prompted to allow Visual Studio Code to open, confirm the prompt
+4. Once Visual Studio Code has opened, click the `Install` button, then the `Enable` button
+
+OR
 
 1. Open [Visual Studio Code](https://code.visualstudio.com/)
 2. Press `Ctrl+P` to open the Quick Open dialog
@@ -65,3 +72,16 @@ OR
 ## Issues
 
 If you think there are any missing or incorrectly-documented functions/parameters/return values, please [file a bug report](https://github.com/marth8880/SWBF2-Lua-API/issues).
+
+## Contributing
+
+Please feel free to help out with the extensions if you'd like! Simply fork/clone the repo ([.git link](https://github.com/marth8880/SWBF2-Lua-API.git)), make your changes, and [submit a pull request](https://yangsu.github.io/pull-request-tutorial/).
+
+Some notes:
+
+- The VSCode extension directory is located in `API\VSCode`
+- The LDT extension directory is located in `API\LuaDevelopmentTools`
+- The file containing all of the VSCode snippets is located in `API\VSCode\snippets\snippets.json`
+- The file containing all of the LDT snippets is located in `API\LuaDevelopmentTools\Battlefront2API.doclua`
+- Documentation for creating VSCode snippets can be found [HERE](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+- Documentation for creating LuaDoc (LDT) snippets can be found [HERE](http://keplerproject.github.io/luadoc/manual.html#howto)

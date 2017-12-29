@@ -2,6 +2,13 @@
 
 ## Install
 
+1. Go to the [extension's page on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=aarongilbert2012.vscode-swbf2-lua-api)
+2. Click the `Install` button
+3. If you're prompted to allow Visual Studio Code to open, confirm the prompt
+4. Once Visual Studio Code has opened, click the `Install` button, then the `Enable` button
+
+OR
+
 1. Open [Visual Studio Code](https://code.visualstudio.com/)
 2. Press `Ctrl+P` to open the Quick Open dialog
 3. Type `ext install vscode-swbf2-lua-api` to find the extension
@@ -20,7 +27,7 @@ OR
 
 ## Features
 
-This extension includes snippets for virtually every single built-in Lua function in Star Wars Battlefront II (2005). Other than event callbacks, the only ones that are currently undocumented are many of the shell-exclusive callbacks, but there is pretty much no use for those anyway.
+This extension includes snippets for virtually every single built-in Lua function in Star Wars Battlefront II (2005). The only ones that are currently undocumented are many of the shell-exclusive callbacks, but there is pretty much no use for those anyway.
 
 ### Currently included
 
@@ -29,11 +36,11 @@ This extension includes snippets for virtually every single built-in Lua functio
 - Functions with parameters include auto-completion for each parameter.
 - Parameters with predetermined values have dropdown-based value auto-fill.
 - Functions with multiple return values include descriptions of each return value.
+- Snippets for all event callbacks (such as `OnCharacterSpawn`) - furthermore, each snippet includes auto-completion that sets up the callback's lambda function (e.g., 'function(object, killer)' for 'OnObjectKill') and instance values.
 
 ### Not yet included
 
 - Parameter descriptions - this is largely because VSCode does not yet seem to support individual parameter descriptions.
-- Snippets for event callbacks (such as `OnCharacterSpawn`).
 
 ## Requirements
 
@@ -45,7 +52,21 @@ There are no explicit requirements or dependencies for this extension, but obvio
 
 If you think there are any missing or incorrectly-documented functions/parameters/return values, please [file a bug report](https://github.com/marth8880/SWBF2-Lua-API/issues).
 
+## Contributing
+
+Please feel free to help out with the extensions if you'd like! Simply fork/clone the repo ([.git link](https://github.com/marth8880/SWBF2-Lua-API.git)), make your changes, and [submit a pull request](https://yangsu.github.io/pull-request-tutorial/).
+
+Some notes:
+
+- The extension directory is located in `API\VSCode`
+- The file containing all of the snippets is located in `API\VSCode\snippets\snippets.json`
+- Documentation for creating snippets can be found [HERE](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+
 ## Release Notes
+
+### 1.0.0
+
+Event callback snippets are now supported.
 
 ### 0.1.0
 
