@@ -91,14 +91,14 @@ Some notes:
 
 > Versions suffixed with **-release-LDT** indicate a Lua Development Tools release, whereas **-release-VSC** indicates a Visual Studio Code release.
 
-### [1.0.0-release-LDT](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/1.0.0-release-LDT/API/LuaDevelopmentTools/Battlefront2API.doclua)
+### [v1.0.0-release-LDT](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/v1.0.0-release-LDT/API/LuaDevelopmentTools/Battlefront2API.doclua)
 
 Event callback snippets are now supported.
 
-### 1.0.0-release-VSC
+### v1.0.0-release-VSC
 
 Event callback snippets are now supported.
 
-### 0.1.0-release-VSC
+### v0.1.0-release-VSC
 
 Initial release of extension.

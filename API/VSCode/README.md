@@ -64,10 +64,10 @@ Some notes:
 
 ## Release Notes
 
-### 1.0.0-release-VSC
+### v1.0.0-release-VSC
 
 Event callback snippets are now supported.
 
-### 0.1.0-release-VSC
+### v0.1.0-release-VSC
 
 Initial release of extension.
