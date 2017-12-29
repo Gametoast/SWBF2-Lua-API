@@ -2318,7 +2318,7 @@
     "OnFlagPickUpConfig": {
         "prefix": "OnFlagPickUpConfig",
         "body": "OnFlagPickUpConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config picks up a Flag.",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class picks up a Flag.",
         "scope": "source.lua"
 	},
 	
@@ -2355,7 +2355,7 @@
     "OnFlagDropConfig": {
         "prefix": "OnFlagDropConfig",
         "body": "OnFlagDropConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config drops a Flag.",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class drops a Flag.",
         "scope": "source.lua"
 	},
 	
@@ -2392,7 +2392,7 @@
     "OnFlagReturnConfig": {
         "prefix": "OnFlagReturnConfig",
         "body": "OnFlagReturnConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config returns an allied Flag.",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class returns an allied Flag.",
         "scope": "source.lua"
 	},
 	
@@ -2429,7 +2429,7 @@
     "OnFlagCaptureConfig": {
         "prefix": "OnFlagCaptureConfig",
         "body": "OnFlagCaptureConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config captures a neutral or enemy Flag.",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class captures a neutral or enemy Flag.",
         "scope": "source.lua"
 	},
 	
@@ -2468,7 +2468,7 @@
     "OnObjectCreateConfig": {
         "prefix": "OnObjectCreateConfig",
         "body": "OnObjectCreateConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the creation of an Object of the specified config, before setting its properties.",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the creation of an Object of the specified class, before setting its properties.",
         "scope": "source.lua"
 	},
 	
@@ -2505,7 +2505,7 @@
     "OnObjectInitConfig": {
         "prefix": "OnObjectInitConfig",
         "body": "OnObjectInitConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the initialization of an Object of the specified config, after settings its properties.",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the initialization of an Object of the specified class, after settings its properties.",
         "scope": "source.lua"
 	},
 	
@@ -2542,7 +2542,7 @@
     "OnObjectDamageConfig": {
         "prefix": "OnObjectDamageConfig",
         "body": "OnObjectDamageConfig(\n\tfunction(object, damager)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: damager (character)    \n\n This Event occurs whenever an Object of the specified config takes damage.",
+        "description": "Actor: object    \n Context: damager (character)    \n\n This Event occurs whenever an Object of the specified class takes damage.",
         "scope": "source.lua"
 	},
 	
@@ -2579,7 +2579,7 @@
     "OnObjectRepairConfig": {
         "prefix": "OnObjectRepairConfig",
         "body": "OnObjectRepairConfig(\n\tfunction(object, repairer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: repairer (character)    \n\n This event occurs when a character finishes repairing an Object of the specified config. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.",
+        "description": "Actor: object    \n Context: repairer (character)    \n\n This event occurs when a character finishes repairing an Object of the specified class. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.",
         "scope": "source.lua"
 	},
 	
@@ -2616,7 +2616,7 @@
     "OnObjectHackConfig": {
         "prefix": "OnObjectHackConfig",
         "body": "OnObjectHackConfig(\n\tfunction(object, hacker)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: hacker (character)    \n\n This Event occurs whenever a character hacks an Object of the specified config (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).",
+        "description": "Actor: object    \n Context: hacker (character)    \n\n This Event occurs whenever a character hacks an Object of the specified class (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).",
         "scope": "source.lua"
 	},
 	
@@ -2653,7 +2653,7 @@
     "OnObjectKillConfig": {
         "prefix": "OnObjectKillConfig",
         "body": "OnObjectKillConfig(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified config dies.",
+        "description": "Actor: object    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified class dies.",
         "scope": "source.lua"
 	},
 	
@@ -2690,7 +2690,7 @@
     "OnObjectHeadshotConfig": {
         "prefix": "OnObjectHeadshotConfig",
         "body": "OnObjectHeadshotConfig(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object (entity soldier)    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified config gets shot in the head.",
+        "description": "Actor: object (entity soldier)    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified class gets shot in the head.",
         "scope": "source.lua"
 	},
 	
@@ -2727,7 +2727,7 @@
     "OnObjectRespawnConfig": {
         "prefix": "OnObjectRespawnConfig",
         "body": "OnObjectRespawnConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: none    \n\n This Event occurs when an Object of the specified config respawns.",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs when an Object of the specified class respawns.",
         "scope": "source.lua"
 	},
 	
@@ -2764,7 +2764,7 @@
     "OnObjectDeleteConfig": {
         "prefix": "OnObjectDeleteConfig",
         "body": "OnObjectDeleteConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the deletion of an Object of the specified config. Do not use the Object after deletion!",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the deletion of an Object of the specified class. Do not use the Object after deletion!",
         "scope": "source.lua"
 	},
 	
@@ -2801,7 +2801,7 @@
     "OnTeamChangeConfig": {
         "prefix": "OnTeamChangeConfig",
         "body": "OnTeamChangeConfig(\n\tfunction(object, team)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: team    \n\n This Event occurs when an Object of the specified config changes teams.",
+        "description": "Actor: object    \n Context: team    \n\n This Event occurs when an Object of the specified class changes teams.",
         "scope": "source.lua"
 	},
 	
@@ -2838,7 +2838,7 @@
     "OnHealthChangeConfig": {
         "prefix": "OnHealthChangeConfig",
         "body": "OnHealthChangeConfig(\n\tfunction(object, health)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: health    \n\n This Event occurs when the Object of the specified config's health changes due to an external event. AddHealth does not trigger this Event (supposedly).",
+        "description": "Actor: object    \n Context: health    \n\n This Event occurs when the Object of the specified class's health changes due to an external event. AddHealth does not trigger this Event (supposedly).",
         "scope": "source.lua"
 	},
 	
@@ -2875,7 +2875,7 @@
     "OnShieldChangeConfig": {
         "prefix": "OnShieldChangeConfig",
         "body": "OnShieldChangeConfig(\n\tfunction(object, shield)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object of the specified config's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
+        "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object of the specified class's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
         "scope": "source.lua"
 	},
 	
@@ -2914,7 +2914,7 @@
     "OnEnterRegionConfig": {
         "prefix": "OnEnterRegionConfig",
         "body": "OnEnterRegionConfig(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charConfigStr}\n)",
-        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified config enters a Region.",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified class enters a Region.",
         "scope": "source.lua"
 	},
 	
@@ -2951,7 +2951,7 @@
     "OnLeaveRegionConfig": {
         "prefix": "OnLeaveRegionConfig",
         "body": "OnLeaveRegionConfig(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charConfigStr}\n)",
-        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified config leaves a Region.",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified class leaves a Region.",
         "scope": "source.lua"
 	},
 	
