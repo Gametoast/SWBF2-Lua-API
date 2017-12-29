@@ -41,7 +41,7 @@ Because each IDE uses a different documentation framework, the features for each
 
 ### Lua Development Tools
 
-Save [API\LuaDevelopmentTools\Battlefront2API.doclua](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/1.0.0-release-LDT/API/LuaDevelopmentTools/Battlefront2API.doclua) (v1.0.0, latest) (right-click link & Save As) to the root of your project's source folder (or `data_***\Common\scripts`).
+Save [API\LuaDevelopmentTools\Battlefront2API.doclua](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/v1.0.0-release-LDT/API/LuaDevelopmentTools/Battlefront2API.doclua) (v1.0.0, latest) (right-click link & Save As) to the root of your project's source folder (or `data_***\Common\scripts`).
 
 > When saving the file, make sure the file extension is `.doclua` and not `.doclua.txt`!
 
