@@ -80,8 +80,8 @@ Please feel free to help out with the extensions if you'd like! Simply fork/clon
 
 Some notes:
 
-- The VSCode extension directory is located in `API\VSCode`
-- The LDT extension directory is located in `API\LuaDevelopmentTools`
+- The VSCode extension directory is at `API\VSCode`
+- The LDT extension directory is at `API\LuaDevelopmentTools`
 - The file containing all of the VSCode snippets is at `API\VSCode\snippets\snippets.json`
 - The file containing all of the LDT snippets is at `API\LuaDevelopmentTools\Battlefront2API.doclua`
 - Documentation for creating VSCode snippets can be found [HERE](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
