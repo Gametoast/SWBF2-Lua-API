@@ -22,14 +22,9 @@
 	"keywords": [
 		"swbf2",
 		"battlefront",
-		"lua",
 		"modding",
-		"api",
-		"snippets",
 		"callbacks",
-		"functions",
-		"gametoast",
-		"pandemic"
+		"functions"
 	],
     "contributes": {
         "snippets": [
