@@ -2293,33 +2293,365 @@
         "scope": "source.lua"
 	},
 	
-	// callbackname
+	// EVENT CALLBACKS :: Object
+	
+	// ObjectCreate
     
     "OnObjectCreate": {
         "prefix": "OnObjectCreate",
-        "body": "OnObjectCreate(\n\tfunction(object, character)\n\t\t${1}\n\tend,\n)",
-        "description": "Actor: object    \n Context: none    \n\n ",
+        "body": "OnObjectCreate(\n\tfunction(object)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the creation of an Object, before setting its properties.",
         "scope": "source.lua"
 	},
     
     "OnObjectCreateName": {
         "prefix": "OnObjectCreateName",
-        "body": "OnObjectCreateName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
-        "description": "",
+        "body": "OnObjectCreateName(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the creation of an Object of the specified name, before setting its properties.",
         "scope": "source.lua"
 	},
     
     "OnObjectCreateTeam": {
         "prefix": "OnObjectCreateTeam",
-        "body": "OnObjectCreateTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
-        "description": "",
+        "body": "OnObjectCreateTeam(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the creation of an Object of the specified team, before setting its properties.",
         "scope": "source.lua"
 	},
     
     "OnObjectCreateConfig": {
         "prefix": "OnObjectCreateConfig",
-        "body": "OnObjectCreateConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
-        "description": "",
+        "body": "OnObjectCreateConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the creation of an Object of the specified config, before setting its properties.",
+        "scope": "source.lua"
+	},
+	
+	// ObjectInit
+    
+    "OnObjectInit": {
+        "prefix": "OnObjectInit",
+        "body": "OnObjectInit(\n\tfunction(object)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the initialization of an Object, after settings its properties.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectInitName": {
+        "prefix": "OnObjectInitName",
+        "body": "OnObjectInitName(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the initialization of an Object of the specified name, after settings its properties.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectInitTeam": {
+        "prefix": "OnObjectInitTeam",
+        "body": "OnObjectInitTeam(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the initialization of an Object of the specified team, after settings its properties.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectInitConfig": {
+        "prefix": "OnObjectInitConfig",
+        "body": "OnObjectInitConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the initialization of an Object of the specified config, after settings its properties.",
+        "scope": "source.lua"
+	},
+	
+	// ObjectDamage
+    
+    "OnObjectDamage": {
+        "prefix": "OnObjectDamage",
+        "body": "OnObjectDamage(\n\tfunction(object, damager)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: damager (character)    \n\n This Event occurs whenever an Object takes damage.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectDamageName": {
+        "prefix": "OnObjectDamageName",
+        "body": "OnObjectDamageName(\n\tfunction(object, damager)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: damager (character)    \n\n This Event occurs whenever an Object of the specified name takes damage.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectDamageTeam": {
+        "prefix": "OnObjectDamageTeam",
+        "body": "OnObjectDamageTeam(\n\tfunction(object, damager)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: damager (character)    \n\n This Event occurs whenever an Object of the specified team takes damage.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectDamageConfig": {
+        "prefix": "OnObjectDamageConfig",
+        "body": "OnObjectDamageConfig(\n\tfunction(object, damager)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: damager (character)    \n\n This Event occurs whenever an Object of the specified config takes damage.",
+        "scope": "source.lua"
+	},
+	
+	// ObjectRepair
+    
+    "OnObjectRepair": {
+        "prefix": "OnObjectRepair",
+        "body": "OnObjectRepair(\n\tfunction(object, repairer)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: repairer (character)    \n\n This event occurs when a character finishes repairing an Object. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectRepairName": {
+        "prefix": "OnObjectRepairName",
+        "body": "OnObjectRepairName(\n\tfunction(object, repairer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: repairer (character)    \n\n This event occurs when a character finishes repairing an Object of the specified name. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectRepairTeam": {
+        "prefix": "OnObjectRepairTeam",
+        "body": "OnObjectRepairTeam(\n\tfunction(object, repairer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: repairer (character)    \n\n This event occurs when a character finishes repairing an Object of the specified team. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectRepairConfig": {
+        "prefix": "OnObjectRepairConfig",
+        "body": "OnObjectRepairConfig(\n\tfunction(object, repairer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: repairer (character)    \n\n This event occurs when a character finishes repairing an Object of the specified config. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.",
+        "scope": "source.lua"
+	},
+	
+	// ObjectHack
+    
+    "OnObjectHack": {
+        "prefix": "OnObjectHack",
+        "body": "OnObjectHack(\n\tfunction(object, hacker)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: hacker (character)    \n\n This Event occurs whenever a character hacks an Object (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectHackName": {
+        "prefix": "OnObjectHackName",
+        "body": "OnObjectHackName(\n\tfunction(object, hacker)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: hacker (character)    \n\n This Event occurs whenever a character hacks an Object of the specified name (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectHackTeam": {
+        "prefix": "OnObjectHackTeam",
+        "body": "OnObjectHackTeam(\n\tfunction(object, hacker)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: hacker (character)    \n\n This Event occurs whenever a character hacks an Object of the specified team (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectHackConfig": {
+        "prefix": "OnObjectHackConfig",
+        "body": "OnObjectHackConfig(\n\tfunction(object, hacker)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: hacker (character)    \n\n This Event occurs whenever a character hacks an Object of the specified config (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).",
+        "scope": "source.lua"
+	},
+	
+	// ObjectKill
+    
+    "OnObjectKill": {
+        "prefix": "OnObjectKill",
+        "body": "OnObjectKill(\n\tfunction(object, killer)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: killer (character)    \n\n This Event occurs when an Object dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectKillName": {
+        "prefix": "OnObjectKillName",
+        "body": "OnObjectKillName(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified name dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectKillTeam": {
+        "prefix": "OnObjectKillTeam",
+        "body": "OnObjectKillTeam(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified team dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectKillConfig": {
+        "prefix": "OnObjectKillConfig",
+        "body": "OnObjectKillConfig(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified config dies.",
+        "scope": "source.lua"
+	},
+	
+	// ObjectHeadshot
+    
+    "OnObjectHeadshot": {
+        "prefix": "OnObjectHeadshot",
+        "body": "OnObjectHeadshot(\n\tfunction(object, killer)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object (entity soldier)    \n Context: killer (character)    \n\n This Event occurs when an Object gets shot in the head.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectHeadshotName": {
+        "prefix": "OnObjectHeadshotName",
+        "body": "OnObjectHeadshotName(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object (entity soldier)    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified name gets shot in the head.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectHeadshotTeam": {
+        "prefix": "OnObjectHeadshotTeam",
+        "body": "OnObjectHeadshotTeam(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object (entity soldier)    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified team gets shot in the head.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectHeadshotConfig": {
+        "prefix": "OnObjectHeadshotConfig",
+        "body": "OnObjectHeadshotConfig(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object (entity soldier)    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified config gets shot in the head.",
+        "scope": "source.lua"
+	},
+	
+	// ObjectRespawn
+    
+    "OnObjectRespawn": {
+        "prefix": "OnObjectRespawn",
+        "body": "OnObjectRespawn(\n\tfunction(object)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs when an Object respawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectRespawnName": {
+        "prefix": "OnObjectRespawnName",
+        "body": "OnObjectRespawnName(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs when an Object of the specified name respawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectRespawnTeam": {
+        "prefix": "OnObjectRespawnTeam",
+        "body": "OnObjectRespawnTeam(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs when an Object of the specified team respawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectRespawnConfig": {
+        "prefix": "OnObjectRespawnConfig",
+        "body": "OnObjectRespawnConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs when an Object of the specified config respawns.",
+        "scope": "source.lua"
+	},
+	
+	// ObjectDelete
+    
+    "OnObjectDelete": {
+        "prefix": "OnObjectDelete",
+        "body": "OnObjectDelete(\n\tfunction(object)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the deletion of an Object. Do not use the Object after deletion!",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectDeleteName": {
+        "prefix": "OnObjectDeleteName",
+        "body": "OnObjectDeleteName(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the deletion of an Object of the specified name. Do not use the Object after deletion!",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectDeleteTeam": {
+        "prefix": "OnObjectDeleteTeam",
+        "body": "OnObjectDeleteTeam(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the deletion of an Object of the specified team. Do not use the Object after deletion!",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectDeleteConfig": {
+        "prefix": "OnObjectDeleteConfig",
+        "body": "OnObjectDeleteConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: none    \n\n This Event occurs on the deletion of an Object of the specified config. Do not use the Object after deletion!",
+        "scope": "source.lua"
+	},
+	
+	// TeamChange
+    
+    "OnTeamChange": {
+        "prefix": "OnTeamChange",
+        "body": "OnTeamChange(\n\tfunction(object, team)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: team    \n\n This Event occurs when an Object changes teams.",
+        "scope": "source.lua"
+	},
+    
+    "OnTeamChangeName": {
+        "prefix": "OnTeamChangeName",
+        "body": "OnTeamChangeName(\n\tfunction(object, team)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: team    \n\n This Event occurs when an Object of the specified name changes teams.",
+        "scope": "source.lua"
+	},
+    
+    "OnTeamChangeTeam": {
+        "prefix": "OnTeamChangeTeam",
+        "body": "OnTeamChangeTeam(\n\tfunction(object, team)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: team    \n\n This Event occurs when an Object of the specified team changes teams.",
+        "scope": "source.lua"
+	},
+    
+    "OnTeamChangeConfig": {
+        "prefix": "OnTeamChangeConfig",
+        "body": "OnTeamChangeConfig(\n\tfunction(object, team)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: team    \n\n This Event occurs when an Object of the specified config changes teams.",
+        "scope": "source.lua"
+	},
+	
+	// HealthChange
+    
+    "OnHealthChange": {
+        "prefix": "OnHealthChange",
+        "body": "OnHealthChange(\n\tfunction(object, health)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: health    \n\n This Event occurs when the Object's health changes due to an external event. AddHealth does not trigger this Event (supposedly).",
+        "scope": "source.lua"
+	},
+    
+    "OnHealthChangeName": {
+        "prefix": "OnHealthChangeName",
+        "body": "OnHealthChangeName(\n\tfunction(object, health)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: health    \n\n This Event occurs when the Object of the specified name's health changes due to an external event. AddHealth does not trigger this Event (supposedly).",
+        "scope": "source.lua"
+	},
+    
+    "OnHealthChangeTeam": {
+        "prefix": "OnHealthChangeTeam",
+        "body": "OnHealthChangeTeam(\n\tfunction(object, health)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: health    \n\n This Event occurs when the Object of the specified team's health changes due to an external event. AddHealth does not trigger this Event (supposedly).",
+        "scope": "source.lua"
+	},
+    
+    "OnHealthChangeConfig": {
+        "prefix": "OnHealthChangeConfig",
+        "body": "OnHealthChangeConfig(\n\tfunction(object, health)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: health    \n\n This Event occurs when the Object of the specified config's health changes due to an external event. AddHealth does not trigger this Event (supposedly).",
+        "scope": "source.lua"
+	},
+	
+	// ShieldChange
+    
+    "OnShieldChange": {
+        "prefix": "OnShieldChange",
+        "body": "OnShieldChange(\n\tfunction(object, shield)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
+        "scope": "source.lua"
+	},
+    
+    "OnShieldChangeName": {
+        "prefix": "OnShieldChangeName",
+        "body": "OnShieldChangeName(\n\tfunction(object, shield)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object of the specified name's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
+        "scope": "source.lua"
+	},
+    
+    "OnShieldChangeTeam": {
+        "prefix": "OnShieldChangeTeam",
+        "body": "OnShieldChangeTeam(\n\tfunction(object, shield)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object of the specified team's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
+        "scope": "source.lua"
+	},
+    
+    "OnShieldChangeConfig": {
+        "prefix": "OnShieldChangeConfig",
+        "body": "OnShieldChangeConfig(\n\tfunction(object, shield)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object of the specified config's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
         "scope": "source.lua"
 	}
 }
@@ -2336,7 +2668,7 @@
 	}
 */
 
-// event callback snippet "template":
+// event callback snippet "templates":
 /*
 ,
 	
@@ -2440,21 +2772,21 @@
     
     "OnObjectCreateName": {
         "prefix": "OnObjectCreateName",
-        "body": "OnObjectCreateName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "body": "OnObjectCreateName(\n\tfunction(object, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
         "description": "",
         "scope": "source.lua"
 	},
     
     "OnObjectCreateTeam": {
         "prefix": "OnObjectCreateTeam",
-        "body": "OnObjectCreateTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "body": "OnObjectCreateTeam(\n\tfunction(object, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
         "description": "",
         "scope": "source.lua"
 	},
     
     "OnObjectCreateConfig": {
         "prefix": "OnObjectCreateConfig",
-        "body": "OnObjectCreateConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "body": "OnObjectCreateConfig(\n\tfunction(object, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
         "description": "",
         "scope": "source.lua"
 	}
