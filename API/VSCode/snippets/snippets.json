@@ -1741,16 +1741,83 @@
         "body": "SetEffectActive(${1:effect}, ${2:active})",
         "description": "Sets the state of the specified particle effect.",
         "scope": "source.lua"
-    }
+	},
+	
+	// EVENT CALLBACKS
+	
+	// CharacterDeath
+    
+    "OnCharacterDeath": {
+        "prefix": "OnCharacterDeath",
+        "body": "OnCharacterDeath(\n\tfunction(player, killer)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever a character (human or AI) dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDeathName": {
+        "prefix": "OnCharacterDeathName",
+        "body": "OnCharacterDeathName(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever a character (human or AI) of the specified name dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDeathTeam": {
+        "prefix": "OnCharacterDeathTeam",
+        "body": "OnCharacterDeathTeam(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever a character (human or AI) of the specified team dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDeathConfig": {
+        "prefix": "OnCharacterDeathConfig",
+        "body": "OnCharacterDeathConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever a character (human or AI) of the specified class dies.",
+        "scope": "source.lua"
+	}
 }
 
-// snippet "template":
+// function snippet "template":
 /*
 ,
     
     "SetOutOfBoundsVoiceOver": {
         "prefix": "SetOutOfBoundsVoiceOver",
         "body": "SetOutOfBoundsVoiceOver(${1:playerTeam}, ${2:streamSoundName})",
+        "description": "",
+        "scope": "source.lua"
+	}
+*/
+
+// event callback snippet "template":
+/*
+,
+	
+	// callbackname
+    
+    "OnCharacterDeath": {
+        "prefix": "OnCharacterDeath",
+        "body": "OnCharacterDeath(\n\tfunction(player, killer)\n\t\t${1}\n\tend,\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDeathName": {
+        "prefix": "OnCharacterDeathName",
+        "body": "OnCharacterDeathName(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDeathTeam": {
+        "prefix": "OnCharacterDeathTeam",
+        "body": "OnCharacterDeathTeam(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDeathConfig": {
+        "prefix": "OnCharacterDeathConfig",
+        "body": "OnCharacterDeathConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
         "description": "",
         "scope": "source.lua"
 	}
