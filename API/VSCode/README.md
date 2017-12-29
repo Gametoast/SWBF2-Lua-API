@@ -59,7 +59,7 @@ Please feel free to help out with the extensions if you'd like! Simply fork/clon
 Some notes:
 
 - The extension directory is located in `API\VSCode`
-- The file containing all of the snippets is located in `API\VSCode\snippets\snippets.json`
+- The file containing all of the snippets is at `API\VSCode\snippets\snippets.json`
 - Documentation for creating snippets can be found [HERE](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
 ## Release Notes

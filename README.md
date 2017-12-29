@@ -2,7 +2,7 @@
 
 ## Features
 
-This repository includes documentation extensions for virtually every single built-in Lua function in Star Wars Battlefront II (2005). Other than event callbacks, the only ones that are currently undocumented are many of the shell-exclusive callbacks, but there is pretty much no use for those anyway. Currently there exists an extension for [Lua Development Tools](https://projects.eclipse.org/projects/tools.ldt) (as a `.doclua` file) and [Visual Studio Code](https://code.visualstudio.com/) (as a marketplace extension).
+This repository includes documentation extensions for virtually every single built-in Lua function in Star Wars Battlefront II (2005). The only ones that are currently undocumented are many of the shell-exclusive callbacks, but there is pretty much no use for those anyway. Currently there exists an extension for [Lua Development Tools](https://projects.eclipse.org/projects/tools.ldt) (as a `.doclua` file) and [Visual Studio Code](https://code.visualstudio.com/) (as a marketplace extension).
 
 Because each IDE uses a different documentation framework, the features for each IDE differ slightly (see below).
 
@@ -16,10 +16,11 @@ Because each IDE uses a different documentation framework, the features for each
 - **Each function includes a description of what it does - some include thorough use-case examples.**
 - Functions with return values include descriptions of each return value.
 - Function parameters are documented with their name, data type, and description.
+- Snippets for all event callbacks (such as `OnCharacterSpawn`).
 
 #### Not yet included
 
-- Snippets for event callbacks (such as `OnCharacterSpawn`).
+- Nothing off the top of my head. ;-)
 
 ### Visual Studio Code
 
@@ -81,7 +82,7 @@ Some notes:
 
 - The VSCode extension directory is located in `API\VSCode`
 - The LDT extension directory is located in `API\LuaDevelopmentTools`
-- The file containing all of the VSCode snippets is located in `API\VSCode\snippets\snippets.json`
-- The file containing all of the LDT snippets is located in `API\LuaDevelopmentTools\Battlefront2API.doclua`
+- The file containing all of the VSCode snippets is at `API\VSCode\snippets\snippets.json`
+- The file containing all of the LDT snippets is at `API\LuaDevelopmentTools\Battlefront2API.doclua`
 - Documentation for creating VSCode snippets can be found [HERE](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 - Documentation for creating LuaDoc (LDT) snippets can be found [HERE](http://keplerproject.github.io/luadoc/manual.html#howto)
