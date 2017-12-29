@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
 
 - Added snippets for all event callbacks.
 - Added install steps to readme for installation via Marketplace page
+- Streamlined parts of the readme
+- Upgraded version naming syntax
 
 ## v0.1.0-release-VSC - 2017-12-28
 
