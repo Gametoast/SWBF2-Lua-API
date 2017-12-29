@@ -2749,6 +2749,17 @@
         "body": "OnTicketBleedChangeTeam(\n\tfunction(team, bleed)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
         "description": "This event occurs when the specified team's bleed rate changes.",
         "scope": "source.lua"
+	},
+	
+	// EVENT CALLBACKS :: Timer
+	
+	// TimerElapse
+    
+    "OnTimerElapse": {
+        "prefix": "OnTimerElapse",
+        "body": "OnTimerElapse(\n\tfunction(timer)\n\t\t${2}\n\tend,\n${1:timer}\n)",
+        "description": "Actor: timer    \n Context: none    \n Instance: name or timer    \n\n This Event occurs when the timer reaches zero.",
+        "scope": "source.lua"
 	}
 }
 
