@@ -2835,9 +2835,1223 @@ function OnCommandPostRespawnName(callback, nameStr) end
 -- @return						Unique handler for event callback
 function OnCommandPostRespawnTeam(callback, teamIndex) end
 
+-- EVENT CALLBACKS :: Flag
+
+-- FlagPickUp
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseFlagPickUp(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character picks up a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @return						Unique handler for event callback
+function OnFlagPickUp(callback) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified name picks up a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string nameStr		Character name
+-- @return						Unique handler for event callback
+function OnFlagPickUpName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified team picks up a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #int teamIndex		Character team
+-- @return						Unique handler for event callback
+function OnFlagPickUpTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified class picks up a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string configStr		Character config
+-- @return						Unique handler for event callback
+function OnFlagPickUpConfig(callback, configStr) end
+
+-- FlagDrop
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseFlagDrop(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character drops a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @return						Unique handler for event callback
+function OnFlagDrop(callback) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified name drops a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string nameStr		Character name
+-- @return						Unique handler for event callback
+function OnFlagDropName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified team drops a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #int teamIndex		Character team
+-- @return						Unique handler for event callback
+function OnFlagDropTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified class drops a Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string configStr		Character config
+-- @return						Unique handler for event callback
+function OnFlagDropConfig(callback, configStr) end
+
+-- FlagReturn
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseFlagReturn(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character returns an allied Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @return						Unique handler for event callback
+function OnFlagReturn(callback) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified name returns an allied Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string nameStr		Character name
+-- @return						Unique handler for event callback
+function OnFlagReturnName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified team returns an allied Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #int teamIndex		Character team
+-- @return						Unique handler for event callback
+function OnFlagReturnTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified class returns an allied Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string configStr		Character config
+-- @return						Unique handler for event callback
+function OnFlagReturnConfig(callback, configStr) end
+
+-- FlagCapture
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseFlagCapture(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character captures a neutral or enemy Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @return						Unique handler for event callback
+function OnFlagCapture(callback) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified name captures a neutral or enemy Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string nameStr		Character name
+-- @return						Unique handler for event callback
+function OnFlagCaptureName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified team captures a neutral or enemy Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #int teamIndex		Character team
+-- @return						Unique handler for event callback
+function OnFlagCaptureTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- This Event occurs when a character of the specified class captures a neutral or enemy Flag.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string configStr		Character config
+-- @return						Unique handler for event callback
+function OnFlagCaptureConfig(callback, configStr) end
+
+-- EVENT CALLBACKS :: Object
+
+-- ObjectCreate
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectCreate(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the creation of an Object, before setting its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @return						Unique handler for event callback
+function OnObjectCreate(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the creation of an Object of the specified name, before setting its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectCreateName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the creation of an Object of the specified team, before setting its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectCreateTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the creation of an Object of the specified class, before setting its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectCreateConfig(callback, configStr) end
+
+-- ObjectInit
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectInit(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the initialization of an Object, after settings its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @return						Unique handler for event callback
+function OnObjectInit(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the initialization of an Object of the specified name, after settings its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectInitName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the initialization of an Object of the specified team, after settings its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectInitTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the initialization of an Object of the specified class, after settings its properties.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectInitConfig(callback, configStr) end
+
+-- ObjectDamage
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectDamage(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: damager (character)  
+-- 
+-- This Event occurs whenever an Object takes damage.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
+-- @return						Unique handler for event callback
+function OnObjectDamage(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: damager (character)  
+-- 
+-- This Event occurs whenever an Object of the specified name takes damage.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectDamageName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: damager (character)  
+-- 
+-- This Event occurs whenever an Object of the specified team takes damage.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectDamageTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: damager (character)  
+-- 
+-- This Event occurs whenever an Object of the specified class takes damage.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectDamageConfig(callback, configStr) end
+
+-- ObjectRepair
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectRepair(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: repairer (character)  
+-- 
+-- This event occurs when a character finishes repairing an Object. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
+-- @return						Unique handler for event callback
+function OnObjectRepair(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: repairer (character)  
+-- 
+-- This event occurs when a character finishes repairing an Object of the specified name. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectRepairName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: repairer (character)  
+-- 
+-- This event occurs when a character finishes repairing an Object of the specified team. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectRepairTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: repairer (character)  
+-- 
+-- This event occurs when a character finishes repairing an Object of the specified class. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectRepairConfig(callback, configStr) end
+
+-- ObjectHack
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectHack(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: hacker (character)  
+-- 
+-- This Event occurs whenever a character hacks an Object (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
+-- @return						Unique handler for event callback
+function OnObjectHack(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: hacker (character)  
+-- 
+-- This Event occurs whenever a character hacks an Object of the specified name (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectHackName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: hacker (character)  
+-- 
+-- This Event occurs whenever a character hacks an Object of the specified team (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectHackTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: hacker (character)  
+-- 
+-- This Event occurs whenever a character hacks an Object of the specified class (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectHackConfig(callback, configStr) end
+
+-- ObjectKill
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectKill(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object dies.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @return						Unique handler for event callback
+function OnObjectKill(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object of the specified name dies.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectKillName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object of the specified team dies.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectKillTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object of the specified class dies.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectKillConfig(callback, configStr) end
+
+-- ObjectHeadshot
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectHeadshot(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object (entity soldier)  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object gets shot in the head.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @return						Unique handler for event callback
+function OnObjectHeadshot(callback) end
+
+--------------------------------------------------------------
+-- Actor: object (entity soldier)  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object of the specified name gets shot in the head.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectHeadshotName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object (entity soldier)  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object of the specified team gets shot in the head.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectHeadshotTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object (entity soldier)  
+-- Context: killer (character)  
+-- 
+-- This Event occurs when an Object of the specified class gets shot in the head.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectHeadshotConfig(callback, configStr) end
+
+-- ObjectRespawn
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectRespawn(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs when an Object respawns.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @return						Unique handler for event callback
+function OnObjectRespawn(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs when an Object of the specified name respawns.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectRespawnName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs when an Object of the specified team respawns.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectRespawnTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs when an Object of the specified class respawns.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectRespawnConfig(callback, configStr) end
+
+-- ObjectDelete
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectDelete(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the deletion of an Object. Do not use the Object after deletion!
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @return						Unique handler for event callback
+function OnObjectDelete(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the deletion of an Object of the specified name. Do not use the Object after deletion!
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectDeleteName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the deletion of an Object of the specified team. Do not use the Object after deletion!
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectDeleteTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- This Event occurs on the deletion of an Object of the specified class. Do not use the Object after deletion!
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectDeleteConfig(callback, configStr) end
+
+-- TeamChange
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseTeamChange(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: team  
+-- 
+-- This Event occurs when an Object changes teams.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
+-- @return						Unique handler for event callback
+function OnTeamChange(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: team  
+-- 
+-- This Event occurs when an Object of the specified name changes teams.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnTeamChangeName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: team  
+-- 
+-- This Event occurs when an Object of the specified team changes teams.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnTeamChangeTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: team  
+-- 
+-- This Event occurs when an Object of the specified class changes teams.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnTeamChangeConfig(callback, configStr) end
+
+-- HealthChange
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseHealthChange(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: health  
+-- 
+-- This Event occurs when the Object's health changes due to an external event. AddHealth does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
+-- @return						Unique handler for event callback
+function OnHealthChange(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: health  
+-- 
+-- This Event occurs when the Object of the specified name's health changes due to an external event. AddHealth does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnHealthChangeName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: health  
+-- 
+-- This Event occurs when the Object of the specified team's health changes due to an external event. AddHealth does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnHealthChangeTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: health  
+-- 
+-- This Event occurs when the Object of the specified class's health changes due to an external event. AddHealth does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnHealthChangeConfig(callback, configStr) end
+
+-- ShieldChange
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseShieldChange(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: shield  
+-- 
+-- This Event occurs when the Object's shield changes due to an external event. AddShield does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
+-- @return						Unique handler for event callback
+function OnShieldChange(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: shield  
+-- 
+-- This Event occurs when the Object of the specified name's shield changes due to an external event. AddShield does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnShieldChangeName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: shield  
+-- 
+-- This Event occurs when the Object of the specified team's shield changes due to an external event. AddShield does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnShieldChangeTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: shield  
+-- 
+-- This Event occurs when the Object of the specified class's shield changes due to an external event. AddShield does not trigger this Event (supposedly).
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnShieldChangeConfig(callback, configStr) end
+
+-- EVENT CALLBACKS :: Region
+
+-- EnterRegion
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseEnterRegion(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character enters a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @return						Unique handler for event callback
+function OnEnterRegion(callback, regionNameStr) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character of the specified name enters a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @param #string charNameStr	Character name
+-- @return						Unique handler for event callback
+function OnEnterRegionName(callback, regionNameStr, charNameStr) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character of the specified team enters a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @param #int charTeamIndex	Character team
+-- @return						Unique handler for event callback
+function OnEnterRegionTeam(callback, regionNameStr, charTeamIndex) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character of the specified class enters a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @param #string charConfigStr	Character config
+-- @return						Unique handler for event callback
+function OnEnterRegionConfig(callback, regionNameStr, charConfigStr) end
+
+-- LeaveRegion
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseLeaveRegion(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character leaves a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @return						Unique handler for event callback
+function OnLeaveRegion(callback, regionNameStr) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character of the specified name leaves a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @param #string charNameStr	Character name
+-- @return						Unique handler for event callback
+function OnLeaveRegionName(callback, regionNameStr, charNameStr) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character of the specified team leaves a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @param #int charTeamIndex	Character team
+-- @return						Unique handler for event callback
+function OnLeaveRegionTeam(callback, regionNameStr, charTeamIndex) end
+
+--------------------------------------------------------------
+-- Actor: region  
+-- Context: character  
+-- Instance: name or region  
+-- 
+-- This Event occurs when a Character of the specified class leaves a Region.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
+-- @param #string regionNameStr	Region or region name
+-- @param #string charConfigStr	Character config
+-- @return						Unique handler for event callback
+function OnLeaveRegionConfig(callback, regionNameStr, charConfigStr) end
+
+-- EVENT CALLBACKS :: Team
+
+-- TicketCountChange
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseTicketCountChange(eventHandler) end
+
+--------------------------------------------------------------
+-- This event occurs when the reinforcement count changes.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, count`
+-- @return						Unique handler for event callback
+function OnTicketCountChange(callback) end
+
+--------------------------------------------------------------
+-- This event occurs when the specified team's reinforcement count changes.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, count`
+-- @param #int teamIndex		Index of team
+-- @return						Unique handler for event callback
+function OnTicketCountChangeTeam(callback, teamIndex) end
+
+-- TicketBleedChange
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseTicketBleedChange(eventHandler) end
+
+--------------------------------------------------------------
+-- This event occurs when the bleed rate changes.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, bleed`
+-- @return						Unique handler for event callback
+function OnTicketBleedChange(callback) end
+
+--------------------------------------------------------------
+-- This event occurs when the specified team's bleed rate changes.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `team, bleed`
+-- @param #int teamIndex		Index of team
+-- @return						Unique handler for event callback
+function OnTicketBleedChangeTeam(callback, teamIndex) end
+
+-- EVENT CALLBACKS :: Timer
+
+-- TimerElapse
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseTimerElapse(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: timer  
+-- Context: none  
+-- Instance: name or timer  
+-- 
+-- This Event occurs when the timer reaches zero.
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `timer`
+-- @param timer					Timer or timer name
+-- @return						Unique handler for event callback
+function OnTimerElapse(callback, timer) end
+
 
 
 -- event callback snippet "templates":
+--[[
+
+-- callbackname
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseObjectCreate(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
+-- @return						Unique handler for event callback
+function OnObjectCreate(callback) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
+-- @param #string nameStr		Object name
+-- @return						Unique handler for event callback
+function OnObjectCreateName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
+-- @param #int teamIndex		Object team
+-- @return						Unique handler for event callback
+function OnObjectCreateTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: object  
+-- Context: none  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
+-- @param #string configStr		Object config
+-- @return						Unique handler for event callback
+function OnObjectCreateConfig(callback, configStr) end
+]]
+
+
+
+--[[
+
+-- callbackname
+
+--------------------------------------------------------------
+-- Deregisters the specified event callback handler.  
+-- 
+-- For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.  
+-- 
+-- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
+-- 
+-- @param eventHandler			Event callback handler to deregister
+function ReleaseFlagPickUp(eventHandler) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @return						Unique handler for event callback
+function OnFlagPickUp(callback) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string nameStr		Character name
+-- @return						Unique handler for event callback
+function OnFlagPickUpName(callback, nameStr) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #int teamIndex		Character team
+-- @return						Unique handler for event callback
+function OnFlagPickUpTeam(callback, teamIndex) end
+
+--------------------------------------------------------------
+-- Actor: flag  
+-- Context: character  
+-- 
+-- 
+-- 
+-- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
+-- @param #string configStr		Character config
+-- @return						Unique handler for event callback
+function OnFlagPickUpConfig(callback, configStr) end
+]]
+
+
+
 --[[
 
 -- callbackname
@@ -2885,7 +4099,8 @@ function OnBeginNeutralizeName(callback, nameStr) end
 function OnBeginNeutralizeTeam(callback, teamIndex) end
 ]]
 
--- event callback snippet "templates":
+
+
 --[[
 
 -- callbackname
