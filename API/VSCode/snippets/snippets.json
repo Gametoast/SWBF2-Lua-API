@@ -1747,6 +1747,13 @@
 	
 	// CharacterDeath
     
+    "ReleaseCharacterDeath": {
+        "prefix": "ReleaseCharacterDeath",
+        "body": "ReleaseCharacterDeath(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnCharacterDeath": {
         "prefix": "OnCharacterDeath",
         "body": "OnCharacterDeath(\n\tfunction(player, killer)\n\t\t${1}\n\tend,\n)",
@@ -1776,6 +1783,13 @@
 	},
 	
 	// CharacterSpawn
+    
+    "ReleaseCharacterSpawn": {
+        "prefix": "ReleaseCharacterSpawn",
+        "body": "ReleaseCharacterSpawn(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnCharacterSpawn": {
         "prefix": "OnCharacterSpawn",
@@ -1807,6 +1821,13 @@
 	
 	// CharacterDispensePowerup
     
+    "ReleaseCharacterDispensePowerup": {
+        "prefix": "ReleaseCharacterDispensePowerup",
+        "body": "ReleaseCharacterDispensePowerup(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnCharacterDispensePowerup": {
         "prefix": "OnCharacterDispensePowerup",
         "body": "OnCharacterDispensePowerup(\n\tfunction(player, powerup)\n\t\t${1}\n\tend,\n)",
@@ -1836,6 +1857,13 @@
 	},
 	
 	// CharacterDispenseControllable
+    
+    "ReleaseCharacterDispenseControllable": {
+        "prefix": "ReleaseCharacterDispenseControllable",
+        "body": "ReleaseCharacterDispenseControllable(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnCharacterDispenseControllable": {
         "prefix": "OnCharacterDispenseControllable",
@@ -1867,6 +1895,13 @@
 	
 	// CharacterLandedFlyer
     
+    "ReleaseCharacterLandedFlyer": {
+        "prefix": "ReleaseCharacterLandedFlyer",
+        "body": "ReleaseCharacterLandedFlyer(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnCharacterLandedFlyer": {
         "prefix": "OnCharacterLandedFlyer",
         "body": "OnCharacterLandedFlyer(\n\tfunction(player, flyer)\n\t\t${1}\n\tend,\n)",
@@ -1896,6 +1931,13 @@
 	},
 	
 	// CharacterEnterVehicle
+    
+    "ReleaseCharacterEnterVehicle": {
+        "prefix": "ReleaseCharacterEnterVehicle",
+        "body": "ReleaseCharacterEnterVehicle(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnCharacterEnterVehicle": {
         "prefix": "OnCharacterEnterVehicle",
@@ -1927,6 +1969,13 @@
 	
 	// CharacterChangeClass
     
+    "ReleaseCharacterChangeClass": {
+        "prefix": "ReleaseCharacterChangeClass",
+        "body": "ReleaseCharacterChangeClass(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnCharacterChangeClass": {
         "prefix": "OnCharacterChangeClass",
         "body": "OnCharacterChangeClass(\n\tfunction(player)\n\t\t${1}\n\tend,\n)",
@@ -1956,6 +2005,13 @@
 	},
 	
 	// CharacterIssueAICommand
+    
+    "ReleaseCharacterIssueAICommand": {
+        "prefix": "ReleaseCharacterIssueAICommand",
+        "body": "ReleaseCharacterIssueAICommand(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnCharacterIssueAICommand": {
         "prefix": "OnCharacterIssueAICommand",
@@ -1989,6 +2045,13 @@
 	
 	// BeginNeutralize
     
+    "ReleaseBeginNeutralize": {
+        "prefix": "ReleaseBeginNeutralize",
+        "body": "ReleaseBeginNeutralize(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnBeginNeutralize": {
         "prefix": "OnBeginNeutralize",
         "body": "OnBeginNeutralize(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
@@ -2011,6 +2074,13 @@
 	},
 	
 	// AbortNeutralize
+    
+    "ReleaseAbortNeutralize": {
+        "prefix": "ReleaseAbortNeutralize",
+        "body": "ReleaseAbortNeutralize(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnAbortNeutralize": {
         "prefix": "OnAbortNeutralize",
@@ -2035,6 +2105,13 @@
 	
 	// FinishNeutralize
     
+    "ReleaseFinishNeutralize": {
+        "prefix": "ReleaseFinishNeutralize",
+        "body": "ReleaseFinishNeutralize(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnFinishNeutralize": {
         "prefix": "OnFinishNeutralize",
         "body": "OnFinishNeutralize(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
@@ -2057,6 +2134,13 @@
 	},
 	
 	// BeginCapture
+    
+    "ReleaseBeginCapture": {
+        "prefix": "ReleaseBeginCapture",
+        "body": "ReleaseBeginCapture(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnBeginCapture": {
         "prefix": "OnBeginCapture",
@@ -2081,6 +2165,13 @@
 	
 	// AbortCapture
     
+    "ReleaseAbortCapture": {
+        "prefix": "ReleaseAbortCapture",
+        "body": "ReleaseAbortCapture(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnAbortCapture": {
         "prefix": "OnAbortCapture",
         "body": "OnAbortCapture(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
@@ -2103,6 +2194,13 @@
 	},
 	
 	// FinishCapture
+    
+    "ReleaseFinishCapture": {
+        "prefix": "ReleaseFinishCapture",
+        "body": "ReleaseFinishCapture(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnFinishCapture": {
         "prefix": "OnFinishCapture",
@@ -2127,6 +2225,13 @@
 	
 	// CommandPostKill
     
+    "ReleaseCommandPostKill": {
+        "prefix": "ReleaseCommandPostKill",
+        "body": "ReleaseCommandPostKill(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnCommandPostKill": {
         "prefix": "OnCommandPostKill",
         "body": "OnCommandPostKill(\n\tfunction(post, killer)\n\t\t${1}\n\tend,\n)",
@@ -2149,6 +2254,13 @@
 	},
 	
 	// CommandPostRespawn
+    
+    "ReleaseCommandPostRespawn": {
+        "prefix": "ReleaseCommandPostRespawn",
+        "body": "ReleaseCommandPostRespawn(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnCommandPostRespawn": {
         "prefix": "OnCommandPostRespawn",
@@ -2174,6 +2286,13 @@
 	// EVENT CALLBACKS :: Flag
 	
 	// FlagPickUp
+    
+    "ReleaseFlagPickUp": {
+        "prefix": "ReleaseFlagPickUp",
+        "body": "ReleaseFlagPickUp(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnFlagPickUp": {
         "prefix": "OnFlagPickUp",
@@ -2205,6 +2324,13 @@
 	
 	// FlagDrop
     
+    "ReleaseFlagDrop": {
+        "prefix": "ReleaseFlagDrop",
+        "body": "ReleaseFlagDrop(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnFlagDrop": {
         "prefix": "OnFlagDrop",
         "body": "OnFlagDrop(\n\tfunction(flag, character)\n\t\t${1}\n\tend,\n)",
@@ -2235,6 +2361,13 @@
 	
 	// FlagReturn
     
+    "ReleaseFlagReturn": {
+        "prefix": "ReleaseFlagReturn",
+        "body": "ReleaseFlagReturn(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnFlagReturn": {
         "prefix": "OnFlagReturn",
         "body": "OnFlagReturn(\n\tfunction(flag, character)\n\t\t${1}\n\tend,\n)",
@@ -2264,6 +2397,13 @@
 	},
 	
 	// FlagCapture
+    
+    "ReleaseFlagCapture": {
+        "prefix": "ReleaseFlagCapture",
+        "body": "ReleaseFlagCapture(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnFlagCapture": {
         "prefix": "OnFlagCapture",
@@ -2297,6 +2437,13 @@
 	
 	// ObjectCreate
     
+    "ReleaseObjectCreate": {
+        "prefix": "ReleaseObjectCreate",
+        "body": "ReleaseObjectCreate(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnObjectCreate": {
         "prefix": "OnObjectCreate",
         "body": "OnObjectCreate(\n\tfunction(object)\n\t\t${1}\n\tend,\n)",
@@ -2326,6 +2473,13 @@
 	},
 	
 	// ObjectInit
+    
+    "ReleaseObjectInit": {
+        "prefix": "ReleaseObjectInit",
+        "body": "ReleaseObjectInit(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnObjectInit": {
         "prefix": "OnObjectInit",
@@ -2357,6 +2511,13 @@
 	
 	// ObjectDamage
     
+    "ReleaseObjectDamage": {
+        "prefix": "ReleaseObjectDamage",
+        "body": "ReleaseObjectDamage(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnObjectDamage": {
         "prefix": "OnObjectDamage",
         "body": "OnObjectDamage(\n\tfunction(object, damager)\n\t\t${1}\n\tend,\n)",
@@ -2386,6 +2547,13 @@
 	},
 	
 	// ObjectRepair
+    
+    "ReleaseObjectRepair": {
+        "prefix": "ReleaseObjectRepair",
+        "body": "ReleaseObjectRepair(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnObjectRepair": {
         "prefix": "OnObjectRepair",
@@ -2417,6 +2585,13 @@
 	
 	// ObjectHack
     
+    "ReleaseObjectHack": {
+        "prefix": "ReleaseObjectHack",
+        "body": "ReleaseObjectHack(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnObjectHack": {
         "prefix": "OnObjectHack",
         "body": "OnObjectHack(\n\tfunction(object, hacker)\n\t\t${1}\n\tend,\n)",
@@ -2446,6 +2621,13 @@
 	},
 	
 	// ObjectKill
+    
+    "ReleaseObjectKill": {
+        "prefix": "ReleaseObjectKill",
+        "body": "ReleaseObjectKill(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnObjectKill": {
         "prefix": "OnObjectKill",
@@ -2477,6 +2659,13 @@
 	
 	// ObjectHeadshot
     
+    "ReleaseObjectHeadshot": {
+        "prefix": "ReleaseObjectHeadshot",
+        "body": "ReleaseObjectHeadshot(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnObjectHeadshot": {
         "prefix": "OnObjectHeadshot",
         "body": "OnObjectHeadshot(\n\tfunction(object, killer)\n\t\t${1}\n\tend,\n)",
@@ -2506,6 +2695,13 @@
 	},
 	
 	// ObjectRespawn
+    
+    "ReleaseObjectRespawn": {
+        "prefix": "ReleaseObjectRespawn",
+        "body": "ReleaseObjectRespawn(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnObjectRespawn": {
         "prefix": "OnObjectRespawn",
@@ -2537,6 +2733,13 @@
 	
 	// ObjectDelete
     
+    "ReleaseObjectDelete": {
+        "prefix": "ReleaseObjectDelete",
+        "body": "ReleaseObjectDelete(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnObjectDelete": {
         "prefix": "OnObjectDelete",
         "body": "OnObjectDelete(\n\tfunction(object)\n\t\t${1}\n\tend,\n)",
@@ -2566,6 +2769,13 @@
 	},
 	
 	// TeamChange
+    
+    "ReleaseTeamChange": {
+        "prefix": "ReleaseTeamChange",
+        "body": "ReleaseTeamChange(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnTeamChange": {
         "prefix": "OnTeamChange",
@@ -2597,6 +2807,13 @@
 	
 	// HealthChange
     
+    "ReleaseHealthChange": {
+        "prefix": "ReleaseHealthChange",
+        "body": "ReleaseHealthChange(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnHealthChange": {
         "prefix": "OnHealthChange",
         "body": "OnHealthChange(\n\tfunction(object, health)\n\t\t${1}\n\tend,\n)",
@@ -2626,6 +2843,13 @@
 	},
 	
 	// ShieldChange
+    
+    "ReleaseShieldChange": {
+        "prefix": "ReleaseShieldChange",
+        "body": "ReleaseShieldChange(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnShieldChange": {
         "prefix": "OnShieldChange",
@@ -2659,6 +2883,13 @@
 	
 	// EnterRegion
     
+    "ReleaseEnterRegion": {
+        "prefix": "ReleaseEnterRegion",
+        "body": "ReleaseEnterRegion(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnEnterRegion": {
         "prefix": "OnEnterRegion",
         "body": "OnEnterRegion(\n\tfunction(region, character)\n\t\t${3}\n\tend,\n${1:regionNameStr}\n)",
@@ -2688,6 +2919,13 @@
 	},
 	
 	// LeaveRegion
+    
+    "ReleaseLeaveRegion": {
+        "prefix": "ReleaseLeaveRegion",
+        "body": "ReleaseLeaveRegion(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnLeaveRegion": {
         "prefix": "OnLeaveRegion",
@@ -2721,6 +2959,13 @@
 	
 	// TicketCountChange
     
+    "ReleaseTicketCountChange": {
+        "prefix": "ReleaseTicketCountChange",
+        "body": "ReleaseTicketCountChange(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
+    
     "OnTicketCountChange": {
         "prefix": "OnTicketCountChange",
         "body": "OnTicketCountChange(\n\tfunction(team, count)\n\t\t${1}\n\tend,\n)",
@@ -2736,6 +2981,13 @@
 	},
 	
 	// TicketBleedChange
+    
+    "ReleaseTicketBleedChange": {
+        "prefix": "ReleaseTicketBleedChange",
+        "body": "ReleaseTicketBleedChange(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnTicketBleedChange": {
         "prefix": "OnTicketBleedChange",
@@ -2754,6 +3006,13 @@
 	// EVENT CALLBACKS :: Timer
 	
 	// TimerElapse
+    
+    "ReleaseTimerElapse": {
+        "prefix": "ReleaseTimerElapse",
+        "body": "ReleaseTimerElapse(${1:eventHandler})",
+        "description": "Deregisters the specified event callback handler.    \n\n For example, if you assign an event callback to a variable via 'playerDeathHandler = OnCharacterDeath(<...>)', calling 'ReleaseCharacterDeath(playerDeathHandler)' would stop the contents of whatever is in '<...>' from executing because the event callback's handler will have been removed from the list of event callbacks that should be executed when 'OnCharacterDeath' (or any one of its filter equivalents, such as 'OnCharacterDeathTeam', etc.) is triggered.    \n\n When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').",
+        "scope": "source.lua"
+	},
     
     "OnTimerElapse": {
         "prefix": "OnTimerElapse",
