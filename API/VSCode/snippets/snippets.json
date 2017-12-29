@@ -2653,6 +2653,68 @@
         "body": "OnShieldChangeConfig(\n\tfunction(object, shield)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
         "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object of the specified config's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
         "scope": "source.lua"
+	},
+	
+	// EVENT CALLBACKS :: Region
+	
+	// EnterRegion
+    
+    "OnEnterRegion": {
+        "prefix": "OnEnterRegion",
+        "body": "OnEnterRegion(\n\tfunction(region, character)\n\t\t${3}\n\tend,\n${1:regionNameStr}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character enters a Region.",
+        "scope": "source.lua"
+	},
+    
+    "OnEnterRegionName": {
+        "prefix": "OnEnterRegionName",
+        "body": "OnEnterRegionName(\n\tfunction(region, character)\n\t\t${3}\n\tend,\n${1:regionNameStr},\n${2:charNameStr}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified name enters a Region.",
+        "scope": "source.lua"
+	},
+    
+    "OnEnterRegionTeam": {
+        "prefix": "OnEnterRegionTeam",
+        "body": "OnEnterRegionTeam(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charTeamIndex}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified team enters a Region.",
+        "scope": "source.lua"
+	},
+    
+    "OnEnterRegionConfig": {
+        "prefix": "OnEnterRegionConfig",
+        "body": "OnEnterRegionConfig(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charConfigStr}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified config enters a Region.",
+        "scope": "source.lua"
+	},
+	
+	// LeaveRegion
+    
+    "OnLeaveRegion": {
+        "prefix": "OnLeaveRegion",
+        "body": "OnLeaveRegion(\n\tfunction(region, character)\n\t\t${3}\n\tend,\n${1:regionNameStr}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character leaves a Region.",
+        "scope": "source.lua"
+	},
+    
+    "OnLeaveRegionName": {
+        "prefix": "OnLeaveRegionName",
+        "body": "OnLeaveRegionName(\n\tfunction(region, character)\n\t\t${3}\n\tend,\n${1:regionNameStr},\n${2:charNameStr}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified name leaves a Region.",
+        "scope": "source.lua"
+	},
+    
+    "OnLeaveRegionTeam": {
+        "prefix": "OnLeaveRegionTeam",
+        "body": "OnLeaveRegionTeam(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charTeamIndex}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified team leaves a Region.",
+        "scope": "source.lua"
+	},
+    
+    "OnLeaveRegionConfig": {
+        "prefix": "OnLeaveRegionConfig",
+        "body": "OnLeaveRegionConfig(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charConfigStr}\n)",
+        "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified config leaves a Region.",
+        "scope": "source.lua"
 	}
 }
 
