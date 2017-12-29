@@ -64,10 +64,6 @@ Some notes:
 
 ## Release Notes
 
-### v1.0.0-release-VSC
+### [v1.0.0-release-VSC](https://github.com/marth8880/SWBF2-Lua-API/releases/tag/v1.0.0-release-VSC)
 
-Event callback snippets are now supported.
-
-### v0.1.0-release-VSC
-
-Initial release of extension.
+### [v0.1.0-release-VSC](https://github.com/marth8880/SWBF2-Lua-API/releases/tag/v0.1.0-release-VSC)
