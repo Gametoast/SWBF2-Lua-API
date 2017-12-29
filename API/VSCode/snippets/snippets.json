@@ -2715,6 +2715,40 @@
         "body": "OnLeaveRegionConfig(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charConfigStr}\n)",
         "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified config leaves a Region.",
         "scope": "source.lua"
+	},
+	
+	// EVENT CALLBACKS :: Team
+	
+	// TicketCountChange
+    
+    "OnTicketCountChange": {
+        "prefix": "OnTicketCountChange",
+        "body": "OnTicketCountChange(\n\tfunction(team, count)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs when the reinforcement count changes.",
+        "scope": "source.lua"
+	},
+    
+    "OnTicketCountChangeTeam": {
+        "prefix": "OnTicketCountChangeTeam",
+        "body": "OnTicketCountChangeTeam(\n\tfunction(team, count)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs when the specified team's reinforcement count changes.",
+        "scope": "source.lua"
+	},
+	
+	// TicketBleedChange
+    
+    "OnTicketBleedChange": {
+        "prefix": "OnTicketBleedChange",
+        "body": "OnTicketBleedChange(\n\tfunction(team, bleed)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs when the bleed rate changes.",
+        "scope": "source.lua"
+	},
+    
+    "OnTicketBleedChangeTeam": {
+        "prefix": "OnTicketBleedChangeTeam",
+        "body": "OnTicketBleedChangeTeam(\n\tfunction(team, bleed)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs when the specified team's bleed rate changes.",
+        "scope": "source.lua"
 	}
 }
 
