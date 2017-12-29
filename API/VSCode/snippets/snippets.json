@@ -2015,28 +2015,28 @@
     
     "OnCharacterIssueAICommand": {
         "prefix": "OnCharacterIssueAICommand",
-        "body": "OnCharacterIssueAICommand(\n\tfunction(player, killer)\n\t\t${1}\n\tend,\n)",
+        "body": "OnCharacterIssueAICommand(\n\tfunction(player, command_id)\n\t\t${1}\n\tend,\n)",
         "description": "This event occurs whenever a player issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
         "scope": "source.lua"
 	},
     
     "OnCharacterIssueAICommandName": {
         "prefix": "OnCharacterIssueAICommandName",
-        "body": "OnCharacterIssueAICommandName(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "body": "OnCharacterIssueAICommandName(\n\tfunction(player, command_id)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
         "description": "This event occurs whenever a player of the specified name issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
         "scope": "source.lua"
 	},
     
     "OnCharacterIssueAICommandTeam": {
         "prefix": "OnCharacterIssueAICommandTeam",
-        "body": "OnCharacterIssueAICommandTeam(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "body": "OnCharacterIssueAICommandTeam(\n\tfunction(player, command_id)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
         "description": "This event occurs whenever a player of the specified team issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
         "scope": "source.lua"
 	},
     
     "OnCharacterIssueAICommandConfig": {
         "prefix": "OnCharacterIssueAICommandConfig",
-        "body": "OnCharacterIssueAICommandConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "body": "OnCharacterIssueAICommandConfig(\n\tfunction(player, command_id)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
         "description": "This event occurs whenever a player of the specified class issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
         "scope": "source.lua"
 	},
