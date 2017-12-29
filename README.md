@@ -41,7 +41,7 @@ Because each IDE uses a different documentation framework, the features for each
 
 ### Lua Development Tools
 
-Save [API\LuaDevelopmentTools\Battlefront2API.doclua](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/master/API/LuaDevelopmentTools/Battlefront2API.doclua) (right-click link & Save As) to the root of your project's source folder (or `data_***\Common\scripts`).
+Save [API\LuaDevelopmentTools\Battlefront2API.doclua](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/1.0.0-release-LDT/API/LuaDevelopmentTools/Battlefront2API.doclua) (v1.0.0, latest) (right-click link & Save As) to the root of your project's source folder (or `data_***\Common\scripts`).
 
 > When saving the file, make sure the file extension is `.doclua` and not `.doclua.txt`!
 
@@ -86,3 +86,19 @@ Some notes:
 - The file containing all of the LDT snippets is at `API\LuaDevelopmentTools\Battlefront2API.doclua`
 - Documentation for creating VSCode snippets can be found [HERE](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 - Documentation for creating LuaDoc (LDT) snippets can be found [HERE](http://keplerproject.github.io/luadoc/manual.html#howto)
+
+## Release Notes
+
+> Versions suffixed with **-release-LDT** indicate a Lua Development Tools release, whereas **-release-VSC** indicates a Visual Studio Code release.
+
+### [1.0.0-release-LDT](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/1.0.0-release-LDT/API/LuaDevelopmentTools/Battlefront2API.doclua)
+
+Event callback snippets are now supported.
+
+### 1.0.0-release-VSC
+
+Event callback snippets are now supported.
+
+### 0.1.0-release-VSC
+
+Initial release of extension.
