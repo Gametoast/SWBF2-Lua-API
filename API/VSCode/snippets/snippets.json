@@ -1773,6 +1773,216 @@
         "body": "OnCharacterDeathConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
         "description": "This event occurs whenever a character (human or AI) of the specified class dies.",
         "scope": "source.lua"
+	},
+	
+	// CharacterSpawn
+    
+    "OnCharacterSpawn": {
+        "prefix": "OnCharacterSpawn",
+        "body": "OnCharacterSpawn(\n\tfunction(player)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever a character (human or AI) spawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterSpawnName": {
+        "prefix": "OnCharacterSpawnName",
+        "body": "OnCharacterSpawnName(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever a character (human or AI) of the specified name spawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterSpawnTeam": {
+        "prefix": "OnCharacterSpawnTeam",
+        "body": "OnCharacterSpawnTeam(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever a character (human or AI) of the specified team spawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterSpawnConfig": {
+        "prefix": "OnCharacterSpawnConfig",
+        "body": "OnCharacterSpawnConfig(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever a character (human or AI) of the specified class spawns.",
+        "scope": "source.lua"
+	},
+	
+	// CharacterDispensePowerup
+    
+    "OnCharacterDispensePowerup": {
+        "prefix": "OnCharacterDispensePowerup",
+        "body": "OnCharacterDispensePowerup(\n\tfunction(player, powerup)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever a character drops a health/ammo pickup.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDispensePowerupName": {
+        "prefix": "OnCharacterDispensePowerupName",
+        "body": "OnCharacterDispensePowerupName(\n\tfunction(player, powerup)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever a character of the specified name drops a health/ammo pickup.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDispensePowerupTeam": {
+        "prefix": "OnCharacterDispensePowerupTeam",
+        "body": "OnCharacterDispensePowerupTeam(\n\tfunction(player, powerup)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever a character of the specified team drops a health/ammo pickup.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDispensePowerupConfig": {
+        "prefix": "OnCharacterDispensePowerupConfig",
+        "body": "OnCharacterDispensePowerupConfig(\n\tfunction(player, powerup)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever a character of the specified class drops a health/ammo pickup.",
+        "scope": "source.lua"
+	},
+	
+	// CharacterDispenseControllable
+    
+    "OnCharacterDispenseControllable": {
+        "prefix": "OnCharacterDispenseControllable",
+        "body": "OnCharacterDispenseControllable(\n\tfunction(player, controllable)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever a character drops a controllable item (such as a remote droid or a mini-turret).    \n\n If you want to check exactly what kind of controllable was dropped, use 'GetEntityClassName(controllable)'.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDispenseControllableName": {
+        "prefix": "OnCharacterDispenseControllableName",
+        "body": "OnCharacterDispenseControllableName(\n\tfunction(player, controllable)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever a character of the specified name drops a controllable item (such as a remote droid or a mini-turret).    \n\n If you want to check exactly what kind of controllable was dropped, use 'GetEntityClassName(controllable)'.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDispenseControllableTeam": {
+        "prefix": "OnCharacterDispenseControllableTeam",
+        "body": "OnCharacterDispenseControllableTeam(\n\tfunction(player, controllable)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever a character of the specified team drops a controllable item (such as a remote droid or a mini-turret).    \n\n If you want to check exactly what kind of controllable was dropped, use 'GetEntityClassName(controllable)'.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterDispenseControllableConfig": {
+        "prefix": "OnCharacterDispenseControllableConfig",
+        "body": "OnCharacterDispenseControllableConfig(\n\tfunction(player, controllable)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever a character of the specified class drops a controllable item (such as a remote droid or a mini-turret).    \n\n If you want to check exactly what kind of controllable was dropped, use 'GetEntityClassName(controllable)'.",
+        "scope": "source.lua"
+	},
+	
+	// CharacterLandedFlyer
+    
+    "OnCharacterLandedFlyer": {
+        "prefix": "OnCharacterLandedFlyer",
+        "body": "OnCharacterLandedFlyer(\n\tfunction(player, flyer)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever a character lands a flyer.    \n\n If you wanted to check if the player landed within a region, use 'IsCharacterInRegion(player, \"regionName\")'.    \n\n If you want to check if the flyer matches a particular type of flyer, use this:    \n 'if GetEntityClass(flyer) == FindEntityClass(\"flyerClassName\") then    \n\t <blah blah insert code here>    \n end'",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterLandedFlyerName": {
+        "prefix": "OnCharacterLandedFlyerName",
+        "body": "OnCharacterLandedFlyerName(\n\tfunction(player, flyer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever a character of the specified name lands a flyer.    \n\n If you wanted to check if the player landed within a region, use 'IsCharacterInRegion(player, \"regionName\")'.    \n\n If you want to check if the flyer matches a particular type of flyer, use this:    \n 'if GetEntityClass(flyer) == FindEntityClass(\"flyerClassName\") then    \n\t <blah blah insert code here>    \n end'",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterLandedFlyerTeam": {
+        "prefix": "OnCharacterLandedFlyerTeam",
+        "body": "OnCharacterLandedFlyerTeam(\n\tfunction(player, flyer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever a character of the specified team lands a flyer.    \n\n If you wanted to check if the player landed within a region, use 'IsCharacterInRegion(player, \"regionName\")'.    \n\n If you want to check if the flyer matches a particular type of flyer, use this:    \n 'if GetEntityClass(flyer) == FindEntityClass(\"flyerClassName\") then    \n\t <blah blah insert code here>    \n end'",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterLandedFlyerConfig": {
+        "prefix": "OnCharacterLandedFlyerConfig",
+        "body": "OnCharacterLandedFlyerConfig(\n\tfunction(player, flyer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever a character of the specified class lands a flyer.    \n\n If you wanted to check if the player landed within a region, use 'IsCharacterInRegion(player, \"regionName\")'.    \n\n If you want to check if the flyer matches a particular type of flyer, use this:    \n 'if GetEntityClass(flyer) == FindEntityClass(\"flyerClassName\") then    \n\t <blah blah insert code here>    \n end'",
+        "scope": "source.lua"
+	},
+	
+	// CharacterEnterVehicle
+    
+    "OnCharacterEnterVehicle": {
+        "prefix": "OnCharacterEnterVehicle",
+        "body": "OnCharacterEnterVehicle(\n\tfunction(player, vehicle)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever a character enters a vehicle. It also works for turrets!",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterEnterVehicleName": {
+        "prefix": "OnCharacterEnterVehicleName",
+        "body": "OnCharacterEnterVehicleName(\n\tfunction(player, vehicle)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever a character of the specified name enters a vehicle. It also works for turrets!",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterEnterVehicleTeam": {
+        "prefix": "OnCharacterEnterVehicleTeam",
+        "body": "OnCharacterEnterVehicleTeam(\n\tfunction(player, vehicle)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever a character of the specified team enters a vehicle. It also works for turrets!",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterEnterVehicleConfig": {
+        "prefix": "OnCharacterEnterVehicleConfig",
+        "body": "OnCharacterEnterVehicleConfig(\n\tfunction(player, vehicle)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever a character of the specified class enters a vehicle. It also works for turrets!",
+        "scope": "source.lua"
+	},
+	
+	// CharacterChangeClass
+    
+    "OnCharacterChangeClass": {
+        "prefix": "OnCharacterChangeClass",
+        "body": "OnCharacterChangeClass(\n\tfunction(player)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever the player presses the OK button in the spawn display. It is not intended to be a robust thing that can be used in either multiplayer or to check when the AI change classes.    \n\n If you need to get the player's class, use 'GetCharacterClass(player)', which will return a class index.    \n\n If you need the class name, you can use 'GetEntityClassName(GetCharacterUnit(player))'.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterChangeClassName": {
+        "prefix": "OnCharacterChangeClassName",
+        "body": "OnCharacterChangeClassName(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever the player of the specified name presses the OK button in the spawn display. It is not intended to be a robust thing that can be used in either multiplayer or to check when the AI change classes.    \n\n If you need to get the player's class, use 'GetCharacterClass(player)', which will return a class index.    \n\n If you need the class name, you can use 'GetEntityClassName(GetCharacterUnit(player))'.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterChangeClassTeam": {
+        "prefix": "OnCharacterChangeClassTeam",
+        "body": "OnCharacterChangeClassTeam(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever the player of the specified team presses the OK button in the spawn display. It is not intended to be a robust thing that can be used in either multiplayer or to check when the AI change classes.    \n\n If you need to get the player's class, use 'GetCharacterClass(player)', which will return a class index.    \n\n If you need the class name, you can use 'GetEntityClassName(GetCharacterUnit(player))'.",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterChangeClassConfig": {
+        "prefix": "OnCharacterChangeClassConfig",
+        "body": "OnCharacterChangeClassConfig(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever the player of the specified class presses the OK button in the spawn display. It is not intended to be a robust thing that can be used in either multiplayer or to check when the AI change classes.    \n\n If you need to get the player's class, use 'GetCharacterClass(player)', which will return a class index.    \n\n If you need the class name, you can use 'GetEntityClassName(GetCharacterUnit(player))'.",
+        "scope": "source.lua"
+	},
+	
+	// CharacterIssueAICommand
+    
+    "OnCharacterIssueAICommand": {
+        "prefix": "OnCharacterIssueAICommand",
+        "body": "OnCharacterIssueAICommand(\n\tfunction(player, killer)\n\t\t${1}\n\tend,\n)",
+        "description": "This event occurs whenever a player issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterIssueAICommandName": {
+        "prefix": "OnCharacterIssueAICommandName",
+        "body": "OnCharacterIssueAICommandName(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "This event occurs whenever a player of the specified name issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterIssueAICommandTeam": {
+        "prefix": "OnCharacterIssueAICommandTeam",
+        "body": "OnCharacterIssueAICommandTeam(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "This event occurs whenever a player of the specified team issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
+        "scope": "source.lua"
+	},
+    
+    "OnCharacterIssueAICommandConfig": {
+        "prefix": "OnCharacterIssueAICommandConfig",
+        "body": "OnCharacterIssueAICommandConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "This event occurs whenever a player of the specified class issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
+        "scope": "source.lua"
 	}
 }
 
