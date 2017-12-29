@@ -1172,7 +1172,7 @@
     "KillObject": {
         "prefix": "KillObject",
         "body": "KillObject(${1:objectName})",
-        "description": "Kills the specified object.",
+        "description": "Kills the specified object (or Flag).    \n\n If the object is a Flag, it is sent back to its starting location.",
         "scope": "source.lua"
     },
     
@@ -1485,15 +1485,15 @@
     
     "GetCommandPostBleedValue": {
         "prefix": "GetCommandPostBleedValue",
-        "body": "GetCommandPostBleedValue(${1:postID})",
-        "description": "Returns a command post's bleed value.",
+        "body": "GetCommandPostBleedValue(${1:post}, ${teamIndex})",
+        "description": "This function returns the point value of the specified (name or ID) Command Post, relative to a particular team (each faction can now have a different valuation of each post)",
         "scope": "source.lua"
     },
     
     "GetCommandPostTeam": {
         "prefix": "GetCommandPostTeam",
-        "body": "GetCommandPostTeam(${1:postID})",
-        "description": "Returns a command post's owning team.",
+        "body": "GetCommandPostTeam(${1:post})",
+        "description": "This function returns the team number of the specified (name or ID) Command Post.",
         "scope": "source.lua"
     },
     
@@ -1743,7 +1743,7 @@
         "scope": "source.lua"
 	},
 	
-	// EVENT CALLBACKS
+	// EVENT CALLBACKS :: Character
 	
 	// CharacterDeath
     
@@ -1983,6 +1983,344 @@
         "body": "OnCharacterIssueAICommandConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
         "description": "This event occurs whenever a player of the specified class issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
         "scope": "source.lua"
+	},
+	
+	// EVENT CALLBACKS :: Command Post
+	
+	// BeginNeutralize
+    
+    "OnBeginNeutralize": {
+        "prefix": "OnBeginNeutralize",
+        "body": "OnBeginNeutralize(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit begins neutralizing a Command Post.",
+        "scope": "source.lua"
+	},
+    
+    "OnBeginNeutralizeName": {
+        "prefix": "OnBeginNeutralizeName",
+        "body": "OnBeginNeutralizeName(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit begins neutralizing a Command Post of the specified name.",
+        "scope": "source.lua"
+	},
+    
+    "OnBeginNeutralizeTeam": {
+        "prefix": "OnBeginNeutralizeTeam",
+        "body": "OnBeginNeutralizeTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit begins neutralizing a Command Post of the specified team.",
+        "scope": "source.lua"
+	},
+	
+	// AbortNeutralize
+    
+    "OnAbortNeutralize": {
+        "prefix": "OnAbortNeutralize",
+        "body": "OnAbortNeutralize(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit stops neutralizing a Command Post.",
+        "scope": "source.lua"
+	},
+    
+    "OnAbortNeutralizeName": {
+        "prefix": "OnAbortNeutralizeName",
+        "body": "OnAbortNeutralizeName(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit stops neutralizing a Command Post of the specified name.",
+        "scope": "source.lua"
+	},
+    
+    "OnAbortNeutralizeTeam": {
+        "prefix": "OnAbortNeutralizeTeam",
+        "body": "OnAbortNeutralizeTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit stops neutralizing a Command Post of the specified team.",
+        "scope": "source.lua"
+	},
+	
+	// FinishNeutralize
+    
+    "OnFinishNeutralize": {
+        "prefix": "OnFinishNeutralize",
+        "body": "OnFinishNeutralize(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit finishes neutralizing a Command Post.",
+        "scope": "source.lua"
+	},
+    
+    "OnFinishNeutralizeName": {
+        "prefix": "OnFinishNeutralizeName",
+        "body": "OnFinishNeutralizeName(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit finishes neutralizing a Command Post of the specified name.",
+        "scope": "source.lua"
+	},
+    
+    "OnFinishNeutralizeTeam": {
+        "prefix": "OnFinishNeutralizeTeam",
+        "body": "OnFinishNeutralizeTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit finishes neutralizing a Command Post of the specified team.",
+        "scope": "source.lua"
+	},
+	
+	// BeginCapture
+    
+    "OnBeginCapture": {
+        "prefix": "OnBeginCapture",
+        "body": "OnBeginCapture(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit begins capturing a neutral Command Post.",
+        "scope": "source.lua"
+	},
+    
+    "OnBeginCaptureName": {
+        "prefix": "OnBeginCaptureName",
+        "body": "OnBeginCaptureName(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit begins capturing a neutral Command Post of the specified name.",
+        "scope": "source.lua"
+	},
+    
+    "OnBeginCaptureTeam": {
+        "prefix": "OnBeginCaptureTeam",
+        "body": "OnBeginCaptureTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit begins capturing a neutral Command Post of the specified team.",
+        "scope": "source.lua"
+	},
+	
+	// AbortCapture
+    
+    "OnAbortCapture": {
+        "prefix": "OnAbortCapture",
+        "body": "OnAbortCapture(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit stops capturing a neutral Command Post.",
+        "scope": "source.lua"
+	},
+    
+    "OnAbortCaptureName": {
+        "prefix": "OnAbortCaptureName",
+        "body": "OnAbortCaptureName(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit stops capturing a neutral Command Post of the specified name.",
+        "scope": "source.lua"
+	},
+    
+    "OnAbortCaptureTeam": {
+        "prefix": "OnAbortCaptureTeam",
+        "body": "OnAbortCaptureTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit stops capturing a neutral Command Post of the specified team.",
+        "scope": "source.lua"
+	},
+	
+	// FinishCapture
+    
+    "OnFinishCapture": {
+        "prefix": "OnFinishCapture",
+        "body": "OnFinishCapture(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit finishes capturing a neutral Command Post.",
+        "scope": "source.lua"
+	},
+    
+    "OnFinishCaptureName": {
+        "prefix": "OnFinishCaptureName",
+        "body": "OnFinishCaptureName(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit finishes capturing a neutral Command Post of the specified name.",
+        "scope": "source.lua"
+	},
+    
+    "OnFinishCaptureTeam": {
+        "prefix": "OnFinishCaptureTeam",
+        "body": "OnFinishCaptureTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when a unit finishes capturing a neutral Command Post of the specified team.",
+        "scope": "source.lua"
+	},
+	
+	// CommandPostKill
+    
+    "OnCommandPostKill": {
+        "prefix": "OnCommandPostKill",
+        "body": "OnCommandPostKill(\n\tfunction(post, killer)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: killer (character)    \n\n This Event occurs when a Command Post dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnCommandPostKillName": {
+        "prefix": "OnCommandPostKillName",
+        "body": "OnCommandPostKillName(\n\tfunction(post, killer)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: killer (character)    \n\n This Event occurs when a Command Post of the specified name dies.",
+        "scope": "source.lua"
+	},
+    
+    "OnCommandPostKillTeam": {
+        "prefix": "OnCommandPostKillTeam",
+        "body": "OnCommandPostKillTeam(\n\tfunction(post, killer)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: killer (character)    \n\n This Event occurs when a Command Post of the specified team dies.",
+        "scope": "source.lua"
+	},
+	
+	// CommandPostRespawn
+    
+    "OnCommandPostRespawn": {
+        "prefix": "OnCommandPostRespawn",
+        "body": "OnCommandPostRespawn(\n\tfunction(post)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: none    \n\n This Event occurs when a Command Post spawns or respawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnCommandPostRespawnName": {
+        "prefix": "OnCommandPostRespawnName",
+        "body": "OnCommandPostRespawnName(\n\tfunction(post)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: post    \n Context: none    \n\n This Event occurs when a Command Post of the specified name spawns or respawns.",
+        "scope": "source.lua"
+	},
+    
+    "OnCommandPostRespawnTeam": {
+        "prefix": "OnCommandPostRespawnTeam",
+        "body": "OnCommandPostRespawnTeam(\n\tfunction(post)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: post    \n Context: none    \n\n This Event occurs when a Command Post of the specified team spawns or respawns.",
+        "scope": "source.lua"
+	},
+	
+	// EVENT CALLBACKS :: Flag
+	
+	// FlagPickUp
+    
+    "OnFlagPickUp": {
+        "prefix": "OnFlagPickUp",
+        "body": "OnFlagPickUp(\n\tfunction(flag, character)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character picks up a Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagPickUpName": {
+        "prefix": "OnFlagPickUpName",
+        "body": "OnFlagPickUpName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified name picks up a Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagPickUpTeam": {
+        "prefix": "OnFlagPickUpTeam",
+        "body": "OnFlagPickUpTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified team picks up a Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagPickUpConfig": {
+        "prefix": "OnFlagPickUpConfig",
+        "body": "OnFlagPickUpConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config picks up a Flag.",
+        "scope": "source.lua"
+	},
+	
+	// FlagDrop
+    
+    "OnFlagDrop": {
+        "prefix": "OnFlagDrop",
+        "body": "OnFlagDrop(\n\tfunction(flag, character)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character drops a Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagDropName": {
+        "prefix": "OnFlagDropName",
+        "body": "OnFlagDropName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified name drops a Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagDropTeam": {
+        "prefix": "OnFlagDropTeam",
+        "body": "OnFlagDropTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified team drops a Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagDropConfig": {
+        "prefix": "OnFlagDropConfig",
+        "body": "OnFlagDropConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config drops a Flag.",
+        "scope": "source.lua"
+	},
+	
+	// FlagReturn
+    
+    "OnFlagReturn": {
+        "prefix": "OnFlagReturn",
+        "body": "OnFlagReturn(\n\tfunction(flag, character)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character returns an allied Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagReturnName": {
+        "prefix": "OnFlagReturnName",
+        "body": "OnFlagReturnName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified name returns an allied Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagReturnTeam": {
+        "prefix": "OnFlagReturnTeam",
+        "body": "OnFlagReturnTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified team returns an allied Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagReturnConfig": {
+        "prefix": "OnFlagReturnConfig",
+        "body": "OnFlagReturnConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config returns an allied Flag.",
+        "scope": "source.lua"
+	},
+	
+	// FlagCapture
+    
+    "OnFlagCapture": {
+        "prefix": "OnFlagCapture",
+        "body": "OnFlagCapture(\n\tfunction(flag, character)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character captures a neutral or enemy Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagCaptureName": {
+        "prefix": "OnFlagCaptureName",
+        "body": "OnFlagCaptureName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified name captures a neutral or enemy Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagCaptureTeam": {
+        "prefix": "OnFlagCaptureTeam",
+        "body": "OnFlagCaptureTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified team captures a neutral or enemy Flag.",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagCaptureConfig": {
+        "prefix": "OnFlagCaptureConfig",
+        "body": "OnFlagCaptureConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified config captures a neutral or enemy Flag.",
+        "scope": "source.lua"
+	},
+	
+	// callbackname
+    
+    "OnObjectCreate": {
+        "prefix": "OnObjectCreate",
+        "body": "OnObjectCreate(\n\tfunction(object, character)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: none    \n\n ",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectCreateName": {
+        "prefix": "OnObjectCreateName",
+        "body": "OnObjectCreateName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectCreateTeam": {
+        "prefix": "OnObjectCreateTeam",
+        "body": "OnObjectCreateTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectCreateConfig": {
+        "prefix": "OnObjectCreateConfig",
+        "body": "OnObjectCreateConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "",
+        "scope": "source.lua"
 	}
 }
 
@@ -2028,6 +2366,95 @@
     "OnCharacterDeathConfig": {
         "prefix": "OnCharacterDeathConfig",
         "body": "OnCharacterDeathConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "",
+        "scope": "source.lua"
+	}
+
+,
+	
+	// callbackname
+    
+    "OnBeginNeutralize": {
+        "prefix": "OnBeginNeutralize",
+        "body": "OnBeginNeutralize(\n\tfunction(post, holding)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: post    \n Context: holding (table of characters)    \n\n ",
+        "scope": "source.lua"
+	},
+    
+    "OnBeginNeutralizeName": {
+        "prefix": "OnBeginNeutralizeName",
+        "body": "OnBeginNeutralizeName(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnBeginNeutralizeTeam": {
+        "prefix": "OnBeginNeutralizeTeam",
+        "body": "OnBeginNeutralizeTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "",
+        "scope": "source.lua"
+	}
+
+,
+	
+	// callbackname
+    
+    "OnFlagPickUp": {
+        "prefix": "OnFlagPickUp",
+        "body": "OnFlagPickUp(\n\tfunction(flag, character)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: flag    \n Context: character    \n\n ",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagPickUpName": {
+        "prefix": "OnFlagPickUpName",
+        "body": "OnFlagPickUpName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagPickUpTeam": {
+        "prefix": "OnFlagPickUpTeam",
+        "body": "OnFlagPickUpTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnFlagPickUpConfig": {
+        "prefix": "OnFlagPickUpConfig",
+        "body": "OnFlagPickUpConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+        "description": "",
+        "scope": "source.lua"
+	}
+
+,
+	
+	// callbackname
+    
+    "OnObjectCreate": {
+        "prefix": "OnObjectCreate",
+        "body": "OnObjectCreate(\n\tfunction(object, character)\n\t\t${1}\n\tend,\n)",
+        "description": "Actor: object    \n Context: none    \n\n ",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectCreateName": {
+        "prefix": "OnObjectCreateName",
+        "body": "OnObjectCreateName(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:nameStr}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectCreateTeam": {
+        "prefix": "OnObjectCreateTeam",
+        "body": "OnObjectCreateTeam(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
+        "description": "",
+        "scope": "source.lua"
+	},
+    
+    "OnObjectCreateConfig": {
+        "prefix": "OnObjectCreateConfig",
+        "body": "OnObjectCreateConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
         "description": "",
         "scope": "source.lua"
 	}
