@@ -29,6 +29,8 @@ OR
 
 This extension includes snippets for virtually every single built-in Lua function in Star Wars Battlefront II (2005). The only ones that are currently undocumented are many of the shell-exclusive callbacks, but there is pretty much no use for those anyway.
 
+![Event callback snippet example](images/swbf2-lua-api_event-callbacks-1.gif)
+
 ### Currently included
 
 - IntelliSense-like function auto-completion.

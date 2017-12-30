@@ -10,6 +10,8 @@ Because each IDE uses a different documentation framework, the features for each
 
 ### Lua Development Tools
 
+![Function snippet example](https://raw.githubusercontent.com/marth8880/SWBF2-Lua-API/master/API/LuaDevelopmentTools/images/swbf2-lua-api_8.png)
+
 #### Currently included
 
 - **IntelliSense-like function auto-completion.** (finicky)
@@ -23,6 +25,8 @@ Because each IDE uses a different documentation framework, the features for each
 - Nothing off the top of my head. ;-)
 
 ### Visual Studio Code
+
+![Event callback snippet example](API/VSCode/images/swbf2-lua-api_event-callbacks-1.gif)
 
 #### Currently included
 
