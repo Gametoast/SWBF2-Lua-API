@@ -2070,7 +2070,7 @@ function SetEffectActive(effect, active) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterDeath(eventHandler) end
 
 --------------------------------------------------------------
@@ -2113,7 +2113,7 @@ function OnCharacterDeathConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterSpawn(eventHandler) end
 
 --------------------------------------------------------------
@@ -2156,7 +2156,7 @@ function OnCharacterSpawnConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterDispensePowerup(eventHandler) end
 
 --------------------------------------------------------------
@@ -2199,7 +2199,7 @@ function OnCharacterDispensePowerupConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterDispenseControllable(eventHandler) end
 
 --------------------------------------------------------------
@@ -2250,7 +2250,7 @@ function OnCharacterDispenseControllableConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterLandedFlyer(eventHandler) end
 
 --------------------------------------------------------------
@@ -2321,7 +2321,7 @@ function OnCharacterLandedFlyerConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterEnterVehicle(eventHandler) end
 
 --------------------------------------------------------------
@@ -2364,7 +2364,7 @@ function OnCharacterEnterVehicleConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterChangeClass(eventHandler) end
 
 --------------------------------------------------------------
@@ -2423,7 +2423,7 @@ function OnCharacterChangeClassConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterIssueAICommand(eventHandler) end
 
 --------------------------------------------------------------
@@ -2492,7 +2492,7 @@ function OnCharacterIssueAICommandConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseBeginNeutralize(eventHandler) end
 
 --------------------------------------------------------------
@@ -2536,7 +2536,7 @@ function OnBeginNeutralizeTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseAbortNeutralize(eventHandler) end
 
 --------------------------------------------------------------
@@ -2580,7 +2580,7 @@ function OnAbortNeutralizeTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseFinishNeutralize(eventHandler) end
 
 --------------------------------------------------------------
@@ -2624,7 +2624,7 @@ function OnFinishNeutralizeTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseBeginCapture(eventHandler) end
 
 --------------------------------------------------------------
@@ -2668,7 +2668,7 @@ function OnBeginCaptureTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseAbortCapture(eventHandler) end
 
 --------------------------------------------------------------
@@ -2712,7 +2712,7 @@ function OnAbortCaptureTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseFinishCapture(eventHandler) end
 
 --------------------------------------------------------------
@@ -2756,7 +2756,7 @@ function OnFinishCaptureTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCommandPostKill(eventHandler) end
 
 --------------------------------------------------------------
@@ -2800,7 +2800,7 @@ function OnCommandPostKillTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCommandPostRespawn(eventHandler) end
 
 --------------------------------------------------------------
@@ -2846,7 +2846,7 @@ function OnCommandPostRespawnTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseFlagPickUp(eventHandler) end
 
 --------------------------------------------------------------
@@ -2901,7 +2901,7 @@ function OnFlagPickUpConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseFlagDrop(eventHandler) end
 
 --------------------------------------------------------------
@@ -2956,7 +2956,7 @@ function OnFlagDropConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseFlagReturn(eventHandler) end
 
 --------------------------------------------------------------
@@ -3011,7 +3011,7 @@ function OnFlagReturnConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseFlagCapture(eventHandler) end
 
 --------------------------------------------------------------
@@ -3068,7 +3068,7 @@ function OnFlagCaptureConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectCreate(eventHandler) end
 
 --------------------------------------------------------------
@@ -3123,7 +3123,7 @@ function OnObjectCreateConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectInit(eventHandler) end
 
 --------------------------------------------------------------
@@ -3178,7 +3178,7 @@ function OnObjectInitConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectDamage(eventHandler) end
 
 --------------------------------------------------------------
@@ -3233,7 +3233,7 @@ function OnObjectDamageConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectRepair(eventHandler) end
 
 --------------------------------------------------------------
@@ -3288,7 +3288,7 @@ function OnObjectRepairConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectHack(eventHandler) end
 
 --------------------------------------------------------------
@@ -3343,7 +3343,7 @@ function OnObjectHackConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectKill(eventHandler) end
 
 --------------------------------------------------------------
@@ -3398,7 +3398,7 @@ function OnObjectKillConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectHeadshot(eventHandler) end
 
 --------------------------------------------------------------
@@ -3453,7 +3453,7 @@ function OnObjectHeadshotConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectRespawn(eventHandler) end
 
 --------------------------------------------------------------
@@ -3508,7 +3508,7 @@ function OnObjectRespawnConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectDelete(eventHandler) end
 
 --------------------------------------------------------------
@@ -3563,7 +3563,7 @@ function OnObjectDeleteConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseTeamChange(eventHandler) end
 
 --------------------------------------------------------------
@@ -3618,7 +3618,7 @@ function OnTeamChangeConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseHealthChange(eventHandler) end
 
 --------------------------------------------------------------
@@ -3673,7 +3673,7 @@ function OnHealthChangeConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseShieldChange(eventHandler) end
 
 --------------------------------------------------------------
@@ -3730,7 +3730,7 @@ function OnShieldChangeConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseEnterRegion(eventHandler) end
 
 --------------------------------------------------------------
@@ -3793,7 +3793,7 @@ function OnEnterRegionConfig(callback, regionNameStr, charConfigStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseLeaveRegion(eventHandler) end
 
 --------------------------------------------------------------
@@ -3858,7 +3858,7 @@ function OnLeaveRegionConfig(callback, regionNameStr, charConfigStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseTicketCountChange(eventHandler) end
 
 --------------------------------------------------------------
@@ -3885,7 +3885,7 @@ function OnTicketCountChangeTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseTicketBleedChange(eventHandler) end
 
 --------------------------------------------------------------
@@ -3914,7 +3914,7 @@ function OnTicketBleedChangeTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseTimerElapse(eventHandler) end
 
 --------------------------------------------------------------
@@ -3943,7 +3943,7 @@ function OnTimerElapse(callback, timer) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseObjectCreate(eventHandler) end
 
 --------------------------------------------------------------
@@ -4003,7 +4003,7 @@ function OnObjectCreateConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseFlagPickUp(eventHandler) end
 
 --------------------------------------------------------------
@@ -4063,7 +4063,7 @@ function OnFlagPickUpConfig(callback, configStr) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseBeginNeutralize(eventHandler) end
 
 --------------------------------------------------------------
@@ -4112,7 +4112,7 @@ function OnBeginNeutralizeTeam(callback, teamIndex) end
 -- 
 -- When this is used, generally it's good practice to also dispose of the event handler by setting its variable to nil (e.g., 'playerDeathHandler = nil').  
 -- 
--- @param eventHandler			Event callback handler to deregister
+-- @param eventHandler			Event callback handler to deregister. NOTE: This must not be a local variable.
 function ReleaseCharacterDeath(eventHandler) end
 
 --------------------------------------------------------------
