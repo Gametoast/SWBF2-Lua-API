@@ -968,6 +968,18 @@ function GetRegionName(region) end
 function GetRegion(region) end
 
 --------------------------------------------------------------
+-- Activates the specified region, enabling its triggers or events.
+-- 
+-- @param #string regionName   Name of the region to activate
+function ActivateRegion(regionName) end
+
+--------------------------------------------------------------
+-- Deactivates the specified region, disabling its triggers or events.
+-- 
+-- @param #string regionName   Name of the region to deactivate
+function DeactivateRegion(regionName) end
+
+--------------------------------------------------------------
 -- Wipes out any allocations that may have been done automatically for walkers.  You�ll need to have this line in, 
 --  and uncommented if you want to have walkers in your level.
 function ClearWalkers() end
@@ -1142,6 +1154,16 @@ function IsCampaign() end
 -- @return #string		Name of the first-loaded wld file
 function GetWorldFilename() end
 
+--------------------------------------------------------------
+-- Returns the world position coordinates (x, y, z) of the specified object.
+-- 
+-- @param object          The object whose position will be returned
+-- @return #float         X coordinate of the object's position
+-- @return #float         Y coordinate (height) of the object's position
+-- @return #float         Z coordinate of the object's position
+function GetWorldPosition(object) end
+
+
 -- Messages
 
 --------------------------------------------------------------
@@ -1173,7 +1195,7 @@ function ShowTimer(timer) end
 --------------------------------------------------------------
 -- Shows the specified localized text in a selection popup. Used in spa2c_c for choosing control layout making but not for PC?!
 -- 
--- @param #string text		Path to localized text to show (example: `"level.spa2.objectives.popup.selectConfig"`)
+-- @param #string text		Path to localized text to show (example: `"level.spa2.objectives.popup.selectClass"`)
 function ShowSelectionTextPopup(text) end
 
 --------------------------------------------------------------
@@ -1418,8 +1440,8 @@ function GetObjectTeam(objectName) end
 --------------------------------------------------------------
 -- Returns whether or not the specified object is alive.
 -- 
--- @param #string objectName		ID of object to check
--- @return #int						1 if object is alive, 0 if object is not alive
+-- @param #string objectName     ID of object to check
+-- @return #bool                 `true` if the object is alive, `false` otherwise
 function IsObjectAlive(objectName) end
 
 --------------------------------------------------------------
@@ -2100,9 +2122,9 @@ function OnCharacterDeathTeam(callback, teamIndex) end
 -- This event occurs whenever a character (human or AI) of the specified class dies.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterDeathConfig(callback, configStr) end
+function OnCharacterDeathClass(callback, classStr) end
 
 -- CharacterSpawn
 
@@ -2143,9 +2165,9 @@ function OnCharacterSpawnTeam(callback, teamIndex) end
 -- This event occurs whenever a character (human or AI) of the specified class spawns.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterSpawnConfig(callback, configStr) end
+function OnCharacterSpawnClass(callback, classStr) end
 
 -- CharacterDispensePowerup
 
@@ -2186,9 +2208,9 @@ function OnCharacterDispensePowerupTeam(callback, teamIndex) end
 -- This event occurs whenever a character of the specified class drops a health/ammo pickup.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, powerup`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterDispensePowerupConfig(callback, configStr) end
+function OnCharacterDispensePowerupClass(callback, classStr) end
 
 -- callbackname
 
@@ -2237,9 +2259,9 @@ function OnCharacterDispenseControllableTeam(callback, teamIndex) end
 -- If you want to check exactly what kind of controllable was dropped, use 'GetEntityClassName(controllable)'.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, controllable`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterDispenseControllableConfig(callback, configStr) end
+function OnCharacterDispenseControllableClass(callback, classStr) end
 
 -- CharacterLandedFlyer
 
@@ -2308,9 +2330,9 @@ function OnCharacterLandedFlyerTeam(callback, teamIndex) end
 -- `end`
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, flyer`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterLandedFlyerConfig(callback, configStr) end
+function OnCharacterLandedFlyerClass(callback, classStr) end
 
 -- CharacterEnterVehicle
 
@@ -2351,9 +2373,9 @@ function OnCharacterEnterVehicleTeam(callback, teamIndex) end
 -- This event occurs whenever a character of the specified class enters a vehicle. It also works for turrets!
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, vehicle`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterEnterVehicleConfig(callback, configStr) end
+function OnCharacterEnterVehicleClass(callback, classStr) end
 
 -- CharacterChangeClass
 
@@ -2410,9 +2432,9 @@ function OnCharacterChangeClassTeam(callback, teamIndex) end
 -- If you need the class name, you can use 'GetEntityClassName(GetCharacterUnit(player))'.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterChangeClassConfig(callback, configStr) end
+function OnCharacterChangeClassClass(callback, classStr) end
 
 -- CharacterIssueAICommand
 
@@ -2477,9 +2499,9 @@ function OnCharacterIssueAICommandTeam(callback, teamIndex) end
 --  'stopfollowchr'
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, command_id`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterIssueAICommandConfig(callback, configStr) end
+function OnCharacterIssueAICommandClass(callback, classStr) end
 
 -- EVENT CALLBACKS :: Command Post
 
@@ -2613,6 +2635,10 @@ function OnFinishNeutralizeName(callback, nameStr) end
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `post, holding`
 -- @param #int teamIndex		Command Post team
 -- @return						Unique event callback handler
+-- 
+-- NOTE: This function does not appear to work as intended. The event does not trigger in practice, 
+--       or its behavior is inconsistent. As a workaround, consider using OnFinishNeutralize and manually 
+--       filtering by team.
 function OnFinishNeutralizeTeam(callback, teamIndex) end
 
 -- BeginCapture
@@ -2888,9 +2914,9 @@ function OnFlagPickUpTeam(callback, teamIndex) end
 -- This Event occurs when a character of the specified class picks up a Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @param #string configStr		Character config
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnFlagPickUpConfig(callback, configStr) end
+function OnFlagPickUpClass(callback, classStr) end
 
 -- FlagDrop
 
@@ -2943,9 +2969,9 @@ function OnFlagDropTeam(callback, teamIndex) end
 -- This Event occurs when a character of the specified class drops a Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @param #string configStr		Character config
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnFlagDropConfig(callback, configStr) end
+function OnFlagDropClass(callback, classStr) end
 
 -- FlagReturn
 
@@ -2998,9 +3024,9 @@ function OnFlagReturnTeam(callback, teamIndex) end
 -- This Event occurs when a character of the specified class returns an allied Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @param #string configStr		Character config
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnFlagReturnConfig(callback, configStr) end
+function OnFlagReturnClass(callback, classStr) end
 
 -- FlagCapture
 
@@ -3053,9 +3079,9 @@ function OnFlagCaptureTeam(callback, teamIndex) end
 -- This Event occurs when a character of the specified class captures a neutral or enemy Flag.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @param #string configStr		Character config
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnFlagCaptureConfig(callback, configStr) end
+function OnFlagCaptureClass(callback, classStr) end
 
 -- EVENT CALLBACKS :: Object
 
@@ -3110,9 +3136,9 @@ function OnObjectCreateTeam(callback, teamIndex) end
 -- This Event occurs on the creation of an Object of the specified class, before setting its properties.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectCreateConfig(callback, configStr) end
+function OnObjectCreateClass(callback, classStr) end
 
 -- ObjectInit
 
@@ -3165,9 +3191,9 @@ function OnObjectInitTeam(callback, teamIndex) end
 -- This Event occurs on the initialization of an Object of the specified class, after settings its properties.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectInitConfig(callback, configStr) end
+function OnObjectInitClass(callback, classStr) end
 
 -- ObjectDamage
 
@@ -3220,9 +3246,9 @@ function OnObjectDamageTeam(callback, teamIndex) end
 -- This Event occurs whenever an Object of the specified class takes damage.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, damager`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectDamageConfig(callback, configStr) end
+function OnObjectDamageClass(callback, classStr) end
 
 -- ObjectRepair
 
@@ -3275,9 +3301,9 @@ function OnObjectRepairTeam(callback, teamIndex) end
 -- This event occurs when a character finishes repairing an Object of the specified class. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, repairer`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectRepairConfig(callback, configStr) end
+function OnObjectRepairClass(callback, classStr) end
 
 -- ObjectHack
 
@@ -3330,9 +3356,9 @@ function OnObjectHackTeam(callback, teamIndex) end
 -- This Event occurs whenever a character hacks an Object of the specified class (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, hacker`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectHackConfig(callback, configStr) end
+function OnObjectHackClass(callback, classStr) end
 
 -- ObjectKill
 
@@ -3385,9 +3411,9 @@ function OnObjectKillTeam(callback, teamIndex) end
 -- This Event occurs when an Object of the specified class dies.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectKillConfig(callback, configStr) end
+function OnObjectKillClass(callback, classStr) end
 
 -- ObjectHeadshot
 
@@ -3440,9 +3466,9 @@ function OnObjectHeadshotTeam(callback, teamIndex) end
 -- This Event occurs when an Object of the specified class gets shot in the head.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, killer`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectHeadshotConfig(callback, configStr) end
+function OnObjectHeadshotClass(callback, classStr) end
 
 -- ObjectRespawn
 
@@ -3495,9 +3521,9 @@ function OnObjectRespawnTeam(callback, teamIndex) end
 -- This Event occurs when an Object of the specified class respawns.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectRespawnConfig(callback, configStr) end
+function OnObjectRespawnClass(callback, classStr) end
 
 -- ObjectDelete
 
@@ -3550,9 +3576,9 @@ function OnObjectDeleteTeam(callback, teamIndex) end
 -- This Event occurs on the deletion of an Object of the specified class. Do not use the Object after deletion!
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectDeleteConfig(callback, configStr) end
+function OnObjectDeleteClass(callback, classStr) end
 
 -- TeamChange
 
@@ -3605,9 +3631,9 @@ function OnTeamChangeTeam(callback, teamIndex) end
 -- This Event occurs when an Object of the specified class changes teams.
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, team`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnTeamChangeConfig(callback, configStr) end
+function OnTeamChangeClass(callback, classStr) end
 
 -- HealthChange
 
@@ -3660,9 +3686,9 @@ function OnHealthChangeTeam(callback, teamIndex) end
 -- This Event occurs when the Object of the specified class's health changes due to an external event. AddHealth does not trigger this Event (supposedly).
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, health`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnHealthChangeConfig(callback, configStr) end
+function OnHealthChangeClass(callback, classStr) end
 
 -- ShieldChange
 
@@ -3715,9 +3741,9 @@ function OnShieldChangeTeam(callback, teamIndex) end
 -- This Event occurs when the Object of the specified class's shield changes due to an external event. AddShield does not trigger this Event (supposedly).
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, shield`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnShieldChangeConfig(callback, configStr) end
+function OnShieldChangeClass(callback, classStr) end
 
 -- EVENT CALLBACKS :: Region
 
@@ -3780,9 +3806,9 @@ function OnEnterRegionTeam(callback, regionNameStr, charTeamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
--- @param #string charConfigStr	Character config
+-- @param #string charclassStr	Character class
 -- @return						Unique event callback handler
-function OnEnterRegionConfig(callback, regionNameStr, charConfigStr) end
+function OnEnterRegionClass(callback, regionNameStr, charclassStr) end
 
 -- LeaveRegion
 
@@ -3843,9 +3869,9 @@ function OnLeaveRegionTeam(callback, regionNameStr, charTeamIndex) end
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `region, character`
 -- @param #string regionNameStr	Region or region name
--- @param #string charConfigStr	Character config
+-- @param #string charclassStr	Character class
 -- @return						Unique event callback handler
-function OnLeaveRegionConfig(callback, regionNameStr, charConfigStr) end
+function OnLeaveRegionClass(callback, regionNameStr, charclassStr) end
 
 -- EVENT CALLBACKS :: Team
 
@@ -3985,9 +4011,9 @@ function OnObjectCreateTeam(callback, teamIndex) end
 -- 
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `object, character`
--- @param #string configStr		Object config
+-- @param #string classStr		Object class
 -- @return						Unique event callback handler
-function OnObjectCreateConfig(callback, configStr) end
+function OnObjectCreateClass(callback, classStr) end
 ]]
 
 
@@ -4045,9 +4071,9 @@ function OnFlagPickUpTeam(callback, teamIndex) end
 -- 
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `flag, character`
--- @param #string configStr		Character config
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnFlagPickUpConfig(callback, configStr) end
+function OnFlagPickUpClass(callback, classStr) end
 ]]
 
 
@@ -4142,7 +4168,7 @@ function OnCharacterDeathTeam(callback, teamIndex) end
 -- 
 -- 
 -- @param callback				Callback to execute, generally a lambda function. Uses parameters: `player, killer`
--- @param #string configStr		Character class
+-- @param #string classStr		Character class
 -- @return						Unique event callback handler
-function OnCharacterDeathConfig(callback, configStr) end
+function OnCharacterDeathClass(callback, classStr) end
 ]]

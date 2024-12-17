@@ -782,6 +782,20 @@
         "description": "Returns the class of the specified region.",
         "scope": "source.lua"
     },
+
+    "ActivateRegion": {
+        "prefix": "ActivateRegion",
+        "body": "ActivateRegion(${1:regionName})",
+        "description": "Activates the specified region, enabling its triggers or events.    \n\n@param regionName: Name of the region to activate.",
+        "scope": "source.lua"
+    },
+
+    "DeactivateRegion": {
+        "prefix": "DeactivateRegion",
+        "body": "DeactivateRegion(${1:regionName})",
+        "description": "Deactivates the specified region, disabling its triggers or events.    \n\n@param regionName: Name of the region to deactivate.",
+        "scope": "source.lua"
+    },
     
     "ClearWalkers": {
         "prefix": "ClearWalkers",
@@ -943,6 +957,14 @@
         "description": "Returns the name of the first wld file that was loaded in the map.    \n\n For example, if the stock hot1.lvl file is loaded, this function will return 'hoth', since the wld file in hot1 is called 'hoth.wld'.",
         "scope": "source.lua"
 	},
+
+    "GetWorldPosition": {
+        "prefix": "GetWorldPosition",
+        "body": "GetWorldPosition(${1:object})",
+        "description": "Returns the world position coordinates (x, y, z) of the specified object.    \n\nThe y-coordinate represents the height.",
+        "scope": "source.lua"
+    },
+
 	
 	// Messages
 	
@@ -1148,6 +1170,48 @@
 	
 	// Object
 	
+    "GetObjectPtr": {
+        "prefix": "GetObjectPtr",
+        "body": "GetObjectPtr(${1:objectName})",
+        "description": "Returns the object pointer of the specified object.",
+        "scope": "source.lua"
+    },
+
+    "ActivateObject": {
+        "prefix": "ActivateObject",
+        "body": "ActivateObject(${1:objectName})",
+        "description": "Activates the specified object.",
+        "scope": "source.lua"
+    },
+
+    "DeactivateObject": {
+        "prefix": "DeactivateObject",
+        "body": "DeactivateObject(${1:objectName})",
+        "description": "Deactivates the specified object.",
+        "scope": "source.lua"
+    },
+
+    "SetObjectTeam": {
+        "prefix": "SetObjectTeam",
+        "body": "SetObjectTeam(${1:objectName}, ${2:teamIndex})",
+        "description": "Assigns the specified object to the specified team.    \n\n@param teamIndex: Index of the team to assign.",
+        "scope": "source.lua"
+    },
+
+    "GetObjectTeam": {
+        "prefix": "GetObjectTeam",
+        "body": "GetObjectTeam(${1:objectName})",
+        "description": "Returns the team index of the specified object.",
+        "scope": "source.lua"
+    },
+    
+    "IsObjectAlive": {
+        "prefix": "IsObjectAlive",
+        "body": "IsObjectAlive(${1:objectName})",
+        "description": "Returns whether or not the specified object is alive.    \n\nReturns `true` if the object is alive, `false` otherwise.",
+        "scope": "source.lua"
+    },
+
 	"GetObjectHealth": {
         "prefix": "GetObjectHealth",
         "body": "GetObjectHealth(${1:objectName})",
@@ -1775,9 +1839,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterDeathConfig": {
-        "prefix": "OnCharacterDeathConfig",
-        "body": "OnCharacterDeathConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterDeathClass": {
+        "prefix": "OnCharacterDeathClass",
+        "body": "OnCharacterDeathClass(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever a character (human or AI) of the specified class dies.",
         "scope": "source.lua"
 	},
@@ -1793,7 +1857,7 @@
     
     "OnCharacterSpawn": {
         "prefix": "OnCharacterSpawn",
-        "body": "OnCharacterSpawn(\n\tfunction(player)\n\t\t${1}\n\tend,\n)",
+        "body": "OnCharacterSpawn(\n\tfunction(player)\n\t\t${1}\n\tend\n)",
         "description": "This event occurs whenever a character (human or AI) spawns.",
         "scope": "source.lua"
 	},
@@ -1812,9 +1876,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterSpawnConfig": {
-        "prefix": "OnCharacterSpawnConfig",
-        "body": "OnCharacterSpawnConfig(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterSpawnClass": {
+        "prefix": "OnCharacterSpawnClass",
+        "body": "OnCharacterSpawnClass(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever a character (human or AI) of the specified class spawns.",
         "scope": "source.lua"
 	},
@@ -1849,9 +1913,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterDispensePowerupConfig": {
-        "prefix": "OnCharacterDispensePowerupConfig",
-        "body": "OnCharacterDispensePowerupConfig(\n\tfunction(player, powerup)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterDispensePowerupClass": {
+        "prefix": "OnCharacterDispensePowerupClass",
+        "body": "OnCharacterDispensePowerupClass(\n\tfunction(player, powerup)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever a character of the specified class drops a health/ammo pickup.",
         "scope": "source.lua"
 	},
@@ -1886,9 +1950,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterDispenseControllableConfig": {
-        "prefix": "OnCharacterDispenseControllableConfig",
-        "body": "OnCharacterDispenseControllableConfig(\n\tfunction(player, controllable)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterDispenseControllableClass": {
+        "prefix": "OnCharacterDispenseControllableClass",
+        "body": "OnCharacterDispenseControllableClass(\n\tfunction(player, controllable)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever a character of the specified class drops a controllable item (such as a remote droid or a mini-turret).    \n\n If you want to check exactly what kind of controllable was dropped, use 'GetEntityClassName(controllable)'.",
         "scope": "source.lua"
 	},
@@ -1923,9 +1987,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterLandedFlyerConfig": {
-        "prefix": "OnCharacterLandedFlyerConfig",
-        "body": "OnCharacterLandedFlyerConfig(\n\tfunction(player, flyer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterLandedFlyerClass": {
+        "prefix": "OnCharacterLandedFlyerClass",
+        "body": "OnCharacterLandedFlyerClass(\n\tfunction(player, flyer)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever a character of the specified class lands a flyer.    \n\n If you wanted to check if the player landed within a region, use 'IsCharacterInRegion(player, \"regionName\")'.    \n\n If you want to check if the flyer matches a particular type of flyer, use this:    \n 'if GetEntityClass(flyer) == FindEntityClass(\"flyerClassName\") then    \n\t <blah blah insert code here>    \n end'",
         "scope": "source.lua"
 	},
@@ -1960,9 +2024,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterEnterVehicleConfig": {
-        "prefix": "OnCharacterEnterVehicleConfig",
-        "body": "OnCharacterEnterVehicleConfig(\n\tfunction(player, vehicle)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterEnterVehicleClass": {
+        "prefix": "OnCharacterEnterVehicleClass",
+        "body": "OnCharacterEnterVehicleClass(\n\tfunction(player, vehicle)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever a character of the specified class enters a vehicle. It also works for turrets!",
         "scope": "source.lua"
 	},
@@ -1997,9 +2061,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterChangeClassConfig": {
-        "prefix": "OnCharacterChangeClassConfig",
-        "body": "OnCharacterChangeClassConfig(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterChangeClassClass": {
+        "prefix": "OnCharacterChangeClassClass",
+        "body": "OnCharacterChangeClassClass(\n\tfunction(player)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever the player of the specified class presses the OK button in the spawn display. It is not intended to be a robust thing that can be used in either multiplayer or to check when the AI change classes.    \n\n If you need to get the player's class, use 'GetCharacterClass(player)', which will return a class index.    \n\n If you need the class name, you can use 'GetEntityClassName(GetCharacterUnit(player))'.",
         "scope": "source.lua"
 	},
@@ -2034,9 +2098,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterIssueAICommandConfig": {
-        "prefix": "OnCharacterIssueAICommandConfig",
-        "body": "OnCharacterIssueAICommandConfig(\n\tfunction(player, command_id)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterIssueAICommandClass": {
+        "prefix": "OnCharacterIssueAICommandClass",
+        "body": "OnCharacterIssueAICommandClass(\n\tfunction(player, command_id)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "This event occurs whenever a player of the specified class issues a command to the AI. The command ID that is passed in must be translated into a string by calling 'TranslateAICommand(command_id)'. This function will return one of the following strings:    \n\n 'getintovehicle'    \n 'getoutofvehicle'    \n 'waitforpickup'    \n 'followchr'    \n 'stopfollowchr'",
         "scope": "source.lua"
 	},
@@ -2128,10 +2192,10 @@
     
     "OnFinishNeutralizeTeam": {
         "prefix": "OnFinishNeutralizeTeam",
-        "body": "OnFinishNeutralizeTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n${1:teamIndex}\n)",
-        "description": "Actor: post    \n Context: holding (table of characters)    \n\n This Event occurs when an enemy unit finishes neutralizing a Command Post of the specified team.",
+        "body": "OnFinishNeutralizeTeam(\n\tfunction(post, holding)\n\t\t${2}\n\tend,\n\t${1:teamIndex}\n)",
+        "description": "Actor: post    \nContext: holding (table of characters)    \n\nThis Event occurs when an enemy unit finishes neutralizing a Command Post of the specified team.    \n\n**NOTE**: This function does not appear to work as intended. The event may not trigger reliably. Consider using `OnFinishNeutralize` with manual team filtering as a workaround.",
         "scope": "source.lua"
-	},
+    },
 	
 	// BeginCapture
     
@@ -2315,9 +2379,9 @@
         "scope": "source.lua"
 	},
     
-    "OnFlagPickUpConfig": {
-        "prefix": "OnFlagPickUpConfig",
-        "body": "OnFlagPickUpConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnFlagPickUpClass": {
+        "prefix": "OnFlagPickUpClass",
+        "body": "OnFlagPickUpClass(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class picks up a Flag.",
         "scope": "source.lua"
 	},
@@ -2352,9 +2416,9 @@
         "scope": "source.lua"
 	},
     
-    "OnFlagDropConfig": {
-        "prefix": "OnFlagDropConfig",
-        "body": "OnFlagDropConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnFlagDropClass": {
+        "prefix": "OnFlagDropClass",
+        "body": "OnFlagDropClass(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class drops a Flag.",
         "scope": "source.lua"
 	},
@@ -2389,9 +2453,9 @@
         "scope": "source.lua"
 	},
     
-    "OnFlagReturnConfig": {
-        "prefix": "OnFlagReturnConfig",
-        "body": "OnFlagReturnConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnFlagReturnClass": {
+        "prefix": "OnFlagReturnClass",
+        "body": "OnFlagReturnClass(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class returns an allied Flag.",
         "scope": "source.lua"
 	},
@@ -2426,9 +2490,9 @@
         "scope": "source.lua"
 	},
     
-    "OnFlagCaptureConfig": {
-        "prefix": "OnFlagCaptureConfig",
-        "body": "OnFlagCaptureConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnFlagCaptureClass": {
+        "prefix": "OnFlagCaptureClass",
+        "body": "OnFlagCaptureClass(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: flag    \n Context: character    \n\n This Event occurs when a character of the specified class captures a neutral or enemy Flag.",
         "scope": "source.lua"
 	},
@@ -2465,9 +2529,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectCreateConfig": {
-        "prefix": "OnObjectCreateConfig",
-        "body": "OnObjectCreateConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectCreateClass": {
+        "prefix": "OnObjectCreateClass",
+        "body": "OnObjectCreateClass(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: none    \n\n This Event occurs on the creation of an Object of the specified class, before setting its properties.",
         "scope": "source.lua"
 	},
@@ -2502,9 +2566,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectInitConfig": {
-        "prefix": "OnObjectInitConfig",
-        "body": "OnObjectInitConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectInitClass": {
+        "prefix": "OnObjectInitClass",
+        "body": "OnObjectInitClass(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: none    \n\n This Event occurs on the initialization of an Object of the specified class, after settings its properties.",
         "scope": "source.lua"
 	},
@@ -2539,9 +2603,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectDamageConfig": {
-        "prefix": "OnObjectDamageConfig",
-        "body": "OnObjectDamageConfig(\n\tfunction(object, damager)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectDamageClass": {
+        "prefix": "OnObjectDamageClass",
+        "body": "OnObjectDamageClass(\n\tfunction(object, damager)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: damager (character)    \n\n This Event occurs whenever an Object of the specified class takes damage.",
         "scope": "source.lua"
 	},
@@ -2576,9 +2640,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectRepairConfig": {
-        "prefix": "OnObjectRepairConfig",
-        "body": "OnObjectRepairConfig(\n\tfunction(object, repairer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectRepairClass": {
+        "prefix": "OnObjectRepairClass",
+        "body": "OnObjectRepairClass(\n\tfunction(object, repairer)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: repairer (character)    \n\n This event occurs when a character finishes repairing an Object of the specified class. Also conveniently works for checking when a player has built a repair/ammo droid from one of those build pads.",
         "scope": "source.lua"
 	},
@@ -2613,9 +2677,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectHackConfig": {
-        "prefix": "OnObjectHackConfig",
-        "body": "OnObjectHackConfig(\n\tfunction(object, hacker)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectHackClass": {
+        "prefix": "OnObjectHackClass",
+        "body": "OnObjectHackClass(\n\tfunction(object, hacker)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: hacker (character)    \n\n This Event occurs whenever a character hacks an Object of the specified class (which is our nomenclature for kicking dudes out of a vehicle with the fusion cutter... makes sense to me).",
         "scope": "source.lua"
 	},
@@ -2650,9 +2714,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectKillConfig": {
-        "prefix": "OnObjectKillConfig",
-        "body": "OnObjectKillConfig(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectKillClass": {
+        "prefix": "OnObjectKillClass",
+        "body": "OnObjectKillClass(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified class dies.",
         "scope": "source.lua"
 	},
@@ -2687,9 +2751,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectHeadshotConfig": {
-        "prefix": "OnObjectHeadshotConfig",
-        "body": "OnObjectHeadshotConfig(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectHeadshotClass": {
+        "prefix": "OnObjectHeadshotClass",
+        "body": "OnObjectHeadshotClass(\n\tfunction(object, killer)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object (entity soldier)    \n Context: killer (character)    \n\n This Event occurs when an Object of the specified class gets shot in the head.",
         "scope": "source.lua"
 	},
@@ -2724,9 +2788,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectRespawnConfig": {
-        "prefix": "OnObjectRespawnConfig",
-        "body": "OnObjectRespawnConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectRespawnClass": {
+        "prefix": "OnObjectRespawnClass",
+        "body": "OnObjectRespawnClass(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: none    \n\n This Event occurs when an Object of the specified class respawns.",
         "scope": "source.lua"
 	},
@@ -2761,9 +2825,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectDeleteConfig": {
-        "prefix": "OnObjectDeleteConfig",
-        "body": "OnObjectDeleteConfig(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectDeleteClass": {
+        "prefix": "OnObjectDeleteClass",
+        "body": "OnObjectDeleteClass(\n\tfunction(object)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: none    \n\n This Event occurs on the deletion of an Object of the specified class. Do not use the Object after deletion!",
         "scope": "source.lua"
 	},
@@ -2798,9 +2862,9 @@
         "scope": "source.lua"
 	},
     
-    "OnTeamChangeConfig": {
-        "prefix": "OnTeamChangeConfig",
-        "body": "OnTeamChangeConfig(\n\tfunction(object, team)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnTeamChangeClass": {
+        "prefix": "OnTeamChangeClass",
+        "body": "OnTeamChangeClass(\n\tfunction(object, team)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: team    \n\n This Event occurs when an Object of the specified class changes teams.",
         "scope": "source.lua"
 	},
@@ -2835,9 +2899,9 @@
         "scope": "source.lua"
 	},
     
-    "OnHealthChangeConfig": {
-        "prefix": "OnHealthChangeConfig",
-        "body": "OnHealthChangeConfig(\n\tfunction(object, health)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnHealthChangeClass": {
+        "prefix": "OnHealthChangeClass",
+        "body": "OnHealthChangeClass(\n\tfunction(object, health)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: health    \n\n This Event occurs when the Object of the specified class's health changes due to an external event. AddHealth does not trigger this Event (supposedly).",
         "scope": "source.lua"
 	},
@@ -2872,9 +2936,9 @@
         "scope": "source.lua"
 	},
     
-    "OnShieldChangeConfig": {
-        "prefix": "OnShieldChangeConfig",
-        "body": "OnShieldChangeConfig(\n\tfunction(object, shield)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnShieldChangeClass": {
+        "prefix": "OnShieldChangeClass",
+        "body": "OnShieldChangeClass(\n\tfunction(object, shield)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "Actor: object    \n Context: shield    \n\n This Event occurs when the Object of the specified class's shield changes due to an external event. AddShield does not trigger this Event (supposedly).",
         "scope": "source.lua"
 	},
@@ -2911,9 +2975,9 @@
         "scope": "source.lua"
 	},
     
-    "OnEnterRegionConfig": {
-        "prefix": "OnEnterRegionConfig",
-        "body": "OnEnterRegionConfig(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charConfigStr}\n)",
+    "OnEnterRegionClass": {
+        "prefix": "OnEnterRegionClass",
+        "body": "OnEnterRegionClass(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charclassStr}\n)",
         "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified class enters a Region.",
         "scope": "source.lua"
 	},
@@ -2948,9 +3012,9 @@
         "scope": "source.lua"
 	},
     
-    "OnLeaveRegionConfig": {
-        "prefix": "OnLeaveRegionConfig",
-        "body": "OnLeaveRegionConfig(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charConfigStr}\n)",
+    "OnLeaveRegionClass": {
+        "prefix": "OnLeaveRegionClass",
+        "body": "OnLeaveRegionClass(\n\tfunction(region, character)\n\t\t${2}\n\tend,\n${1:regionNameStr},\n${2:charclassStr}\n)",
         "description": "Actor: region    \n Context: character    \n Instance: name or region    \n\n This Event occurs when a Character of the specified class leaves a Region.",
         "scope": "source.lua"
 	},
@@ -3061,9 +3125,9 @@
         "scope": "source.lua"
 	},
     
-    "OnCharacterDeathConfig": {
-        "prefix": "OnCharacterDeathConfig",
-        "body": "OnCharacterDeathConfig(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnCharacterDeathClass": {
+        "prefix": "OnCharacterDeathClass",
+        "body": "OnCharacterDeathClass(\n\tfunction(player, killer)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "",
         "scope": "source.lua"
 	}
@@ -3118,9 +3182,9 @@
         "scope": "source.lua"
 	},
     
-    "OnFlagPickUpConfig": {
-        "prefix": "OnFlagPickUpConfig",
-        "body": "OnFlagPickUpConfig(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnFlagPickUpClass": {
+        "prefix": "OnFlagPickUpClass",
+        "body": "OnFlagPickUpClass(\n\tfunction(flag, character)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "",
         "scope": "source.lua"
 	}
@@ -3150,9 +3214,9 @@
         "scope": "source.lua"
 	},
     
-    "OnObjectCreateConfig": {
-        "prefix": "OnObjectCreateConfig",
-        "body": "OnObjectCreateConfig(\n\tfunction(object, character)\n\t\t${2}\n\tend,\n${1:configStr}\n)",
+    "OnObjectCreateClass": {
+        "prefix": "OnObjectCreateClass",
+        "body": "OnObjectCreateClass(\n\tfunction(object, character)\n\t\t${2}\n\tend,\n${1:classStr}\n)",
         "description": "",
         "scope": "source.lua"
 	}
