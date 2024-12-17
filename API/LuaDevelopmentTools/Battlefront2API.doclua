@@ -1195,7 +1195,7 @@ function ShowTimer(timer) end
 --------------------------------------------------------------
 -- Shows the specified localized text in a selection popup. Used in spa2c_c for choosing control layout making but not for PC?!
 -- 
--- @param #string text		Path to localized text to show (example: `"level.spa2.objectives.popup.selectClass"`)
+-- @param #string text		Path to localized text to show (example: `"level.spa2.objectives.popup.selectConfig"`)
 function ShowSelectionTextPopup(text) end
 
 --------------------------------------------------------------
