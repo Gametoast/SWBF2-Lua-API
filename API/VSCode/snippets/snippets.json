@@ -159,7 +159,35 @@
         "description": "Stops the music previously played using 'ScriptCB_PlayInGameMusic()'.",
         "scope": "source.lua"
     },
-    
+
+    "ScriptCB_GetVolumes": {
+        "prefix": "ScriptCB_GetVolumes",
+        "body": "ScriptCB_GetVolumes()",
+        "description": "Retrieves the current volume levels for various audio categories in the game.\n\nReturns:\n- Music Volume (0-10)\n- SFX Volume (0-10)\n- Speech Volume (0-10)\n- Battle Speech Volume (0-10)\n- Unknown Volume (0-10)\n- Total Volume (0-10)",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_SetVolumes": {
+        "prefix": "ScriptCB_SetVolumes",
+        "body": "ScriptCB_SetVolumes(${1:musicVolume}, ${2:sfxVolume}, ${3:speechVolume}, ${4:battleSpeechVolume}, ${5:totalVolume})",
+        "description": "Sets the volume levels for various audio categories in the game.\n\nThis function adjusts all in-game sound settings, except for the **unknown 5th value** returned by `ScriptCB_GetVolumes()`, which cannot be modified.\n\nParameters:\n- musicVolume (0-10)\n- sfxVolume (0-10)\n- speechVolume (0-10)\n- battleSpeechVolume (0-10)\n- totalVolume (0-10)",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_SoundEnable": {
+        "prefix": "ScriptCB_SoundEnable",
+        "body": "ScriptCB_SoundEnable()",
+        "description": "Re-enables menu sounds in the game.\n\nThis function restores any sounds related to the games UI, such as button clicks and menu navigation sounds, after they have been disabled using `ScriptCB_SoundDisable()`.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_SoundDisable": {
+        "prefix": "ScriptCB_SoundDisable",
+        "body": "ScriptCB_SoundDisable()",
+        "description": "Disables all menu sounds in the game.\n\nThis function mutes any sounds related to the games UI, such as button clicks and menu navigation sounds. It does not affect in-game sound effects, music, or speech volumes. This lasts until the match ends and you are sent back to the main menu.",
+        "scope": "source.lua"
+    },
+
     "ScriptCB_EnableCommandPostVO": {
         "prefix": "ScriptCB_EnableCommandPostVO",
         "body": "ScriptCB_EnableCommandPostVO(${1:enabled})",
