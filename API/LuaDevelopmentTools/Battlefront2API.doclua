@@ -221,6 +221,51 @@ function ScriptCB_PlayInGameMusic(musicID) end
 function ScriptCB_StopInGameMusic() end
 
 --------------------------------------------------------------
+-- Retrieves the current volume levels for various audio categories in the game.
+-- 
+-- @return #int musicVolume              Music volume level (e.g., 0 for muted music)
+-- @return #int sfxVolume                SFX (Sound Effects) volume level (e.g., 4 for 40% SFX)
+-- @return #int speechVolume             Speech volume level (e.g., 6 for 60% Speech)
+-- @return #int battleSpeechVolume       Battle Speech volume level (e.g., 7 for 70% Battle Speech)
+-- @return #int unknownVolume            Unknown category, possibly related to environmental sounds (e.g., 10)
+-- @return #int totalVolume              Total volume level (e.g., 8 for 80% Total Volume)
+function ScriptCB_GetVolumes() end
+
+--------------------------------------------------------------
+-- Sets the volume levels for various audio categories in the game.
+-- 
+-- This function adjusts all in-game sound settings, except for the 
+-- **unknown 5th value** returned by `ScriptCB_GetVolumes()`, which 
+-- cannot be modified using this function.
+--
+-- @param #int musicVolume           Music volume level (0-10)
+-- @param #int sfxVolume             SFX (Sound Effects) volume level (0-10)
+-- @param #int speechVolume          Speech volume level (0-10)
+-- @param #int battleSpeechVolume    Battle Speech volume level (0-10)
+-- @param #int totalVolume           Total volume level (0-10)
+function ScriptCB_SetVolumes(musicVolume, sfxVolume, speechVolume, battleSpeechVolume, totalVolume) end
+
+--------------------------------------------------------------
+-- Re-enables menu sounds in the game.
+-- 
+-- This function restores any sounds related to the game’s UI, such as button clicks 
+-- and menu navigation sounds, after they have been disabled using `ScriptCB_SoundDisable()`.
+-- 
+-- It does not affect in-game sound effects, music, or speech volumes. If menu sounds 
+-- were disabled, calling this function will allow them to play again without needing 
+-- to restart the match.
+--------------------------------------------------------------
+function ScriptCB_SoundEnable() end
+
+--------------------------------------------------------------
+-- Disables all menu sounds in the game.
+-- 
+-- This function mutes any sounds related to the game’s UI, such as button clicks 
+-- and menu navigation sounds. It does not affect in-game sound effects, music, 
+-- or speech volumes. This lasts until the match ends and you are sent back to the main menu.
+function ScriptCB_SoundDisable() end
+
+--------------------------------------------------------------
 -- Enables or disables command post voice overs.
 -- 
 -- @param #int enabled			Set to 1 to enable command post VO, 0 to disable command post VO
