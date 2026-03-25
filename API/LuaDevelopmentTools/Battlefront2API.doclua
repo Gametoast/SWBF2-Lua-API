@@ -297,6 +297,95 @@ function ScriptCB_SetSpawnDisplayGain(gain, fadeTime) end
 -- @param #int enabled			1 to enable, 0 to disable.  (default = 1)
 function ScriptCB_TriggerSoundRegionEnable(groupName, enabled) end
 
+-- Movie functions
+
+--------------------------------------------------------------
+-- Opens a movie file for playback. The second parameter is always passed as an empty
+--  string in all known scripts and appears to be an unused segment identifier.
+--
+-- @param #string sourceFilename		File containing the movie (e.g. "movies\\fly.mvs")
+-- @param #string segment				Segment identifier within the file (always "" in practice)
+function ScriptCB_OpenMovie(sourceFilename, segment) end
+
+--------------------------------------------------------------
+-- Closes the currently open movie.
+function ScriptCB_CloseMovie() end
+
+--------------------------------------------------------------
+-- Plays a movie at the specified screen position.
+--
+-- @param #string movieName				Name of the movie properties to play
+-- @param #int loop						Set to 1 to loop the movie, 0 to play once
+-- @param #string nextMovieName			Name of the next movie to chain to after this one finishes (empty string for none)
+-- @param #float left					Left position on screen
+-- @param #float top					Top position on screen
+-- @param #float width					Width on screen
+-- @param #float height				    Height on screen
+function ScriptCB_PlayMovie(movieName, loop, nextMovieName, left, top, width, height) end
+
+--------------------------------------------------------------
+-- Stops the currently playing movie.
+function ScriptCB_StopMovie() end
+
+--------------------------------------------------------------
+-- Returns whether a movie is currently playing.
+--
+-- @return #bool						True if a movie is playing, false otherwise
+function ScriptCB_IsMoviePlaying() end
+
+--------------------------------------------------------------
+-- Returns whether the specified movie properties are currently playing.
+--
+-- @param #string propertiesName		Name of the movie properties to check
+-- @return #bool						True if the specified movie properties are playing, false otherwise
+function ScriptCB_AreMoviePropertiesPlaying(propertiesName) end
+
+--------------------------------------------------------------
+-- Plays an in-game movie. The source .mvs file is automatically determined by the game's language setting.
+--
+-- @param #string sourceFilename		Source .mvs filename (e.g. "ingame.mvs"), unused by the engine but should still be specified
+-- @param #string movieID				ID of the movie properties to play
+function ScriptCB_PlayInGameMovie(sourceFilename, movieID) end
+
+--------------------------------------------------------------
+-- Stops the currently playing in-game movie.
+function ScriptCB_StopInGameMovie() end
+
+--------------------------------------------------------------
+-- Sets the movie to play once the mission has ended.
+--
+-- @param #string sourceFilename		File containing the movie
+-- @param #string movieID				ID of the movie properties to play
+function SetMissionEndMovie(sourceFilename, movieID) end
+
+--------------------------------------------------------------
+-- DEPRECATED, DOESN'T WORK.
+-- Logs a deprecation warning. Use SetMissionEndMovie instead.
+function ScriptCB_SetVictoryMovie() end
+
+--------------------------------------------------------------
+-- DEPRECATED, DOESN'T WORK.
+-- Logs a deprecation warning. Use SetMissionEndMovie instead.
+function ScriptCB_SetDefeatMovie() end
+
+-- Screen transition functions
+
+--------------------------------------------------------------
+-- Begins a screen transition effect with the specified timing and transition types.
+--
+--  Transition types are hashed strings that map to internal enum values:
+--  `"FADE"` fades to/from black (default). `"BLUR"` applies a vignette-like effect.
+--  Five other types exist internally (horizontal/vertical close/slide and
+--  random) but their string names are currently unknown.
+--
+-- @param #int sceneIndex				Scene index (0 or 1)
+-- @param #float fadeOutTime			Time in seconds for the fade out
+-- @param #float fadeHoldTime			Time in seconds to hold the black screen
+-- @param #float fadeInTime				Time in seconds for the fade in
+-- @param #string transitionOutType		Transition effect for fading out (e.g. "FADE")
+-- @param #string transitionInType		Transition effect for fading in (e.g. "FADE")
+function BeginScreenTransition(sceneIndex, fadeOutTime, fadeHoldTime, fadeInTime, transitionOutType, transitionInType) end
+
 --------------------------------------------------------------
 -- Returns the entity class of the specified class name.
 -- 
@@ -714,7 +803,7 @@ function UnlockHeroForTeam(teamIndex) end
 --------------------------------------------------------------
 -- Forces the specified character unit to accept the unlocked hero, automatically bringing them to the spawn screen.
 -- 
--- @param #int integerChrIdx		Character unit index returned by GetCharacterUnit
+-- @param #int integerChrIdx		Character index (e.g. from GetTeamMember)
 function AcceptHero(integerChrIdx) end
 
 --------------------------------------------------------------
@@ -1762,14 +1851,14 @@ function SelectCharacterTeam(character, teamIndex) end
 -- Returns whether the specified character is a human player or an AI.
 -- 
 -- @param #int characterIndex		Index of character to check "humanity" of
--- @return #int						1 if character is human, 0 if character is not human
+-- @return #bool					True if character is human, false if character is not human
 function IsCharacterHuman(characterIndex) end
 
 --------------------------------------------------------------
 -- Selects the specified class for the specified character (as if you were doing so manually via the spawn screen).
 -- 
 -- @param #int character		Character unit
--- @param #int class			Name of class to select
+-- @param class					Class index or class name string
 function SelectCharacterClass(character, class) end
 
 --------------------------------------------------------------
@@ -1777,7 +1866,7 @@ function SelectCharacterClass(character, class) end
 --  classes as a table (with the hero being the last class in the list), the first class's index would be 0, the 
 --  second class's index would be 1, etc.
 -- 
--- @param #int integerChrIdx		Integer character index returned by GetCharacterUnit
+-- @param #int integerChrIdx		Character index (e.g. from GetTeamMember)
 -- @return #int						Numeric index of character's class
 function GetCharacterClass(integerChrIdx) end
 
@@ -1817,23 +1906,23 @@ function AllowAISpawn(teamIndex, canSpawn) end
 --------------------------------------------------------------
 -- Spawns the specified character unit index at the specified path point.
 -- 
--- @param #int integerChrIdx	Unit returned from GetCharacterUnit
+-- @param #int integerChrIdx	Character index (e.g. from GetTeamMember)
 -- @param pathPoint				Path point returned from GetPathPoint
 function SpawnCharacter(integerChrIdx, pathPoint) end
 
 --------------------------------------------------------------
--- Returns the integer character index from the specified entity or team member index.
--- 
--- @param entity			Character entity, or character index returned from GetTeamMember
--- @return #int				Character unit index
-function GetCharacterUnit(entity) end
+-- Returns the entity lightuserdata from the specified character index.
+--
+-- @param #int integerChrIdx	Character index (e.g. from GetTeamMember)
+-- @return entity				Entity lightuserdata
+function GetCharacterUnit(integerChrIdx) end
 
 --------------------------------------------------------------
--- Returns the integer vehicle index from the specified vehicle entity.
--- 
--- @param entity			Vehicle entity
--- @return #int				Vehicle index
-function GetCharacterVehicle(entity) end
+-- Returns the vehicle entity lightuserdata from the specified character index.
+--
+-- @param #int integerChrIdx	Character index (e.g. from GetTeamMember)
+-- @return entity				Entity lightuserdata
+function GetCharacterVehicle(integerChrIdx) end
 
 --------------------------------------------------------------
 -- Returns the integer index from the specified RemoteTerminal entity.  See BF2EntityRemoteTerminalClassReference for more information. 
@@ -1883,13 +1972,6 @@ function MissionVictory(teamIndex) end
 -- 
 -- @param #int teamIndex		Index of team to declare defeat for
 function MissionDefeat(teamIndex) end
-
---------------------------------------------------------------
--- Sets the movie to play once the mission has ended.
--- 
--- @param #string sourceFilename		File containing the movie
--- @param #string movieID				ID of the movie properties to play
-function SetMissionEndMovie(sourceFilename, movieID) end
 
 -- AI Goal management functions
 

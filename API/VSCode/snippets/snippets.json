@@ -1542,15 +1542,15 @@
     
     "GetCharacterUnit": {
         "prefix": "GetCharacterUnit",
-        "body": "GetCharacterUnit(${1:entity})",
-        "description": "Returns the integer character index from the specified entity or team member index.",
+        "body": "GetCharacterUnit(${1:integerChrIdx})",
+        "description": "Returns the entity lightuserdata from the specified character index.",
         "scope": "source.lua"
     },
     
     "GetCharacterVehicle": {
         "prefix": "GetCharacterVehicle",
-        "body": "GetCharacterVehicle(${1:entity})",
-        "description": "Returns the integer vehicle index from the specified vehicle entity.",
+        "body": "GetCharacterVehicle(${1:integerChrIdx})",
+        "description": "Returns the vehicle entity lightuserdata from the specified character index.",
         "scope": "source.lua"
     },
     
@@ -1609,7 +1609,84 @@
         "description": "Sets the movie to play once the mission has ended.",
         "scope": "source.lua"
 	},
-	
+
+    "ScriptCB_OpenMovie": {
+        "prefix": "ScriptCB_OpenMovie",
+        "body": "ScriptCB_OpenMovie(${1:sourceFilename}, ${2:\"\"})",
+        "description": "Opens a movie file for playback. Second parameter is an unused segment identifier (always empty string).",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_CloseMovie": {
+        "prefix": "ScriptCB_CloseMovie",
+        "body": "ScriptCB_CloseMovie()",
+        "description": "Closes the currently open movie.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_PlayMovie": {
+        "prefix": "ScriptCB_PlayMovie",
+        "body": "ScriptCB_PlayMovie(${1:movieName}, ${2:loop}, ${3:nextMovieName}, ${4:left}, ${5:top}, ${6:width}, ${7:height})",
+        "description": "Plays a movie at the specified screen position. nextMovieName chains to another movie when finished (empty string for none).",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_StopMovie": {
+        "prefix": "ScriptCB_StopMovie",
+        "body": "ScriptCB_StopMovie()",
+        "description": "Stops the currently playing movie.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_IsMoviePlaying": {
+        "prefix": "ScriptCB_IsMoviePlaying",
+        "body": "ScriptCB_IsMoviePlaying()",
+        "description": "Returns whether a movie is currently playing.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_AreMoviePropertiesPlaying": {
+        "prefix": "ScriptCB_AreMoviePropertiesPlaying",
+        "body": "ScriptCB_AreMoviePropertiesPlaying(${1:propertiesName})",
+        "description": "Returns whether the specified movie properties are currently playing.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_PlayInGameMovie": {
+        "prefix": "ScriptCB_PlayInGameMovie",
+        "body": "ScriptCB_PlayInGameMovie(${1:sourceFilename}, ${2:movieID})",
+        "description": "Plays an in-game movie. The source .mvs file is automatically determined by the game's language setting.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_StopInGameMovie": {
+        "prefix": "ScriptCB_StopInGameMovie",
+        "body": "ScriptCB_StopInGameMovie()",
+        "description": "Stops the currently playing in-game movie.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_SetVictoryMovie": {
+        "prefix": "ScriptCB_SetVictoryMovie",
+        "body": "ScriptCB_SetVictoryMovie()",
+        "description": "DEPRECATED, DOESN'T WORK. Logs a deprecation warning.",
+        "scope": "source.lua"
+    },
+
+    "ScriptCB_SetDefeatMovie": {
+        "prefix": "ScriptCB_SetDefeatMovie",
+        "body": "ScriptCB_SetDefeatMovie()",
+        "description": "DEPRECATED, DOESN'T WORK. Logs a deprecation warning.",
+        "scope": "source.lua"
+    },
+
+    "BeginScreenTransition": {
+        "prefix": "BeginScreenTransition",
+        "body": "BeginScreenTransition(${1:sceneIndex}, ${2:fadeOutTime}, ${3:fadeHoldTime}, ${4:fadeInTime}, ${5:transitionOutType}, ${6:transitionInType})",
+        "description": "Begins a screen transition effect with the specified timing and transition types (e.g. \"FADE\").",
+        "scope": "source.lua"
+    },
+
 	// AI Goal management functions
     
     "ClearAIGoals": {
