@@ -373,10 +373,14 @@ function ScriptCB_SetDefeatMovie() end
 --------------------------------------------------------------
 -- Begins a screen transition effect with the specified timing and transition types.
 --
---  Transition types are hashed strings that map to internal enum values:
---  `"FADE"` fades to/from black (default). `"BLUR"` applies a vignette-like effect.
---  Five other types exist internally (horizontal/vertical close/slide and
---  random) but their string names are currently unknown.
+--  Available transition types:
+--  `"FADE"` - fade to/from black (default)
+--  `"BLUR"` - vignette-like effect
+--  `"SWIPE_LR"` - swipe left to right
+--  `"SWIPE_RL"` - swipe right to left
+--  `"SWIPE_TB"` - swipe top to bottom
+--  `"SWIPE_BT"` - swipe bottom to top
+--  `"SWIPE_RAND"` - randomly picks one of the four swipe directions
 --
 -- @param #int sceneIndex				Scene index (0 or 1)
 -- @param #float fadeOutTime			Time in seconds for the fade out
