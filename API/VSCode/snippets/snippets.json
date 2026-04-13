@@ -163,14 +163,14 @@
     "ScriptCB_GetVolumes": {
         "prefix": "ScriptCB_GetVolumes",
         "body": "ScriptCB_GetVolumes()",
-        "description": "Retrieves the current volume levels for various audio categories in the game.\n\nReturns:\n- Music Volume (0-10)\n- SFX Volume (0-10)\n- Speech Volume (0-10)\n- Battle Speech Volume (0-10)\n- Unknown Volume (0-10)\n- Total Volume (0-10)",
+        "description": "Retrieves the current volume levels for various audio categories in the game.\n\nReturns:\n- Music Volume (0-10)\n- SFX Volume (0-10)\n- Speech Volume (0-10)\n- Battle Speech Volume (0-10)\n- Maximum Volume (0-10)\n- Total Volume (0-10)",
         "scope": "source.lua"
     },
 
     "ScriptCB_SetVolumes": {
         "prefix": "ScriptCB_SetVolumes",
         "body": "ScriptCB_SetVolumes(${1:musicVolume}, ${2:sfxVolume}, ${3:speechVolume}, ${4:battleSpeechVolume}, ${5:totalVolume})",
-        "description": "Sets the volume levels for various audio categories in the game.\n\nThis function adjusts all in-game sound settings, except for the **unknown 5th value** returned by `ScriptCB_GetVolumes()`, which cannot be modified.\n\nParameters:\n- musicVolume (0-10)\n- sfxVolume (0-10)\n- speechVolume (0-10)\n- battleSpeechVolume (0-10)\n- totalVolume (0-10)",
+        "description": "Sets the current audio volume levels.\n\nThis function sets the adjustable volume categories returned by ScriptCB_GetVolumes(). The maximum volume value is not included, since it is fixed at 10.\n\nParameters:\n- musicVolume (0-10)\n- sfxVolume (0-10)\n- speechVolume (0-10)\n- battleSpeechVolume (0-10)\n- totalVolume (0-10)",
         "scope": "source.lua"
     },
 
@@ -429,7 +429,7 @@
     "SetStationaryWaitTime": {
         "prefix": "SetStationaryWaitTime",
         "body": "SetStationaryWaitTime(${1:time})",
-        "description": "Unused, exact functionality unknown. Might be related to AI planning requests.",
+        "description": "Sets the amount of time in seconds, that AI remain in a stationary vehicle/turret wait state after losing or failing to find a target. Once this timeout expires, the AI may exit the vehicle/turret. \n\nDefault: 10.0 \n\nRelated: SetStayInTurrets(true) effectively disables this by setting the timeout to 10000 seconds. \n\n",
         "scope": "source.lua"
     },
     
@@ -576,21 +576,21 @@
     "SetHeroUnlockRule": {
         "prefix": "SetHeroUnlockRule",
         "body": "SetHeroUnlockRule(${1:rule})",
-        "description": "Unused. Sets the rule by which the hero is unlocked.",
+        "description": "Unused stub. This function doesn't do anything.",
         "scope": "source.lua"
     },
     
     "SetHeroTeamRule": {
         "prefix": "SetHeroTeamRule",
         "body": "SetHeroTeamRule(${1:rule})",
-        "description": "Unused. Sets the hero player rule (whatever that means).",
+        "description": "Sets how the engine decides which team gets the hero. Unknown rules are ignored. \n\nHas no effect in some networked states. \n\nDoes nothing if heroes are disabled in the current profile.",
         "scope": "source.lua"
     },
     
     "SetHeroPlayerRule": {
         "prefix": "SetHeroPlayerRule",
         "body": "SetHeroPlayerRule(${1:rule})",
-        "description": "Unused. Sets the hero player rule (whatever that means).",
+        "description": "Sets how the engine decides which player gets the hero. Unknown rules are ignored. \n\nHas no effect in some networked states. \n\nDoes nothing if heroes are disabled in the current profile.",
         "scope": "source.lua"
     },
     
@@ -723,14 +723,14 @@
     "SetNumBirdTypes": {
         "prefix": "SetNumBirdTypes",
         "body": "SetNumBirdTypes(${1:types})",
-        "description": "Sets how many types of birds there are in the level.",
+        "description": "Sets how many types of birds there are in the level. \n\nThe value is clamped to the range 0-3, with 0 being none.",
         "scope": "source.lua"
     },
     
     "SetBirdType": {
         "prefix": "SetBirdType",
-        "body": "SetBirdType(${1:disable}, ${2:size}, ${3:texture})",
-        "description": "Declares a new bird type.",
+        "body": "SetBirdType(${1:typeIndex}, ${2:size}, ${3:texture})",
+        "description": "Configures a bird variant used when spawning ground birds. Active bird types are chosen randomly when birds are spawned.",
         "scope": "source.lua"
     },
     
@@ -744,14 +744,14 @@
     "SetNumFishTypes": {
         "prefix": "SetNumFishTypes",
         "body": "SetNumFishTypes(${1:types})",
-        "description": "",
+        "description": "Sets how many types of fish there are in the level. \n\nThe value is clamped to the range 0-3, with 0 being none.",
         "scope": "source.lua"
     },
     
     "SetFishType": {
         "prefix": "SetFishType",
-        "body": "SetFishType(${1:disable}, ${2:size}, ${3:texture})",
-        "description": "Declares a new fish type.",
+        "body": "SetFishType(${1:typeIndex}, ${2:size}, ${3:texture})",
+        "description": "Configures a fish variant used when spawning fish. Active fish types are chosen randomly when fish are spawned.",
         "scope": "source.lua"
     },
     
@@ -946,8 +946,8 @@
     
     "SpaceAssaultSetupTeamNumbers": {
         "prefix": "SpaceAssaultSetupTeamNumbers",
-        "body": "SpaceAssaultSetupTeamNumbers(${1:unknown})",
-        "description": "Unused. Exact functionality unknown.",
+        "body": "SpaceAssaultSetupTeamNumbers(${1:team1Number}, ${2:team2Number})",
+        "description": "Sets the two team numbers used by Space Assault.",
         "scope": "source.lua"
     },
     
