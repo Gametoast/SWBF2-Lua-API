@@ -223,26 +223,26 @@ function ScriptCB_StopInGameMusic() end
 --------------------------------------------------------------
 -- Retrieves the current volume levels for various audio categories in the game.
 -- 
--- @return #int musicVolume              Music volume level (e.g., 0 for muted music)
--- @return #int sfxVolume                SFX (Sound Effects) volume level (e.g., 4 for 40% SFX)
--- @return #int speechVolume             Speech volume level (e.g., 6 for 60% Speech)
--- @return #int battleSpeechVolume       Battle Speech volume level (e.g., 7 for 70% Battle Speech)
--- @return #int unknownVolume            Unknown category, possibly related to environmental sounds (e.g., 10)
--- @return #int totalVolume              Total volume level (e.g., 8 for 80% Total Volume)
+-- @return #int musicVolume             Music volume level (e.g., 0 for muted music)
+-- @return #int sfxVolume               SFX (Sound Effects) volume level (e.g., 4 for 40% SFX)
+-- @return #int voiceVolume             Voice volume level (e.g., 6 for 60% Speech)
+-- @return #int battleSpeechVolume      Battle Speech volume level (e.g., 7 for 70% Battle Speech)
+-- @return #int maxVolume               Maximum volume value (always 10)
+-- @return #int totalVolume             Total volume level (e.g., 8 for 80% Total Volume)
 function ScriptCB_GetVolumes() end
 
 --------------------------------------------------------------
--- Sets the volume levels for various audio categories in the game.
--- 
--- This function adjusts all in-game sound settings, except for the 
--- **unknown 5th value** returned by `ScriptCB_GetVolumes()`, which 
--- cannot be modified using this function.
+-- Sets the current audio volume levels.
 --
--- @param #int musicVolume           Music volume level (0-10)
--- @param #int sfxVolume             SFX (Sound Effects) volume level (0-10)
--- @param #int speechVolume          Speech volume level (0-10)
--- @param #int battleSpeechVolume    Battle Speech volume level (0-10)
--- @param #int totalVolume           Total volume level (0-10)
+-- This function sets the adjustable volume categories returned by
+-- ScriptCB_GetVolumes(). The maximum volume value is not included,
+-- since it is fixed at 10.
+--
+-- @param #int musicVolume              Music volume level (0-10)
+-- @param #int sfxVolume                SFX (Sound Effects) volume level (0-10)
+-- @param #int voiceVolume              Voice volume level (0-10)
+-- @param #int battleSpeechVolume       Battle Speech volume level (0-10)
+-- @param #int totalVolume              Total volume level (0-10)
 function ScriptCB_SetVolumes(musicVolume, sfxVolume, speechVolume, battleSpeechVolume, totalVolume) end
 
 --------------------------------------------------------------
@@ -630,7 +630,14 @@ function SetUberMode(enabled) end
 function SetAllowBlindJetJumps(allow) end
 
 --------------------------------------------------------------
--- Unused, exact functionality unknown. Might be related to AI planning requests.
+-- Sets the amount of time in seconds, that AI remain
+-- in a stationary vehicle/turret wait state after losing or
+-- failing to find a target. Once this timeout expires, the AI
+-- may exit the vehicle/turret.
+--
+-- Default: 10.0
+-- Related: SetStayInTurrets(true) effectively disables this
+-- by setting the timeout to 10000 seconds.
 -- 
 -- @param #float time			Wait time in seconds
 function SetStationaryWaitTime(time) end
@@ -775,19 +782,27 @@ function EnableSPHeroRules() end
 function EnableSPScriptedHeroes() end
 
 --------------------------------------------------------------
--- Unused. Sets the rule by which the hero is unlocked.
+-- Unused stub. This function doesn't do anything.
 -- 
--- @param #string rule			Unlock rule to use, possible options are unknown
+-- @param #string rule          Ignored
 function SetHeroUnlockRule(rule) end
 
 --------------------------------------------------------------
--- Unused. Sets the hero player rule (whatever that means).
+-- Sets how the engine decides which team gets the hero.
+-- Unknown rules are ignored.
+--
+-- Has no effect in some networked states.
+-- Does nothing if heroes are disabled in the current profile.
 -- 
 -- @param #string rule			Team rule to use, possible options are unknown
 function SetHeroTeamRule(rule) end
 
 --------------------------------------------------------------
--- Unused. Sets the hero player rule (whatever that means).
+-- Sets how the engine decides which player gets the hero.
+-- Unknown rules are ignored.
+--
+-- Has no effect in some networked states.
+-- Does nothing if heroes are disabled in the current profile.
 -- 
 -- @param #string rule			Player rule to use, possible options are unknown
 function SetHeroPlayerRule(rule) end
@@ -990,17 +1005,19 @@ function SetMemoryPoolSize(memoryPool, size) end
 
 --------------------------------------------------------------
 -- Sets how many types of birds there are in the level.
+-- The value is clamped to the range 0-3, with 0 being none.
 -- 
 -- @param #int types			Number of bird types
 function SetNumBirdTypes(types) end
 
 --------------------------------------------------------------
--- Declares a new bird type.
+-- Configures a bird variant used when spawning ground birds.
+-- Active bird types are chosen randomly when birds are spawned.
 -- 
--- @param #int disable			Exact functionality unknown, seems to disable birds of this type when set to 1 
--- @param #float size			Size of birds of this type
--- @param #string texture		Name of bird texture
-function SetBirdType(disable, size, texture) end
+-- @param #int typeIndex             Bird type index (0-2)
+-- @param #float size			Bird size
+-- @param #string texture		Bird texture name
+function SetBirdType(typeIndex, size, texture) end
 
 --------------------------------------------------------------
 -- Sets the lowest height at which flocks of birds can fly.
@@ -1010,17 +1027,19 @@ function SetBirdFlockMinHeight(height) end
 
 --------------------------------------------------------------
 -- Sets how many types of fish there are in the level.
+-- The value is clamped to the range 0-3, with 0 being none.
 -- 
 -- @param #int types			Number of fish types
 function SetNumFishTypes(types) end
 
 --------------------------------------------------------------
--- Declares a new fish type.
+-- Configures a fish variant used when spawning fish.
+-- Active fish types are chosen randomly when fish are spawned.
 -- 
--- @param #int disable			Exact functionality unknown, seems to disable fish of this type when set to 1
--- @param #float size			Size of fish of this type
--- @param #string texture		Name of fish texture
-function SetFishType(disable, size, texture) end
+-- @param #int typeIndex             Fish type index (0-2)
+-- @param #float size			Fish size
+-- @param #string texture		Fish texture name
+function SetFishType(typeIndex, size, texture) end
 
 --------------------------------------------------------------
 -- Fills the specified region with asteroids.  Each asteroid will move in the X, Y, and Z directions at a random velocity within the range 
@@ -1251,10 +1270,11 @@ function SpaceAssaultAddCriticalSystem(name, pointValue, hudPosX, hudPosY, displ
 function SpaceAssaultLinkCriticalSystems(objects) end
 
 --------------------------------------------------------------
--- Unused. Exact functionality unknown.
--- 
--- @param unknown			Unknown argument
-function SpaceAssaultSetupTeamNumbers(unknown) end
+-- Sets the two team numbers used by Space Assault.
+--
+-- @param #int team1                First team number
+-- @param #int team2                Second team number
+function SpaceAssaultSetupTeamNumbers(team1, team2) end
 
 --------------------------------------------------------------
 -- Sets up the HUD bitmaps for each team's capital ship, systems, etc.
