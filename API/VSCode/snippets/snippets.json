@@ -666,14 +666,14 @@
     
     "SetSpawnDelay": {
         "prefix": "SetSpawnDelay",
-        "body": "SetSpawnDelay(${1:num1}, ${2:num2})",
+        "body": "SetSpawnDelay(${1:waveDelay}, ${2:slotDelay})",
         "description": "Specifies an initial spawn delay.    \n\n All levels use this call. You should never have to modify the values.",
         "scope": "source.lua"
     },
     
     "SetSpawnDelayTeam": {
         "prefix": "SetSpawnDelayTeam",
-        "body": "SetSpawnDelayTeam(${1:num1}, ${2:num2}, ${3:teamIndex})",
+        "body": "SetSpawnDelayTeam(${1:waveDelay}, ${2:slotDelay}, ${3:teamIndex})",
         "description": "Specifies an initial spawn delay for the specified team.    \n\n All levels use this call. You should never have to modify the values.",
         "scope": "source.lua"
     },
@@ -1563,15 +1563,15 @@
     
     "GetCharacterRemote": {
         "prefix": "GetCharacterRemote",
-        "body": "GetCharacterRemote(${1:entity})",
-        "description": "Returns the integer index from the specified RemoteTerminal entity.    \n\n See BF2EntityRemoteTerminalClassReference for more information.    \n http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2EntityRemoteTerminalClassReference.jpg",
+        "body": "GetCharacterRemote(${1:integerChrIdx})",
+        "description": "Returns the RemoteTerminal entity lightuserdata from the specified RemoteTerminal integer.    \n\n See BF2EntityRemoteTerminalClassReference for more information.    \n http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2EntityRemoteTerminalClassReference.jpg",
         "scope": "source.lua"
     },
     
     "GetCharacterControllable": {
         "prefix": "GetCharacterControllable",
-        "body": "GetCharacterControllable(${1:entity})",
-        "description": "Returns the integer vehicle index from the specified Controllable entity.    \n\n See BF2ControllableClassReference for more information.    \n http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2ControllableClassReference.jpg",
+        "body": "GetCharacterControllable(${1:integerChrIdx})",
+        "description": "Returns the controllable entity lightuserdata from the specified Controllable integer.    \n\n See BF2ControllableClassReference for more information.    \n http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2ControllableClassReference.jpg",
         "scope": "source.lua"
     },
     

@@ -875,19 +875,28 @@ function GetBleedRate(teamIndex) end
 function SetCarrierClass(teamIndex, class) end
 
 --------------------------------------------------------------
--- Specifies an initial spawn delay.  All levels use this call. You should never have to modify the values.
--- 
--- @param #float num1			Unknown, always set to `10.0`
--- @param #float num2			Unknown, always set to `0.25`
-function SetSpawnDelay(num1, num2) end
+-- Sets the AI reinforcement spawn timing for teams 1 and 2. All levels use this call.
+-- @param #float waveDelay      Spawn wave/cycle period in seconds. Queued AI become eligible
+--                              to respawn only on the next spawn cycle, so this is effectively  
+--                              the delay between reinforcement waves.
+--                              NOTE: forced to 15.0 in network play, so this value only takes effect in singleplayer.
+-- @param #float slotDelay      Per-slot respawn spacing in seconds. After a unit spawns, its
+--                              slot timer reloads to this value, staggering individual spawns
+--                              within a wave so the whole team doesn't appear at once.
+function SetSpawnDelay(waveDelay, slotDelay) end
 
 --------------------------------------------------------------
--- Specifies an initial spawn delay for the specified team.  All levels use this call. You should never have to modify the values.
--- 
--- @param #float num1			Unknown, always set to `10.0`
--- @param #float num2			Unknown, always set to `0.25`
--- @param #int teamIndex		Index of team
-function SetSpawnDelayTeam(num1, num2, teamIndex) end
+-- Sets the AI reinforcement spawn timing for the specified team. All levels use this call.
+--
+-- @param #float waveDelay      Spawn wave/cycle period in seconds. Queued AI become eligible
+--                              to respawn only on the next spawn cycle, so this is effectively  
+--                              the delay between reinforcement waves.
+--                              NOTE: forced to 15.0 in network play, so this value only takes effect in singleplayer.
+-- @param #float slotDelay      Per-slot respawn spacing in seconds. After a unit spawns, its
+--                              slot timer reloads to this value, staggering individual spawns
+--                              within a wave so the whole team doesn't appear at once.
+-- @param #int teamIndex        Index of team
+function SetSpawnDelayTeam(waveDelay, slotDelay, teamIndex) end
 
 --------------------------------------------------------------
 -- Sets a switch in the code that controls a number of AI behaviors.  If this were a very foggy map, with a short view distance, 
@@ -1949,7 +1958,7 @@ function GetCharacterUnit(integerChrIdx) end
 function GetCharacterVehicle(integerChrIdx) end
 
 --------------------------------------------------------------
--- Returns the integer index from the specified RemoteTerminal entity.  See BF2EntityRemoteTerminalClassReference for more information. 
+-- Returns the RemoteTerminal entity lightuserdata from the specified RemoteTerminal integer.  See BF2EntityRemoteTerminalClassReference for more information. 
 --  http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2EntityRemoteTerminalClassReference.jpg
 -- 
 -- @param #int integerChrIdx   Character index (e.g. from GetTeamMember)
@@ -1957,7 +1966,7 @@ function GetCharacterVehicle(integerChrIdx) end
 function GetCharacterRemote(entity) end
 
 --------------------------------------------------------------
--- Returns the integer vehicle index from the specified Controllable entity.  See BF2ControllableClassReference for more information. 
+-- Returns the controllable entity lightuserdata from the specified Controllable integer.  See BF2ControllableClassReference for more information. 
 --  http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2ControllableClassReference.jpg
 -- 
 -- @param #int integerChrIdx   Character index (e.g. from GetTeamMember)
