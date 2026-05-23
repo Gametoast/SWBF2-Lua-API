@@ -839,19 +839,23 @@ function ShowAllUnitsOnMinimap(enabled) end
 function ShowTeamPoints(teamIndex, enabled) end
 
 --------------------------------------------------------------
--- Activates a bonus for the specified team.
+-- Activates (or deactivates) a team bonus. Only ONE bonus can be active per team;
+-- activating a second overwrites the first.
 -- 
 -- @param #int teamIndex		Index of team to activate bonus for
 -- @param #string bonus			Bonus to activate. Allowed values:  
--- 								 `MEDICAL_SUPPLIES`  
--- 								 `SURPLUS_SUPPLIES`  
--- 								 `SENSOR_BOOST`  
--- 								 `HERO`  
--- 								 `RESERVES`  
--- 								 `SABOTAGE`  
--- 								 `SNEAK_ATTACK`  
--- 								 `TRAINING`
-function ActivateBonus(teamIndex, bonus) end
+-- 								 `team_bonus_supplies`              - Doubles weapon ammo (mMaxClips x2, refilled)
+-- 								 `team_bonus_garrison`              - One-time reinforcement injection when count drops below threshold
+-- 								 `team_bonus_sensor_array`          - Reveals enemies on radar/map
+-- 								 `team_bonus_energy_boost`          - Per-frame weapon-energy effect on soldiers
+-- 								 `team_bonus_advanced_blasters`     - Multiplies ordnance damage by (1 + some odf parameter?); no effect on ordnance with default 0.0
+-- 								 `team_bonus_bacta_tanks`           - Continuous health regen
+-- 								 `team_bonus_combat_shielding`      - +25% health/shield on spawn (maxHP + maxHP*0.25) 
+-- 								 `team_bonus_sabotage`              - Damages enemy vehicles as they spawn (down to ~25% HP + explosion)
+-- 								 `team_bonus_autoturrets`           - Adds/removes auto-turrets at team-owned command posts
+-- 								 `team_bonus_leader`                - Unlocks/spawns the hero unit
+-- @param #bool enabled         Optional (default true). True activates; false deactivates the team's bonus.
+function ActivateBonus(teamIndex, bonus, enabled) end
 
 --------------------------------------------------------------
 -- Sets the specified team's ticket bleed rate.
