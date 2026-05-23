@@ -17,18 +17,14 @@ function SetBleedingVoiceOver(playerTeam, bleedTeam, streamSoundName, bleeding) 
 function SetBleedingRepeatTime(repeatTime) end
 
 --------------------------------------------------------------
--- Sets the voice over to play for the specified bonus.
--- 
--- @param #int playerTeam				Player's team number
--- @param #int bonusNum					The number of the bonus to be set.  
--- 										 `0` - medical regen bonus (played on level load, heard by players team)  
---										 `1` - surplus supplies bonus (played on level load, heard by players team)  
---										 `2` - sensor boost bonus (played on level load, heard by players team)  
---										 `3` - hero is on the battlefield (played on level load, heard by both teams)  
---										 `4` - our team just got the reserves bonus (played when it happens, heard by players team)  
---										 `5` - the other team just got reserves bonus (played when it happens, heard by other team)
--- @param #string streamSoundName		Stream sound to play when the bonus occurs (or at level load if the bonus is ongoing)
-function SetPlanetaryBonusVoiceOver(playerTeam, bonusNum, streamSoundName) end
+-- DEPRECATED, DOESN'T WORK.
+-- Logs a deprecation warning.
+function SetPlanetaryBonusVoiceOver() end
+
+--------------------------------------------------------------
+-- DEPRECATED, DOESN'T WORK.
+-- Logs a deprecation warning.
+function ScriptCB_MetagameSetBonus() end
 
 --------------------------------------------------------------
 -- Sets the sound effect to play for the specified sound event.
@@ -1956,16 +1952,16 @@ function GetCharacterVehicle(integerChrIdx) end
 -- Returns the integer index from the specified RemoteTerminal entity.  See BF2EntityRemoteTerminalClassReference for more information. 
 --  http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2EntityRemoteTerminalClassReference.jpg
 -- 
--- @param entity			RemoteTerminal entity
--- @return #int				RemoteTerminal entity index
+-- @param #int integerChrIdx   Character index (e.g. from GetTeamMember)
+-- @return entity              RemoteTerminal entity lightuserdata
 function GetCharacterRemote(entity) end
 
 --------------------------------------------------------------
 -- Returns the integer vehicle index from the specified Controllable entity.  See BF2ControllableClassReference for more information. 
 --  http://www.secretsociety.com/forum/downloads/BF2Docs/ClassReference/BF2ControllableClassReference.jpg
 -- 
--- @param entity			Vehicle entity
--- @return #int				Controllable entity index
+-- @param #int integerChrIdx   Character index (e.g. from GetTeamMember)
+-- @return entity              The controllable entity the character occupies
 function GetCharacterControllable(entity) end
 
 --------------------------------------------------------------

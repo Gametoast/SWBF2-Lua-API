@@ -15,8 +15,15 @@
     
     "SetPlanetaryBonusVoiceOver": {
         "prefix": "SetPlanetaryBonusVoiceOver",
-        "body": "SetPlanetaryBonusVoiceOver(${1:playerTeam}, ${2|0,1,2,3,4,5|}, ${3:streamSoundName})",
-        "description": "Sets the voice over to play for the specified bonus.",
+        "body": "SetPlanetaryBonusVoiceOver()",
+        "description": "DEPRECATED, DOESN'T WORK. Logs a deprecation warning.",
+        "scope": "source.lua"
+    },
+    
+    "ScriptCB_MetagameSetBonus": {
+        "prefix": "ScriptCB_MetagameSetBonus",
+        "body": "ScriptCB_MetagameSetBonus()",
+        "description": "DEPRECATED, DOESN'T WORK. Logs a deprecation warning.",
         "scope": "source.lua"
     },
     
