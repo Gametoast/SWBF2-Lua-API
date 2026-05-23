@@ -631,8 +631,8 @@
     
     "ActivateBonus": {
         "prefix": "ActivateBonus",
-        "body": "ActivateBonus(${1:teamIndex}, ${2|\"MEDICAL_SUPPLIES\",\"SURPLUS_SUPPLIES\",\"SENSOR_BOOST\",\"HERO\",\"RESERVES\",\"SABOTAGE\",\"SNEAK_ATTACK\",\"TRAINING\"|})",
-        "description": "Activates a bonus for the specified team.",
+        "body": "ActivateBonus(${1:teamIndex}, ${2|\"team_bonus_supplies\",\"team_bonus_garrison\",\"team_bonus_sensor_array\",\"team_bonus_energy_boost\",\"team_bonus_advanced_blasters\",\"team_bonus_bacta_tanks\",\"team_bonus_combat_shielding\",\"team_bonus_sabotage\",\"team_bonus_autoturrets\",\"team_bonus_leader\"|}${3:, true})",
+        "description": "Activates (or deactivates) a team bonus. Only one bonus can be active per team. supplies=2x ammo; garrison=reinforcement injection; sensor_array=reveal enemies on radar; energy_boost=weapon-energy effect; advanced_blasters=damage x(1+ordnance mBonusAmplification); bacta_tanks=health regen; combat_shielding=+25% spawn HP; sabotage=damages enemy vehicles on spawn; autoturrets=auto-turrets at owned CPs; leader=spawn hero. 3rd arg enabled (default true; false deactivates).",
         "scope": "source.lua"
     },
     
