@@ -742,10 +742,21 @@ function AddAssaultDestroyPoints(integerChrIdx) end
 function AddSpaceAssaultDestroyPoints(integerChrIdx, object) end
 
 --------------------------------------------------------------
--- Returns the faction ID of the specified team.  Not sure what this is used for.
+-- Returns the faction ID (side) of the specified team.  This is the value the engine derived from the
+-- team's name when it was set with `SetTeamName`, so `SetTeamName(1, "rep")` makes this return `3`.
+-- Team names the engine doesn't recognize all fall through to `5` (locals), and a team whose name was
+-- never set reads back as `0`.
 -- 
 -- @param #int teamIndex		Index of team
--- @return #string				Team's faction ID
+-- @return #int					Team's faction ID. Possible values:  
+-- 								 `0` - neutral / not found 
+-- 								 `1` - alliance  
+-- 								 `2` - empire  
+-- 								 `3` - republic  
+-- 								 `4` - cis  
+-- 								 `5` - locals  
+-- 								 `6` - heroes  
+-- 								 `7` - villains
 function GetTeamFactionId(teamIndex) end
 
 --------------------------------------------------------------

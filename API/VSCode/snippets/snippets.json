@@ -548,7 +548,7 @@
     "GetTeamFactionId": {
         "prefix": "GetTeamFactionId",
         "body": "GetTeamFactionId(${1:teamIndex})",
-        "description": "Returns the faction ID of the specified team.    \n\n Not sure what this is used for.",
+        "description": "Returns the faction ID (side) of the specified team. Possible values:    \n `0` - neutral / not found    \n `1` - alliance    \n `2` - empire    \n `3` - republic    \n `4` - cis    \n `5` - locals    \n `6` - heroes    \n `7` - villains    \n\n This is the value the engine derived from the team's name when it was set with `SetTeamName`, so `SetTeamName(1, \"rep\")` makes this return `3`. Team names the engine doesn't recognize all fall through to `5` (locals), and a team whose name was never set reads back as `0`.",
         "scope": "source.lua"
     },
     
